@@ -7,7 +7,7 @@
 	<title>SCORM Sample</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/pdpa.css">
 </head>
@@ -31,17 +31,18 @@
 		<div class="cleardiv"></div>
 	</header>
 	<!-- END HEADER -->
-	
+
 	<!-- Sidebar Holder -->
             <nav id="sidebar">
-                <div id="dismiss"><i class="glyphicon glyphicon-arrow-left"></i></div>
+                <div id="dismiss"><i class="glyphicon glyphicon-remove"></i></div>
 
                 <div class="sidebar-header">
-                    <h3>Bootstrap Sidebar</h3>
+									<a id="homeBtn" href="javascript:void(0);"><i class="fa fa-home navBtn"></i></a>
+									<a id="glossaryBtn" href="javascript:void(0);"><i class="fa fa-book navBtn"></i></a>
+									<a id="helpBtn" href="javascript:void(0);"><i class="fa fa-question navBtn"></i></a>
                 </div>
 
                 <ul class="list-unstyled components">
-                    <p>Dummy Heading</p>
                     <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -68,8 +69,7 @@
                 </ul>
 
             </nav>
-	
-	<div class="overlay"></div>
+
 
 	<div id="content" class="container-fluid"></div>
 </div>
