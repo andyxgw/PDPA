@@ -1,0 +1,153 @@
+body{
+	/*background: url(../images/dust_scratches.png) repeat; */
+	/* background: url(../images/bg.png) no-repeat; */
+	background: #FFFFFF; 
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 10px;	
+	text-align: center;		
+	margin:0;
+	border:0;
+	width: 1px;
+	min-width: 100%;
+	height: 1px;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+
+/* SPLASH SCREEN */
+#splashScreen {
+	position:relative;
+	background-image: url(../images/bg.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position: center top;
+	margin: 0 auto;
+	max-width:140em;
+	min-height:100em;
+}
+
+#welcomeMsg {
+    width: 80%;
+    text-align: center;
+    padding: 3em 0.5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#welcomeMsg h1 {
+    font-size: 4em;
+    font-weight: 500;
+    color: #103258;
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 0.8em;
+}
+
+#playBtn {
+	border-radius: 0.3em;
+	padding: 0.8em 5em;
+	font-weight: bold;
+	font-size: 2em;
+	background: #103258;
+	color: #efa841;
+	border: none;
+}
+
+#playBtn:active {
+    margin-left: 0;
+}
+/* END OF SPLASH SCREEN */
+
+
+/* INTRODUCTION */
+#introScreen {
+	position:relative;
+	background-image: url(../images/bg.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position: center top;
+	margin: 0 auto;
+	max-width:140em;
+	min-height:100em;
+}
+#introMsg {
+    width: 80%;
+    text-align: center;
+    padding: 3em 0.5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#introMsg h1 {
+	font-size: 4.5em;
+	font-weight: 700;
+	color: #103258;
+	padding: 0;
+	margin: 0 auto;
+	margin-bottom: 0.4em;
+	display: none;
+}
+#introMsg h2 {
+	position: relative;
+	font-size: 4em;
+	font-weight: 400;
+	color: #103258;
+	padding: 0;
+	margin: 0 auto;
+	margin-bottom: 0;
+	top:15em;
+}
+/* END INTRODUCTION */
+
+
+
+
+
+
+
+
+.navbar-fixed-top {
+    border: none;
+	height: 80px;
+}
+
+nav .container-fluid {
+    padding: 0;
+    width: 100%;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    /* No support for these yet, use at own risk */
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+#main_content {
+	position:relative;
+	background-image: url(../images/bg.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position: center top; 
+	margin: 0 auto;
+	max-width:140em;
+	min-height:100em;
+}
+
+#main_content .container-fluid {
+    padding: 0;
+    text-align: center;
+}

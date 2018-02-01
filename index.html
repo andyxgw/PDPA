@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<title>SCORM Sample</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet"> 
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/pdpa.css">
+</head>
+
+<body>
+
+
+
+
+
+
+
+<!-- MAIN CONTENT -->
+<div id="main_content">
+
+	<!-- HEADER -->
+	<header id="header">
+		<div class="logo"><img src="images/ntu.png" class="ntulogo"  border="0" /></div>
+		<div id="TopicHeader"></div>
+		<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><i class="glyphicon glyphicon-align-left"></i></button>
+		<div class="cleardiv"></div>
+	</header>
+	<!-- END HEADER -->
+	
+	<!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div id="dismiss">
+                    <i class="glyphicon glyphicon-arrow-left"></i>
+                </div>
+
+                <div class="sidebar-header">
+                    <h3>Bootstrap Sidebar</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <p>Dummy Heading</p>
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="#">Home 1</a></li>
+                            <li><a href="#">Home 2</a></li>
+                            <li><a href="#">Home 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="#">Page 1</a></li>
+                            <li><a href="#">Page 2</a></li>
+                            <li><a href="#">Page 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+
+            </nav>
+	
+	<div class="overlay"></div>
+
+	<div id="content" class="container-fluid"></div>
+</div>
+<!-- END MAIN CONTENT -->
+
+
+<audio id="VoiceOver"></audio>
+<audio id="VoiceOver1"></audio>
+<audio id="VoiceOver2"></audio>
+<audio id="VoiceOver3"></audio>
+<audio id="VoiceOver4"></audio>
+<audio id="VoiceOver5"></audio>
+
+
+<!-- Javascripts and Plugins --->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+<script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
+<script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/APIWrapper.js"></script>
+<script src="js/base.js"></script>
+
+</body>
+
+</html>
