@@ -5,9 +5,9 @@
 <p>
 <table width="100%" border="1" cellspacing="0" cellpadding="5">
 <tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
+<td width="25%">1</td>
+<td width="25%">2</td>
+<td width="40%">3</td>
 </tr>
 </table>
 </p>
