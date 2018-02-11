@@ -3,11 +3,11 @@
 ## SCORM Functions
 Below covers the essential functions and their respective parameters (if any)
 
-| Tables        | Are           | Cool  |
+| Functions      | Description           | Parameter(s)  |
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| CheckBookMark() | To retrieve bookmark value. If no value exist, user will be redirected to the default first page of the module/course. |  |
+| SetBookMark(num) | Use page number as the bookmark value and set it into LMS. |  A integer value  |
+| GetBookMarkPage() | To retrieve bookmark value | |
 
 <p>
 <b>CheckBookMark()</b><br/>
