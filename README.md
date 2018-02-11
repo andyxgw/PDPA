@@ -4,10 +4,13 @@
 
 <p>
 <table width="100%" border="1" cellspacing="0" cellpadding="5">
-<tr>
+<th>
 <td width="25%">1</td>
 <td width="25%">2</td>
 <td width="40%">3</td>
+</th>
+<tr>
+
 </tr>
 </table>
 </p>
