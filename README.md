@@ -1,6 +1,6 @@
 # PDPA
 
-## SCORM Functions
+### SCORM Functions
 Below covers the essential functions and their respective parameters (if any)
 
 | Functions      | Description           | Parameter(s)  |
