@@ -10,6 +10,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/pdpa.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -33,42 +34,21 @@
 	<!-- END HEADER -->
 
 	<!-- Sidebar Holder -->
-            <nav id="sidebar">
-                <div id="dismiss"><i class="glyphicon glyphicon-remove"></i></div>
+	<nav id="sidebar">
+		<div id="dismiss">
+			<i class="glyphicon glyphicon-remove"></i>
+		</div>
 
-                <div class="sidebar-header">
-									<a id="homeBtn" href="javascript:void(0);"><i class="fa fa-home navBtn"></i></a>
-									<a id="glossaryBtn" href="javascript:void(0);"><i class="fa fa-book navBtn"></i></a>
-									<a id="helpBtn" href="javascript:void(0);"><i class="fa fa-question navBtn"></i></a>
-                </div>
+		<div class="sidebar-header">
+			<a id="homeBtn" href="javascript:void(0);"><i class="fa fa-home navBtn"></i></a>
+			<a id="glossaryBtn" href="javascript:void(0);"><i class="fa fa-book navBtn"></i></a>
+			<a id="helpBtn" href="javascript:void(0);"><i class="fa fa-question navBtn"></i></a>
+		</div>
 
-                <ul class="list-unstyled components">
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><a href="#">Home 1</a></li>
-                            <li><a href="#">Home 2</a></li>
-                            <li><a href="#">Home 3</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li><a href="#">Page 1</a></li>
-                            <li><a href="#">Page 2</a></li>
-                            <li><a href="#">Page 3</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-
-            </nav>
+		<div id="MenuItem">
+		
+		</div>
+	</nav>
 
 
 	<div id="content" class="container-fluid"></div>
@@ -85,7 +65,7 @@
 
 
 <!-- Javascripts and Plugins --->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/jquery.ui.touch-punch.min.js"></script>
@@ -96,7 +76,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="js/APIWrapper.js"></script>
 <script src="js/base.js"></script>
-
+<script> 
+    $(function(){
+      $("#MenuItem").load("menu.html"); 
+    });
+    </script> 
 </body>
 
 </html>

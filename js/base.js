@@ -52,6 +52,8 @@ $(document).ready(function(e) {
 
 	resizeWindow();
 	mainContent.show();
+	
+	$("#sidebar").load("../menu.html"); 
 
 	$("#sidebar").mCustomScrollbar({
 		theme: "minimal"
