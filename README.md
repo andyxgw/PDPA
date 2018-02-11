@@ -1,13 +1,13 @@
 # PDPA
 
-<h3>SCORM Functions</h3>
+## SCORM Functions
+Below covers the essential functions and their respective parameters (if any)
 
-<p>
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-</p>
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
 <p>
 <b>CheckBookMark()</b><br/>

@@ -100,15 +100,6 @@ function SetBookmark(num){
 	doLMSCommit();
 }
 
-function GetBookmark(){
-	var page = doLMSGetValue("cmi.core.lesson_location");
-	completionStatus = doLMSGetValue("cmi.core.lesson_status");
-
-	if(completionStatus == "completed" || completionStatus == "passed")
-	{
-		page = 1;
-	}
-}
 
 function GetBookmarkPage(){
 	var page = doLMSGetValue("cmi.core.lesson_location");
@@ -168,7 +159,6 @@ function GetSlideData(){
 		}
 	}
 }
-
 
 
 function IsLessonCompleted() {
