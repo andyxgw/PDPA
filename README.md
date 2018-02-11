@@ -3,16 +3,10 @@
 <h3>SCORM Functions</h3>
 
 <p>
-<table width="100%" border="1" cellspacing="0" cellpadding="5">
-<th>
-<td width="25%">1</td>
-<td width="25%">2</td>
-<td width="40%">3</td>
-</th>
-<tr>
-
-</tr>
-</table>
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 </p>
 
 <p>
