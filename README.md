@@ -15,6 +15,8 @@ Below covers the essential functions and their respective parameters (if any)
 
 
 
+
+
 ## Base Functions
 File location: js/base.js
 
