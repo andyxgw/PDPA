@@ -12,10 +12,7 @@ Below covers the essential functions and their respective parameters (if any)
 | IsLessonCompleted() | Access user learning data and verify last page has been read. If yes, set the status of the lesson as completed. | |
 | doExitTasks() | Perform series of functions which include setting user learning data and set lesson learning duration when user close the LMS window | |
 
-
-
-
-
+<br /><br />
 
 ## Base Functions
 File location: js/base.js
