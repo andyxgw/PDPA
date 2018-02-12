@@ -1,5 +1,6 @@
 ## SCORM Functions
 File location: js/SCORMFunctions.js
+
 Below covers the essential functions and their respective parameters (if any)
 
 | Functions      | Description           | Parameter(s)  |
