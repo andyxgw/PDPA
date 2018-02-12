@@ -5,7 +5,7 @@ File location: js/SCORMFunctions.js
 Below covers the essential functions and their respective parameters (if any)
 
 | Functions      | Description           | Parameter(s)  |
-| ------------- |-----------| -----|
+| ------------- |-----------| -------|
 | CheckBookMark() | To retrieve bookmark value. If no value exist, user will be redirected to the default first page of the module/course. |  |
 | SetBookMark(num) | Use page number as the bookmark value and set it into LMS. |  A integer value  |
 | GetBookMarkPage() | To retrieve bookmark value | |
@@ -19,6 +19,7 @@ Below covers the essential functions and their respective parameters (if any)
 File location: js/base.js
 
 The following covers the customizable variables to fit into the context of the entire SCORM package. Only change the value of the variables stated below.
+
 | Variable      | Acceptable Values  |
-| ------------- |----------------|
+| ------------- |--------------------|
 | HygieneFactorMode | true / false  |
