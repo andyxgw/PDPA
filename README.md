@@ -24,3 +24,11 @@ The following covers the customizable variables to fit into the context of the e
 | HygieneFactorMode | true / false  | To set whether the package require hygiene factor to be implemented |
 | TotalPages | <i>integer</i>  | To set the number of pages, including the subpages for the package. This will automatically indicate the last page where learners will not be able to proceed forward. |
 | StartPageNo | <i>integer</i>  | To set the start page number, exclude the splash/intro page of the package (if any). This will automatically prevent learners from being able to navigated to the previous page |
+
+<br />
+
+## Menu Listing
+File location: js/index.html
+'''
+aaa
+'''
