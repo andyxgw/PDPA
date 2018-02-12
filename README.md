@@ -31,5 +31,39 @@ The following covers the customizable variables to fit into the context of the e
 File location: js/index.html
 
 ```
-Give the example
+<nav id="sidebar">
+  <div id="dismiss">
+    <i class="glyphicon glyphicon-remove"></i>
+  </div>
+
+  <div class="sidebar-header">
+    <a id="homeBtn" href="javascript:void(0);"><i class="fa fa-home navBtn"></i></a>
+    <a id="glossaryBtn" href="javascript:void(0);"><i class="fa fa-book navBtn"></i></a>
+    <a id="helpBtn" href="javascript:void(0);"><i class="fa fa-question navBtn"></i></a>
+  </div>
+
+  <div id="MenuItem">
+    <ul class="list-unstyled components">
+      <li>
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="fa fa-square-o faCB"></i> Topic 1</a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+          <li><a href="#"><i class="fa fa-square-o faCB"></i>  Topic 1.1</a></li>
+          <li><a href="#"><i class="fa fa-square-o faCB"></i>  Topic 1.2</a></li>
+          <li><a href="#"><i class="fa fa-square-o faCB"></i>  Topic 1.3</a></li>
+        </ul>
+      </li>
+      <li><a href="#"><i class="fa fa-square-o faCB"></i>  Topic 2</a> </label></span></li>
+      <li>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"><i class="fa fa-square-o faCB"></i> Topic 3</a>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li><a href="#"><i class="fa fa-square-o faCB"></i> Topic 3.1</a></li>
+          <li><a href="#"><i class="fa fa-square-o faCB"></i> Topic 3.2</a></li>
+          <li><a href="#"><i class="fa fa-square-o faCB"></i> Topic 3.3</a></li>
+        </ul>
+      </li>
+      <li><a href="#"><i class="fa fa-square-o faCB"></i> Topic 4</a></li>
+      <li><a href="#"><i class="fa fa-square-o faCB"></i> Topic 5</a></li>
+    </ul>
+  </div>
+</nav>
 ```
