@@ -13,8 +13,6 @@ var StartPageNo = 3;
 var MenuPageNo = 2;
 var PageNo = 1;
 
-var TotalPagesWithSubPages = 11;
-var PagesWithSubPagesArray = [];
 
 var UserAnswersCount = 0
 var UserAnswers = [];
@@ -52,8 +50,8 @@ $(document).ready(function(e) {
 
 	resizeWindow();
 	mainContent.show();
-	
-	$("#sidebar").load("../menu.html"); 
+
+	$("#sidebar").load("../menu.html");
 
 	$("#sidebar").mCustomScrollbar({
 		theme: "minimal"

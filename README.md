@@ -22,4 +22,5 @@ The following covers the customizable variables to fit into the context of the e
 | Variable      | Acceptable Values  | Description  |
 | ------------- |--------------------|--------------|
 | HygieneFactorMode | true / false  | To set whether the package require hygiene factor to be implemented |
-| HygieneFactorMode | true / false  | To set whether the package require hygiene factor to be implemented |
+| TotalPages | <i>integer</i>  | To set the number of pages, including the subpages for the package |
+| StartPageNo | <i>integer</i>  | To set the start page number, exclude the splash/intro page of the package (if any) |
