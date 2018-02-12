@@ -12,7 +12,7 @@ Below covers the essential functions and their respective parameters (if any)
 | IsLessonCompleted() | Access user learning data and verify last page has been read. If yes, set the status of the lesson as completed. | |
 | doExitTasks() | Perform series of functions which include setting user learning data and set lesson learning duration when user close the LMS window | |
 
-<br /><br />
+<br />
 
 ## Base Functions
 File location: js/base.js
@@ -22,5 +22,5 @@ The following covers the customizable variables to fit into the context of the e
 | Variable      | Acceptable Values  | Description  |
 | ------------- |--------------------|--------------|
 | HygieneFactorMode | true / false  | To set whether the package require hygiene factor to be implemented |
-| TotalPages | <i>integer</i>  | To set the number of pages, including the subpages for the package |
-| StartPageNo | <i>integer</i>  | To set the start page number, exclude the splash/intro page of the package (if any) |
+| TotalPages | <i>integer</i>  | To set the number of pages, including the subpages for the package. This will automatically indicate the last page where learners will not be able to proceed forward. |
+| StartPageNo | <i>integer</i>  | To set the start page number, exclude the splash/intro page of the package (if any). This will automatically prevent learners from being able to navigated to the previous page |
