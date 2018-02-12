@@ -1,6 +1,4 @@
-# PDPA
-
-### SCORM Functions
+## SCORM Functions
 File location: js/SCORMFunctions.js
 Below covers the essential functions and their respective parameters (if any)
 
@@ -15,11 +13,14 @@ Below covers the essential functions and their respective parameters (if any)
 | doExitTasks() | Perform series of functions which include setting user learning data and set lesson learning duration when user close the LMS window | |
 
 
-### Base Functions
+
+
+## Base Functions
 File location: js/base.js
 
-The following covers the customizable variables to fit into the context of the entire SCORM package. Only change the value of the variables stated below.
+The following covers the customizable variables to fit into the context of the entire SCORM package. Only change the value of the variables stated below. These variables are at the top lines of the JS file.
 
-| Variable      | Acceptable Values  |
-| ------------- |--------------------|
-| HygieneFactorMode | true / false  |
+| Variable      | Acceptable Values  | Description  |
+| ------------- |--------------------|--------------|
+| HygieneFactorMode | true / false  | To set whether the package require hygiene factor to be implemented |
+| HygieneFactorMode | true / false  | To set whether the package require hygiene factor to be implemented |
