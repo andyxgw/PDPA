@@ -1,11 +1,11 @@
 body{
 	/*background: url(../images/dust_scratches.png) repeat; */
 	/* background: url(../images/bg.png) no-repeat; */
-	background: #FFFFFF; 
+	background: #FFFFFF;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
-	font-size: 10px;	
-	text-align: center;		
+	font-size: 10px;
+	text-align: center;
 	margin:0;
 	border:0;
 	width: 1px;
@@ -141,7 +141,7 @@ nav .container-fluid {
 	background-image: url(../images/bg.png);
 	background-repeat:no-repeat;
 	background-size: cover;
-	background-position: center top; 
+	background-position: center top;
 	margin: 0 auto;
 	max-width:140em;
 	min-height:100em;

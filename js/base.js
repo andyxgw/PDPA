@@ -12,6 +12,9 @@ var PagesArray = [];
 var StartPageNo = 3;
 var MenuPageNo = 2;
 var PageNo = 1;
+var TopicNumber;
+var TotalPagesInTopic;
+var PageInTopic;
 
 var TotalPagesWithSubPages = 11;
 var PagesWithSubPagesArray = [];
@@ -45,7 +48,7 @@ if(TotalPagesWithSubPages > 0)
 }
 
 window.addEventListener("resize", resizeWindow);
-	window.addEventListener("orientationchange", resizeWindow);
+window.addEventListener("orientationchange", resizeWindow);
 
 /* Execution of functions upon document loaded */
 $(document).ready(function(e) {
@@ -67,6 +70,8 @@ $(document).ready(function(e) {
 		$('.collapse.in').toggleClass('in');
 		$('a[aria-expanded=true]').attr('aria-expanded', 'false');
 	});
+
+	LoadPage();
 
 
 });
@@ -128,4 +133,46 @@ function disableScrollBars() {
 	document.documentElement.style.overflow = 'hidden';  // firefox, chrome
 	document.body.style.overflow = "hidden";
 	document.body.scroll = "no"; // ie only
+}
+
+
+
+// Load Specific Page
+function LoadPage() {
+	if(PageNo > 1)
+	{
+		if(HygieneFactorMode == false)
+		{
+			EnablePrevBtn();
+			EnableNextBtn();
+		}
+		else
+		{
+			EnablePrevBtn();
+			DisableNextBtn();
+		}
+	}
+	//CheckPageStatus();
+	if(PageNo == TotalPages)
+	{
+		PagesArray[PageNo-1] = 1;    // Check if current page is at last page
+		DisableNextBtn();
+	}
+
+	PageName = GeneratePageName(PageNo);
+	SetBookmark(PageNo);
+	$('#content').load(PageName);
+	$('#PageReader').text("Page " + PageNo + " of " + TotalPages);
+}
+
+function GeneratePageName(PageNo)
+{
+	if(PageNo < 10){
+		fileStr = 'pages/p0'+PageNo+'.html';
+	}
+	else{
+		fileStr = 'pages/p'+PageNo+'.html'
+	}
+
+	return fileStr;
 }

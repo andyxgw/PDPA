@@ -1,0 +1,555 @@
+@font-face
+{
+	font-family: calibri0;
+	src: url("../fonts/Calibri.ttf"), url("fonts/Calibri.eot");
+	/* EOT for IE9, TTF for the rest. */
+}
+
+@font-face
+{
+	font-family: helvetica0;
+	src: url("../fonts/Helvetica.ttf"), url("fonts/Helvetica.eot");
+	/* EOT for IE9, TTF for the rest. */
+}
+
+#SubPageContainer
+{
+	margin: 0px;
+	background-color: transparent;
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+.SubPageTitle
+{
+	font-family: calibri0;
+	width: 70%;
+	margin: 0 auto;
+	font-weight: 700;
+	font-size: 2.6em;
+}
+
+.MenuTitle
+{
+	margin-top: 1em;
+	font-size: 3em;
+}
+
+.MenuContent
+{
+	width: 100%;
+	margin: 4em auto;
+}
+
+.MenuImage_T1
+{
+	max-width: 25em;
+	height: auto;
+	position: absolute;
+	left: 0;
+}
+
+
+
+.MenuImage_T2
+{
+	max-width: 15.9em;
+	height: auto;
+	position: absolute;
+	left: 25.4em;
+	top: 11em;
+}
+
+.MenuImage_T3
+{
+	max-width: 15.9em;
+	height: auto;
+	position: absolute;
+	left: 45.2em;
+	top: 11.2em;
+}
+
+.MenuImage_T4
+{
+	max-width: 25em;
+	height: auto;
+	position: absolute;
+	left: 61.6em;
+	top: 8em;
+}
+
+.MenuImage_T5
+{
+	max-width: 35.3em;
+	height: auto;
+	position: absolute;
+	left: 51.4em;
+	top: 28em;
+}
+
+.MenuImage_T6
+{
+	max-width: 35.3em;
+	height: auto;
+	position: absolute;
+	left: 90.3em;
+	top: 28.1em;
+}
+
+.MenuImage_T7
+{
+	max-width: 25em;
+	height: auto;
+	position: absolute;
+	left: 90.3em;
+	top: 8em;
+}
+
+.MenuImage_T8
+{
+	max-width: 15.95em;
+	height: auto;
+	position: absolute;
+	left: 115.85em;
+	top: 10.5em;
+}
+
+.MenuPointer:hover
+{
+	cursor: pointer;
+}
+
+.TopicInfo
+{
+	display: none;
+	position: absolute;
+	bottom: 4em;
+	right: 2em;
+	height: 12em;
+	width: 96%;
+}
+
+.TopicInfoContent
+{
+  vertical-align: middle;
+	font-size: 2.5em;
+	width: 42em;
+	height: 90%;
+	padding-right: 0.8em;
+	border-right: 0.15em solid #fba71b;
+	text-align: right;
+	margin-top: 0.2em;
+	position: absolute;
+}
+
+.TopicInfoTitle
+{
+	font-weight: bold;
+}
+
+.TopicInfoDetail
+{
+	position: absolute;
+	height: 90%;
+	width: 12em;
+	right: 8em;
+	margin-top: 0.5em;
+
+}
+
+.TopicInfoDuration
+{
+	font-size: 2em;
+	font-weight: bold;
+	text-align: left;
+	position: relative;
+	margin-top: 1.8em;
+
+}
+
+.TopicInfoButton
+{
+
+	bottom: 0em;
+	left: 0em;
+	height: 2.8em;
+	width: 100%;
+	position: absolute;
+	font-size: 1.5em;
+	text-align: left;
+}
+
+
+
+
+.TopicBtn
+{
+	color: #959595;
+	margin-right: 0.5em;
+	margin-left: 0;
+	font-size: 1.2em;
+}
+
+
+.topic-accessed
+{
+	color: #fba71b;
+}
+
+
+
+.TopicIndicator1
+{
+	position: absolute;
+	bottom: 12em;
+	right: 0em;
+}
+
+
+.VideoPanel
+{
+	width: 110em;
+	margin: 1em auto 0 auto;
+}
+
+.VideoCover
+{
+	width: 100em;
+}
+
+.VideoCover img
+{
+	max-width: 100%;
+}
+
+.VideoSize
+{
+	width: 100%;
+}
+
+.VideoBox
+{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.ImagePanel img
+{
+	float: left;
+	margin-left: 4em;
+	margin-right: 2em;
+	width: 36em;
+}
+
+.ImagePanel
+{
+	width: 96%;
+	margin: 3em auto 0 auto;
+}
+
+#ImageLoadPanel
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.clearfix
+{
+	clear:both;
+}
+
+.QuestionPanel
+{
+
+}
+
+#questionSpace
+{
+	text-align: left;
+	font-size: 2em;
+	position: relative;
+	margin-left: 3.5em;
+}
+
+#theQuestion
+{
+	text-align: left;
+	font-size: 1.3em;
+	font-weight: bold;
+	line-height: 1.4em;
+	margin-bottom: 1em;
+}
+
+.ChoiceMarker
+{
+	z-index: 100;
+	margin: 0px;
+	display: none;
+	position: absolute;
+	width: 1em;
+	height: auto;
+	left: -3.3em;
+}
+
+.ChoiceChecker
+{
+	z-index: 100;
+	margin: 0px;
+	display: block;
+	position: absolute;
+	margin-top: 0.1em;
+	left: -2em;
+}
+
+
+.ChoiceWrapper
+{
+	font-size: 1.3em;
+	margin-bottom: 1.2em;
+	z-index: 1;
+	margin: 0 0 0.4em 2em;
+	display: block;
+	position: relative;
+}
+
+.ChoiceWrapper p
+{
+	color: #a0a0a0;
+}
+
+.RespondTitle
+{
+	text-align: center;
+	font-size: 2.4em;
+}
+
+.RespondExplanation
+{
+	font-size: 2.4em;
+}
+
+.RespondWrapper
+{
+	z-index: 50;
+
+	display: none;
+	position: absolute;
+	width: 80em;
+	height: 18em;
+	left: 30em;
+	top: 43em;
+	background-image: url(../images/Graphics_RespondWrapper.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.RespondWrapper p
+{
+	margin-left: 1.5em;
+}
+
+.RespondMarker
+{
+	z-index: 100;
+	margin: 0px;
+	display: block;
+	position: absolute;
+	left: 40em;
+	top: -0.5em;
+}
+
+.ImageClick
+{
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+#SubPageContainer .Image, #SubPageContainer .VisualSwitch, #SubPageContainer .PageChecker, #SubPageContainer .TopicProceedIndicator
+{
+	z-index: 100;
+	margin: 0px;
+	display: block;
+	position: absolute;
+}
+
+#SubPageContainer .BackImage
+{
+	z-index: 1;
+	margin: 0px;
+	display: block;
+	position: absolute;
+}
+
+#SubPageContainer .Hotspot, #SubPageContainer .Switch
+{
+	z-index: 100;
+	margin: 0px;
+	display: block;
+	position: absolute;
+}
+
+#SubPageContainer .Hotspot:hover, #SubPageContainer .Switch:hover, #SubPageContainer .IrregularSwitch:hover
+{
+	cursor: pointer;
+}
+
+#SubPageContainer .VisualQn
+{
+	z-index: 0;
+	margin: 0px;
+	display: block;
+	position: absolute;
+}
+
+#SubPageContainer .VisualEx
+{
+	z-index: 100;
+	margin: 0px;
+	display: none;
+	position: absolute;
+}
+
+#SubPageContainer .BtnClose
+{
+	z-index: 400;
+	margin: 0px;
+	display: block;
+	position: absolute;
+}
+
+#SubPageContainer .BtnClose:hover
+{
+	cursor: pointer;
+}
+
+#SubPageContainer .BtnSubmit
+{
+	z-index: 400;
+	margin: 0px;
+	display: block;
+	position: absolute;
+}
+
+#SubPageContainer .BtnSubmit:hover
+{
+	cursor: pointer;
+}
+
+#SubPageContainer .BtnProceedTopic
+{
+	z-index: 400;
+	margin: 0px;
+	display: block;
+	position: absolute;
+	opacity: 0.5;
+}
+
+#SubPageContainer .BtnProceedTopic:hover
+{
+	cursor: pointer;
+}
+
+#SubPageContainer .BtnDecisionTime
+{
+	z-index: 400;
+	margin: 0px;
+	display: none;
+	position: absolute;
+}
+
+#SubPageContainer .BtnDecisionTime:hover
+{
+	cursor: pointer;
+}
+
+
+
+
+
+#SubPageContainer .TextWrapperPri
+{
+	z-index: 50;
+	margin: 50px;
+	display: block;
+	position: relative;
+	float: left;
+}
+
+#SubPageContainer .TextWrapperPri h1, #SubPageContainer .TextWrapperPri h2, #SubPageContainer .TextWrapperPri p, #SubPageContainer .TextWrapperPri li
+{
+	color: rgb(0, 0, 0);
+}
+
+#SubPageContainer .TextWrapperPri a, #SubPageContainer .TextWrapperPri a:link, #SubPageContainer .TextWrapperPri a:visited, #SubPageContainer .TextWrapperPri a:active
+{
+	color: rgb(251, 167, 27);
+	text-decoration: none;
+}
+
+#SubPageContainer .TextWrapperPri a:hover
+{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#SubPageContainer .DimmingPiece
+{
+	z-index: 200;
+	margin: 0px;
+	display: none;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 1281px;
+	height: 621px;
+	background-color: rgba(0, 0, 0, 0.85);
+}
+
+#SubPageContainer .Overlay
+{
+	z-index: 300;
+	margin: 0px;
+	display: none;
+	position: absolute;
+	text-align: left;
+	background: transparent;
+}
+
+
+
+#SubPageContainer .ChoiceWrapper:hover
+{
+	cursor: pointer;
+}
+
+
+#SubPageContainer .Closure
+{
+	margin: 50px;
+	display: block;
+	position: relative;
+	text-align: left;
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(0, 0, 0);
+	border-radius: 10px;
+}
+
+#SubPageContainer canvas
+{
+	z-index: 10;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	margin: 0px;
+}
