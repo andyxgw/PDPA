@@ -1,17 +1,12 @@
 ShortVideoMode(false);
 SetSlideData();
+UpdateProgress();
 
 console.log("Current Page: "+PageNo);
 
 
-if(PageInTopic == TotalPagesInTopic)
-{
-  $("#b" + TopicNumber).attr("class", "fa fa-check-square-o faCB");
-}
 
-
-
-if(PageNo > ContentPage)
+if(PageNo > ContentPage && ContentPage > 0)
 {
   ProgressTracking(PageNo);
 }
@@ -56,7 +51,14 @@ $('.popup-close').click(function(e) {
 });
 
 
-
+function UpdateProgress()
+{
+  if(TotalPagesWithSubPages == 0)
+  {
+    var BoxNo = PageNo;
+    $("#b" + BoxNo).attr("class", "fa fa-check-square-o faCB_visited");
+  }
+}
 
 
 
