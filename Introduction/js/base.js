@@ -92,6 +92,22 @@ $(document).ready(function(e) {
 
 	});
 
+	$('#helpBtn').click(function(e) {
+		$('.popup-wrap1').fadeIn(250);
+		$('.popup-box1').removeClass('transform-out').addClass('transform-in');
+		StopVideoOrAudio();
+		$('#vPlayer1').trigger('play');
+		e.preventDefault();
+	});
+
+	$('.popup-close1').click(function(e) {
+		$('.popup-wrap1').fadeOut(500);
+		$('.popup-box1').removeClass('transform-in').addClass('transform-out');
+		$('#vPlayer1').trigger('pause');
+		ResumeVideoOrAudio();
+		e.preventDefault();
+	});
+
 
 });
 
@@ -177,9 +193,8 @@ function LoadPage() {
 	{
 		if(HygieneFactorMode == false)
 		{
-			DisablePrevBtn();
-			DisableNextBtn();
-			PagesArray[PageNo-1] = 1;
+			EnablePrevBtn();
+			EnableNextBtn();
 		}
 		else
 		{
@@ -212,13 +227,32 @@ function GeneratePageName(PageNo)
 	return fileStr;
 }
 
-function UpdatePageStatus()
+function UpdateProgress(PageNo, TopicNumber, PageInTopic, TotalPagesInTopic)
 {
 	PagesArray[PageNo-1] = 1;
 	SetSlideData();
 	SetBookmark(PageNo);
-	ValidateLessonCompletion();
+	IsLessonCompleted();
+
+	var BoxNo;
+
+	if(TotalPagesWithSubPages == 0)
+  {
+		BoxNo = PageNo;
+    $("#b" + BoxNo).attr("class", "fa fa-check-square-o faCB_visited");
+  }
+	else
+	{
+			if(PageInTopic == TotalPagesInTopic)
+			{
+				BoxNo = TopicNo;
+				$("#b"+BoxNo+"_"+PageInTopic).attr("class", "fa fa-check-square-o faCB_visited");
+				$("#b"+BoxNo).attr("class", "fa fa-check-square-o faCB_visited");
+			}
+	}
 }
+
+
 
 function DisablePrevBtn()
 {
@@ -432,4 +466,36 @@ function StopVideoOrAudio()
 function ResumeVideoOrAudio()
 {
 	$(PlayerID).trigger('play');
+}
+
+
+function ShortVideoMode(boolDisplay)
+{
+	if(boolDisplay == true)
+	{
+		if($("#vPlayer").length > 0)
+		{
+			$("#vPlayer").attr("src","test/ShortVideo.mp4");
+		}
+		if($("#vPlayer2").length > 0)
+		{
+			$("#vPlayer2").attr("src","test/ShortVideo.mp4");
+		}
+		if($("#vPlayer3").length > 0)
+		{
+			$("#vPlayer3").attr("src","test/ShortVideo.mp4");
+		}
+		if($("#vPlayer4").length > 0)
+		{
+			$("#vPlayer4").attr("src","test/ShortVideo.mp4");
+		}
+		if($("#vPlayer5").length > 0)
+		{
+			$("#vPlayer5").attr("src","test/ShortVideo.mp4");
+		}
+		if($("#vPlayer6").length > 0)
+		{
+			$("#vPlayer6").attr("src","test/ShortVideo.mp4");
+		}
+	}
 }

@@ -1,17 +1,3 @@
-@font-face
-{
-	font-family: calibri0;
-	src: url("../fonts/Calibri.ttf"), url("fonts/Calibri.eot");
-	/* EOT for IE9, TTF for the rest. */
-}
-
-@font-face
-{
-	font-family: helvetica0;
-	src: url("../fonts/Helvetica.ttf"), url("fonts/Helvetica.eot");
-	/* EOT for IE9, TTF for the rest. */
-}
-
 #SubPageContainer
 {
 	margin: 0px;
@@ -23,250 +9,315 @@
 	border: 0;
 }
 
-.SubPageTitle
+.InfoTextPanel
 {
-	font-family: calibri0;
-	width: 70%;
-	margin: 0 auto;
-	font-weight: 700;
-	font-size: 2.6em;
+	width: 128em;
+	height: 72em;
+	max-height: 72em;
+	margin: 2em auto 0 auto;
+	background: #e1e1e1;
+	border: 1px solid #d3d3d3;
 }
 
-.MenuTitle
+.InfoTextPanel .LeftPanel
+{
+	width: 53em;
+	height: 100%;
+	padding: 2em;
+	font-size: 1.6em;
+	float:left;
+	text-align: left;
+}
+
+.InfoTextPanel .LeftPanel .ContentTitle
+{
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.InfoTextPanel .LeftPanel .ContentDesc
 {
 	margin-top: 1em;
-	font-size: 3em;
+	font-weight: normal;
+	font-size: 1.2em;
 }
 
-.MenuContent
+.InfoTextPanel .LeftPanel .ContentDesc ul li
+{
+	margin-left: -1.2em;
+	margin-bottom: 0.5em;
+}
+
+.InfoTextPanel .RightPanel
+{
+	width: 25em;
+	height: 100%;
+	padding: 0em;
+	font-size: 1.6em;
+	float:right;
+	text-align: left;
+	position: relative;
+}
+
+.CharImage
+{
+	max-width: 22em;
+	height: auto;
+	bottom: 0;
+	position: absolute;
+}
+
+.IconImage1
+{
+	max-width: 13em;
+	height: auto;
+}
+
+.DividerImage
+{
+	width: 0.1em;
+	height: auto;
+}
+
+.BulletTab
+{
+	margin-left: 0.5em;
+	float:left;
+}
+
+.BulletImage
+{
+	width: 1.8em;
+	height:auto;
+}
+
+.BulletText
+{
+	width: 25em;
+	text-align: left;
+	float: left;
+	margin-left: 0.5em;
+}
+
+.InfoTextPanel .TopPanel
+{
+  width: 100%;
+  height: 28.4em;
+  padding: 2.2em 2em 0em 2em;
+  font-size: 2em;
+}
+
+.InfoTextPanel .TopPanel .InfoText
+{
+	text-align: left;
+}
+
+.InfoTextPanel .TopPanel .CenterContainer
+{
+  width: 60em;
+  margin: 2em auto;
+}
+
+.InfoTextPanel .TopPanel .CenterContainer .LeftText
+{
+  float: left;
+  width: 28em;
+}
+
+.InfoTextPanel .TopPanel .CenterContainer .CenterText
+{
+  float: left;
+  width: 2em;
+}
+
+.InfoTextPanel .TopPanel .CenterContainer .RightText
+{
+  float: left;
+  width: 28em;
+}
+
+.InfoTextPanel .BottomPanel
+{
+    width: 100%;
+    height:15em;
+    background: #646464;
+}
+
+.InfoTextPanel .QuizPanel
+{
+  width: 100%;
+  padding: 1.5em 2em 1.5em 2em;
+  font-size: 2em;
+	text-align: left;
+}
+
+.InfoTextPanel .QuizPanel p
+{
+	margin-bottom: 0.1em;
+}
+
+.QuizDivider
+{
+	height: 0.2em;
+	border-bottom: 1px solid #252525;
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
+
+.QuizGraphic
+{
+	margin-top: 4em;
+}
+
+.QuizGraphic img
 {
 	width: 100%;
-	margin: 4em auto;
-}
-
-.MenuImage_T1
-{
-	max-width: 25em;
 	height: auto;
-	position: absolute;
-	left: 0;
 }
 
+.check {
+  width: 0.9em;
+  height: 0.9em;
+}
 
+.check input {
+  display: none;
+}
+.check input:checked + .box {
+  background-color: #b3ffb7;
+}
 
-.MenuImage_T2
+.check input:checked + .box:after {
+  top: 0;
+}
+.check .box {
+  width: 100%;
+  height: 100%;
+  transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+  border: 2px solid transparent;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.check .box:after {
+  width: 50%;
+  height: 20%;
+  content: '';
+  position: absolute;
+  border-left: 0.7em solid;
+  border-bottom: 0.7em solid;
+  border-color: #40c540;
+  transform: rotate(-45deg) translate3d(0, 0, 0);
+  transform-origin: center center;
+  transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+  left: 0;
+  right: 0;
+  top: 200%;
+  bottom: 5%;
+  margin: auto;
+}
+
+.PopUpPanel .TopPanel
 {
-	max-width: 15.9em;
-	height: auto;
-	position: absolute;
-	left: 25.4em;
-	top: 11em;
+  width: 100%;
+	padding: 0em 1em 1.5em 1em;
+  font-size: 2em;
 }
 
-.MenuImage_T3
+.PopUpPanel .TopPanel h1
 {
-	max-width: 15.9em;
-	height: auto;
-	position: absolute;
-	left: 45.2em;
-	top: 11.2em;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #e16400;
+	margin-bottom: 1em;
 }
 
-.MenuImage_T4
+.PopUpPanel .TopPanel ul li
 {
-	max-width: 25em;
-	height: auto;
-	position: absolute;
-	left: 61.6em;
-	top: 8em;
+	margin-left: -1.2em;
+	margin-bottom: 0.5em;
+	font-size: 0.7em;
+	text-align: left;
 }
 
-.MenuImage_T5
+
+.PopUpPanel .BottomPanel
 {
-	max-width: 35.3em;
-	height: auto;
-	position: absolute;
-	left: 51.4em;
-	top: 28em;
+    width: 100%;
+    padding-top:2.2em;
+		padding-bottom:2.5em;
+    background: #646464;
 }
 
-.MenuImage_T6
+.PopUpPanel .BottomPanel p
 {
-	max-width: 35.3em;
-	height: auto;
-	position: absolute;
-	left: 90.3em;
-	top: 28.1em;
+		text-align: left;
 }
 
-.MenuImage_T7
+.PopUpPanel .BottomPanel .PicPanel
 {
-	max-width: 25em;
-	height: auto;
-	position: absolute;
-	left: 90.3em;
-	top: 8em;
+    width: 90%;
+		margin: 1em auto 0 auto;
 }
 
-.MenuImage_T8
+.PopUpPanel .BottomPanel .PicPanel img
 {
-	max-width: 15.95em;
+	width: 7em;
 	height: auto;
-	position: absolute;
-	left: 115.85em;
-	top: 10.5em;
+	margin-right: 4.2em;
 }
 
-.MenuPointer:hover
+.PopUpPanel .TopPanel p
+{
+	text-align: left;
+	font-size: 0.7em;
+}
+
+
+.InstructionText
+{
+	width: 30em;
+	margin: 0em auto;
+	padding-top: 3em;
+	font-size: 1.8em;
+	color: #ffffff;
+}
+
+.PopupInstructionText
+{
+	width: 94%;
+	margin: 0em auto;
+	font-size: 1.4em;
+	color: #ffffff;
+}
+
+.PopupInstructionText .BulletNote
+{
+	width: 40em;
+	margin: 0em auto;
+	font-size: 0.9em;
+	color: #ffffff;
+}
+
+.PopupInstructionText .BulletText
+{
+	width: 37em;
+	text-align: left;
+	float: left;
+	margin-left: 0.3em;
+}
+
+a.ModalLink
+{
+	color: #e16400;
+}
+
+a.ModalLink:hover
 {
 	cursor: pointer;
 }
 
-.TopicInfo
-{
-	display: none;
-	position: absolute;
-	bottom: 4em;
-	right: 2em;
-	height: 12em;
-	width: 96%;
-}
-
-.TopicInfoContent
-{
-  vertical-align: middle;
-	font-size: 2.5em;
-	width: 42em;
-	height: 90%;
-	padding-right: 0.8em;
-	border-right: 0.15em solid #fba71b;
-	text-align: right;
-	margin-top: 0.2em;
-	position: absolute;
-}
-
-.TopicInfoTitle
-{
-	font-weight: bold;
-}
-
-.TopicInfoDetail
-{
-	position: absolute;
-	height: 90%;
-	width: 12em;
-	right: 8em;
-	margin-top: 0.5em;
-
-}
-
-.TopicInfoDuration
-{
-	font-size: 2em;
-	font-weight: bold;
-	text-align: left;
-	position: relative;
-	margin-top: 1.8em;
-
-}
-
-.TopicInfoButton
-{
-
-	bottom: 0em;
-	left: 0em;
-	height: 2.8em;
-	width: 100%;
-	position: absolute;
-	font-size: 1.5em;
-	text-align: left;
-}
-
-
-
-
-.TopicBtn
-{
-	color: #959595;
-	margin-right: 0.5em;
-	margin-left: 0;
-	font-size: 1.2em;
-}
-
-
-.topic-accessed
-{
-	color: #fba71b;
-}
-
-
-
-.TopicIndicator1
-{
-	position: absolute;
-	bottom: 12em;
-	right: 0em;
-}
-
-
-.VideoPanel
-{
-	width: 128em;
-	margin: 2em auto 0 auto;
-}
-
-.VideoCover
-{
-	width: 100em;
-}
-
-.VideoCover img
-{
-	max-width: 100%;
-}
-
-.VideoSize
-{
-	width: 100%;
-}
-
-.VideoBox
-{
-	display: block;
-	width: 100%;
-	height: auto;
-}
-
-.ImagePanel img
-{
-	float: left;
-	margin-left: 4em;
-	margin-right: 2em;
-	width: 36em;
-}
-
-.ImagePanel
-{
-	width: 96%;
-	margin: 3em auto 0 auto;
-}
-
-#ImageLoadPanel
-{
-	width: 100%;
-	height: 100%;
-	position: relative;
-}
-
-.clearfix
-{
-	clear:both;
-}
-
-.QuestionPanel
-{
-
-}
 
 #questionSpace
 {
@@ -336,7 +387,6 @@
 .RespondWrapper
 {
 	z-index: 50;
-
 	display: none;
 	position: absolute;
 	width: 80em;
@@ -366,190 +416,4 @@
 .ImageClick
 {
 	cursor: pointer;
-}
-
-
-
-
-
-
-
-#SubPageContainer .Image, #SubPageContainer .VisualSwitch, #SubPageContainer .PageChecker, #SubPageContainer .TopicProceedIndicator
-{
-	z-index: 100;
-	margin: 0px;
-	display: block;
-	position: absolute;
-}
-
-#SubPageContainer .BackImage
-{
-	z-index: 1;
-	margin: 0px;
-	display: block;
-	position: absolute;
-}
-
-#SubPageContainer .Hotspot, #SubPageContainer .Switch
-{
-	z-index: 100;
-	margin: 0px;
-	display: block;
-	position: absolute;
-}
-
-#SubPageContainer .Hotspot:hover, #SubPageContainer .Switch:hover, #SubPageContainer .IrregularSwitch:hover
-{
-	cursor: pointer;
-}
-
-#SubPageContainer .VisualQn
-{
-	z-index: 0;
-	margin: 0px;
-	display: block;
-	position: absolute;
-}
-
-#SubPageContainer .VisualEx
-{
-	z-index: 100;
-	margin: 0px;
-	display: none;
-	position: absolute;
-}
-
-#SubPageContainer .BtnClose
-{
-	z-index: 400;
-	margin: 0px;
-	display: block;
-	position: absolute;
-}
-
-#SubPageContainer .BtnClose:hover
-{
-	cursor: pointer;
-}
-
-#SubPageContainer .BtnSubmit
-{
-	z-index: 400;
-	margin: 0px;
-	display: block;
-	position: absolute;
-}
-
-#SubPageContainer .BtnSubmit:hover
-{
-	cursor: pointer;
-}
-
-#SubPageContainer .BtnProceedTopic
-{
-	z-index: 400;
-	margin: 0px;
-	display: block;
-	position: absolute;
-	opacity: 0.5;
-}
-
-#SubPageContainer .BtnProceedTopic:hover
-{
-	cursor: pointer;
-}
-
-#SubPageContainer .BtnDecisionTime
-{
-	z-index: 400;
-	margin: 0px;
-	display: none;
-	position: absolute;
-}
-
-#SubPageContainer .BtnDecisionTime:hover
-{
-	cursor: pointer;
-}
-
-
-
-
-
-#SubPageContainer .TextWrapperPri
-{
-	z-index: 50;
-	margin: 50px;
-	display: block;
-	position: relative;
-	float: left;
-}
-
-#SubPageContainer .TextWrapperPri h1, #SubPageContainer .TextWrapperPri h2, #SubPageContainer .TextWrapperPri p, #SubPageContainer .TextWrapperPri li
-{
-	color: rgb(0, 0, 0);
-}
-
-#SubPageContainer .TextWrapperPri a, #SubPageContainer .TextWrapperPri a:link, #SubPageContainer .TextWrapperPri a:visited, #SubPageContainer .TextWrapperPri a:active
-{
-	color: rgb(251, 167, 27);
-	text-decoration: none;
-}
-
-#SubPageContainer .TextWrapperPri a:hover
-{
-	text-decoration: underline;
-	cursor: pointer;
-}
-
-#SubPageContainer .DimmingPiece
-{
-	z-index: 200;
-	margin: 0px;
-	display: none;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 1281px;
-	height: 621px;
-	background-color: rgba(0, 0, 0, 0.85);
-}
-
-#SubPageContainer .Overlay
-{
-	z-index: 300;
-	margin: 0px;
-	display: none;
-	position: absolute;
-	text-align: left;
-	background: transparent;
-}
-
-
-
-#SubPageContainer .ChoiceWrapper:hover
-{
-	cursor: pointer;
-}
-
-
-#SubPageContainer .Closure
-{
-	margin: 50px;
-	display: block;
-	position: relative;
-	text-align: left;
-	border-style: solid;
-	border-width: 2px;
-	border-color: rgb(0, 0, 0);
-	border-radius: 10px;
-}
-
-#SubPageContainer canvas
-{
-	z-index: 10;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	margin: 0px;
 }

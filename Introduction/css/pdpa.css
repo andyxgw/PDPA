@@ -1,3 +1,18 @@
+@font-face
+{
+	font-family: calibri0;
+	src: url("../fonts/Calibri.ttf"), url("fonts/Calibri.eot");
+	/* EOT for IE9, TTF for the rest. */
+}
+
+@font-face
+{
+	font-family: helvetica0;
+	src: url("../fonts/Helvetica.ttf"), url("fonts/Helvetica.eot");
+	/* EOT for IE9, TTF for the rest. */
+}
+
+
 body{
 	background: #FFFFFF;
 	font-family: 'Roboto', sans-serif;
@@ -53,10 +68,10 @@ body{
 	display: block;
 	color: #ffffff;
 	font-size: 2em;
-	margin-top: 3.5em;
-	margin-left: 3em;
+	margin-top: 1.8em;
+	margin-left: 2em;
 	text-transform: none;
-	letter-spacing: 0.08em;
+	letter-spacing: 0.06em;
 }
 
 
@@ -346,13 +361,14 @@ a.article, a.article:hover {
 	border: 0;
 	color: rgba(0, 0, 0, 0.75);
 	display: inline-block;
-	height: 2.5em;
-	width: 2.6em;
+	height: 4.8em;
+	width: 4em;
 	text-indent: 0;
 	white-space: nowrap;
 	z-index: 100;
 	text-decoration: none;
 	padding-top: 0.1em;
+	background: #181C62;
 }
 
 .NextBtn:before {
@@ -367,16 +383,17 @@ a.article, a.article:hover {
 .NextBtn:hover {
 	cursor: pointer;
 	text-decoration: none;
+	background: #d71440;
 }
 
 .NextBtn:hover:before {
-	color: #E58A03;
+	color: #FFFFFF;
 	cursor: pointer;
 }
 
 .NextBtn:before {
 	content: "\f054";
-	color: #ff9900;
+	color: #FFFFFF;
 	font-size: 3.5em;
 	margin-left: 0em;
 }
@@ -385,13 +402,14 @@ a.article, a.article:hover {
 	border: 0;
 	color: rgba(0, 0, 0, 0.75);
 	display: inline-block;
-	height: 2.5em;
-	width: 2.6em;
+	height: 4.8em;
+	width: 4em;
 	text-indent: 0;
 	white-space: nowrap;
 	z-index: 100;
 	text-decoration: none;
 	padding-top: 0.1em;
+	background: #181C62;
 }
 
 .PrevBtn:before {
@@ -406,16 +424,17 @@ a.article, a.article:hover {
 .PrevBtn:hover {
 	cursor: pointer;
 	text-decoration: none;
+	background: #d71440;
 }
 
 .PrevBtn:hover:before {
-	color: #E58A03;
+	color: #ffffff;
 	cursor: pointer;
 }
 
-.PrevBtn:before {
+.PrevBtn:before { 
 	content: "\f053";
-	color: #ff9900;
+	color: #ffffff;
 	font-size: 3.5em;
 	margin-left: 0em;
 }
@@ -431,4 +450,67 @@ a.article, a.article:hover {
 	text-align: center;
 	margin: 0 auto;
 
+}
+
+
+
+
+.VideoPanel
+{
+	width: 128em;
+	margin: 2em auto 0 auto;
+}
+
+.VideoHelpPanel
+{
+	width: 76em;
+	margin: 2em auto 0 auto;
+}
+
+.VideoCover
+{
+	width: 100em;
+}
+
+.VideoCover img
+{
+	max-width: 100%;
+}
+
+.VideoSize
+{
+	width: 100%;
+}
+
+.VideoBox
+{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.ImagePanel img
+{
+	float: left;
+	margin-left: 4em;
+	margin-right: 2em;
+	width: 36em;
+}
+
+.ImagePanel
+{
+	width: 96%;
+	margin: 3em auto 0 auto;
+}
+
+#ImageLoadPanel
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.clearfix
+{
+	clear:both;
 }

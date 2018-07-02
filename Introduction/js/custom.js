@@ -1,15 +1,9 @@
 ShortVideoMode(false);
 SetSlideData();
-UpdateProgress();
+UpdateProgress(PageNo, TopicNumber, PageInTopic, TotalPagesInTopic);
 
 console.log("Current Page: "+PageNo);
 
-
-
-if(PageNo > ContentPage && ContentPage > 0)
-{
-  ProgressTracking(PageNo);
-}
 
 if(HygieneFactorMode == true)
 {
@@ -35,138 +29,38 @@ if(HygieneFactorMode == true)
 	}
 }
 
-
-$('.popup-close').click(function(e) {
-
-    var clicked = $("#ClickedImage").val();
-    var completed = $("#CompletedImage").val();
-
-    $('#'+clicked).attr("src", completed);
-    $('#'+clicked).attr("data-selected", "1");
-    ActivateQuiz();
-
-		$('.popup-wrap').fadeOut(300);
-		$('.popup-box').removeClass('transform-in').addClass('transform-out');
-		e.preventDefault();
+$('.popup-close2').click(function(e) {
+	$('.popup-wrap2').fadeOut(500);
+	$('.popup-box2').removeClass('transform-in').addClass('transform-out');
+	e.preventDefault();
 });
 
 
-function UpdateProgress()
+
+
+
+function ShowTextPopup(PopUpHeader, PopUpContent, PopUpFooter)
 {
-  if(TotalPagesWithSubPages == 0)
-  {
-    var BoxNo = PageNo;
-    $("#b" + BoxNo).attr("class", "fa fa-check-square-o faCB_visited");
-  }
-}
+    $('.popup-wrap2').fadeIn(250);
+	  $('.popup-box2').removeClass('transform-out').addClass('transform-in');
+		$("#PU_header").html(PopUpHeader);
+    $("#PU_content").html(PopUpContent);
 
-
-
-function ProgressTracking(currPageNo)
-{
-    var PageListingDetail = PageListingDetails(currPageNo);
-		var TopicNo = PageListingDetail[0];
-		var SubPageStartIndex = PageListingDetail[1];
-		var SubPagesCount = PageListingDetail[2];
-		var SubPageEndIndex = PageListingDetail[3];
-    var progressHTML = "";
-
-    for(var i=SubPageStartIndex; i<SubPageEndIndex; i++)
-    {
-      if(i <= currPageNo)
-      {
-        progressHTML += '<i class="fa fa-circle TopicBtn topic-accessed"></i>';
-      }
-      else {
-        progressHTML += '<i class="fa fa-circle TopicBtn"></i>';
-      }
-    }
-
-    $("#ProgressTracker").html(progressHTML);
-
-}
-
-
-
-function ShowPopup(ContentType, ClickedImage,ImageFileName, CompletedFileName)
-{
-  if(ContentType == "Image")
-  {
-      var imgHTML = '<img src="images/'+ImageFileName+'" border="0" style="width: 90%;">';
-      imgHTML += '<input type="hidden" id="ClickedImage" value="'+ClickedImage+'">';
-      imgHTML += '<input type="hidden" id="CompletedImage" value="images/'+CompletedFileName+'">';
-
-      $('.popup-wrap').fadeIn(250);
-		  $('.popup-box').removeClass('transform-out').addClass('transform-in');
-      $("#ImageLoadPanel").html(imgHTML);
-  }
-}
-
-
-function ActivateQuiz()
-{
-  if($("#ImageToClick").length > 0)
-  {
-    var numInputs = 0;
-    for(var q=1; q <= $("#ImageToClick").val(); q++)
-    {
-      if($('#Image'+q).attr("data-selected") == "1")
-      {
-        numInputs += 1;
-      }
-    }
-
-    if(numInputs >= $("#ImageToClick").val())
-    {
-      EnableQuiz("ChoiceWrapper");
-    }
-  }
-  else {
-    EnableQuiz("ChoiceWrapper");
-  }
-}
-
-function DisableQuiz(element)
-{
-  $("."+element).css("pointer-events", "none");
-}
-
-function EnableQuiz(element)
-{
-  $("."+element).css("pointer-events", "auto");
-}
-
-
-function ShortVideoMode(boolDisplay)
-{
-	if(boolDisplay == true)
-	{
-		if($("#vPlayer").length > 0)
+		if(PopUpFooter == "")
 		{
-			$("#vPlayer").attr("src","test/ShortVideo.mp4");
+			$(".BottomPanel").hide();
 		}
-		if($("#vPlayer2").length > 0)
-		{
-			$("#vPlayer2").attr("src","test/ShortVideo.mp4");
+		else {
+			$(".BottomPanel").show();
+			$("#PU_footer").html(PopUpFooter);
 		}
-		if($("#vPlayer3").length > 0)
-		{
-			$("#vPlayer3").attr("src","test/ShortVideo.mp4");
-		}
-		if($("#vPlayer4").length > 0)
-		{
-			$("#vPlayer4").attr("src","test/ShortVideo.mp4");
-		}
-		if($("#vPlayer5").length > 0)
-		{
-			$("#vPlayer5").attr("src","test/ShortVideo.mp4");
-		}
-		if($("#vPlayer6").length > 0)
-		{
-			$("#vPlayer6").attr("src","test/ShortVideo.mp4");
-		}
-	}
 }
+
+
+
+
+
+
 
 
 var PageListingDetails = function(strPageNo)

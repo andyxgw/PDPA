@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Introduction</title>
+<link rel="stylesheet" type="text/css" href="css/page.css" />
+</head>
+
+<body>
+
+<div id="SubPageContainer">
+
+	<div class="InfoTextPanel">
+		<div class="QuizPanel">
+			<p>Which of the following are considered personal data?</p>
+			<p>Select your answer(s) by checking on the boxes above the table, then click “Submit”.</p>
+			<div class="QuizDivider"></div>
+			<div class="QuizGraphic">
+				<table border="1" cellpadding="3" cellspacing="0">
+					<tr>
+						<td style="width:7em;text-align:center"><label class="check"><input type="checkbox" name="option1" value="correct"><div class="box"></div></label></td>
+						<td style="width:11em;text-align:center"><input type="checkbox" name="option2" value="correct"></td>
+						<td style="width:7.5em;text-align:center"><input type="checkbox" name="option3" value="correct"></td>
+						<td style="width:4em;text-align:center"><input type="checkbox" name="option4" value="correct"></td>
+						<td style="width:5em;text-align:center"><input type="checkbox" name="option5" value="correct"></td>
+						<td style="width:7.5em;text-align:center"><input type="checkbox" name="option6" value="correct"></td>
+						<td style="width:11.5em;text-align:center"><input type="checkbox" name="option7" value="correct"></td>
+						<td style="width:6.2em;text-align:center"><input type="checkbox" name="option8" value="correct"></td>
+					</tr>
+				</table>
+				<img src="images/LA_Records.png">
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+
+<script>
+PageNo = 5;
+TopicNumber = 5;
+TotalPagesInTopic = 1;
+PageInTopic = 1;
+
+$('#TopicHeader').text("Learning Activity 1");
+
+if($("#vPlayer").length > 0)
+{
+	$("#vPlayer").get(0).play();
+}
+
+</script>
+
+<script src="js/custom.js"></script>
+
+
+</body>
+</html>

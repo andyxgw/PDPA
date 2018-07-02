@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Introduction</title>
+<link rel="stylesheet" type="text/css" href="css/page.css" />
+</head>
+
+<body>
+
+<div id="SubPageContainer">
+
+	<div class="InfoTextPanel">
+		<div class="TopPanel">
+			<div class="InfoText">The Personal Data Protection Act, or PDPA, governs the <a id="Popup1" class="ModalLink">collection, use and disclosure</a> of individuals’ <a id="Popup2" class="ModalLink">personal data</a> in Singapore by <a id="Popup3" class="ModalLink">organisations</a> in a manner that recognises both:</div>
+			<div class="CenterContainer">
+				<div class="LeftText"><img src="images/individual.png" class="IconImage1" /></div>
+				<div class="CenterText"><img src="images/DividerVert01.png" class="DividerImage" /></div>
+				<div class="RightText"><img src="images/Organisation.png" class="IconImage1" /></div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="CenterContainer">
+				<div class="LeftText">
+					<div class="BulletTab"><img src="images/Bullet01.png" class="BulletImage"></div>
+					<div class="BulletText">The rights of <a id="Popup4" class="ModalLink">individuals</a> to protect their personal data, including the rights of access and correction.</div>
+				</div>
+				<div class="CenterText" style="width: 3em;">&nbsp;</div>
+				<div class="RightText">
+					<div class="BulletTab"><img src="images/Bullet02.png" class="BulletImage"></div>
+					<div class="BulletText">The needs of organisations to collect, use or disclose personal data for legitimate and <a id="Popup5" class="ModalLink">reasonable</a> <a id="Popup6" class="ModalLink">purposes</a>.</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="BottomPanel">
+			<div class="InstructionText">
+				<div class="BulletTab"><img src="images/Symbol_Instruction.png" class="BulletImage"></div>
+				<div class="BulletText" style="text-align:center">The highlighted words are important terms in the PDPA.<br />Click on each word to learn more.</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="SmallPopUp" class="popup-wrap2">
+		 <div class="popup-box2">
+			 <a class="close-btn2 popup-close2" href="#">x</a>
+			 <div class="PopUpPanel">
+				 <div class="TopPanel">
+					 <h1 id="PU_header"></h1>
+					 <div id="PU_content"></div>
+				 </div>
+				 <div class="BottomPanel">
+					 <div class="PopupInstructionText">
+						 <div id="PU_footer"></div>
+						<div class="clearfix"></div>
+		 			</div>
+				 </div>
+			 </div>
+		 </div>
+	</div>
+
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+
+<script>
+PageNo = 4;
+TopicNumber = 4;
+TotalPagesInTopic = 1;
+PageInTopic = 1;
+
+$('#TopicHeader').text("What is the PDPA");
+
+if($("#vPlayer").length > 0)
+{
+	$("#vPlayer").get(0).play();
+}
+
+</script>
+
+<script src="js/custom.js"></script>
+
+<script>
+var puHeader = "";
+var puContent = "";
+var puFooter = "";;
+
+$('#Popup1').click(function(e) {
+	puHeader = 'Data Collection, Use and Disclosure (in Singapore)';
+
+	puContent = '<ul>';
+	puContent += '<li><b><u>Collection</u></b> refers to any act or set of acts through which an organisation obtains control over or possession of personal data.</li>';
+	puContent += '<li><b><u>Use</u></b> refers to any act or set of acts by which an organisation employs personal data.</li>';
+	puContent += '<li><b><u>Disclosure</u></b> refers to any act or set of acts by which an organisation discloses, transfers or otherwise makes available personal data that is under its control or in its possession to any other organisation.</li>';
+	puContent += '</ul>';
+
+	puFooter = '<div class="BulletNote">';
+ 	puFooter += '<div class="BulletTab"><img src="images/Symbol_Note.png" class="BulletImage"></div>';
+	puFooter += '<div class="BulletText" style="text-align:center">The definition of "collection, use and disclosure" of data should be interpreted very broadly to cover any type of data processing.</div>';
+	puFooter += '</div>';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+});
+
+$('#Popup2').click(function(e) {
+	puHeader = 'Personal Data';
+
+	puContent = '<p>All data, whether true or not, about an individual who can be identified</p>';
+	puContent += '<ul>';
+	puContent += '<li>from that data; or</li>';
+	puContent += '<li>from that data and other information to which the organisation has or is likely to have access.</li>';
+	puContent += '</ul>';
+
+ 	puFooter = '<p>Examples of personal data:</p>';
+	puFooter += '<div class="PicPanel">';
+	puFooter += '<img src="images/icMatricNo.png"><img src="images/cctvFootage.png"><img src="images/ExamResults.png"><img src="images/TransactionRecords.png">';
+	puFooter += '</div>';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+});
+
+$('#Popup3').click(function(e) {
+	puHeader = 'Organisations';
+
+	puContent = '<p>The term "organisation" broadly covers:</p>';
+	puContent += '<ul>';
+	puContent += '<li>natural persons,</li>';
+	puContent += '<li>corporate bodies (such as companies),</li>';
+	puContent += '<li>unincorporated bodies of persons (such as associations or University student organisations), </li>';
+	puContent += '</ul>';
+	puContent += '<p>regardless of whether they are formed or recognised under the law of Singapore and regardless of whether they are residents or have an office or place of business in Singapore.</p>';
+
+	puFooter = '<div class="PicPanel">';
+	puFooter += '<img src="images/Organisation.png">';
+	puFooter += '</div>';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+});
+
+$('#Popup4').click(function(e) {
+	puHeader = 'Individuals';
+
+	puContent = '<p>The PDPA defines an individual as "a natural person, whether living or deceased".</p>';
+	puContent += '<ul>';
+	puContent += '<li>Only the personal data of a natural person is protected under the PDPA.</li>';
+	puContent += '<li>Data relating to corporate bodies and other entities are not covered.</li>';
+	puContent += '</ul>';
+
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+});
+
+$('#Popup5').click(function(e) {
+	puHeader = 'Reasonable';
+
+	puContent = '<p>Under the PDPA, organisations should therefore act based on what a reasonable person would consider appropriate in the circumstances.</p>';
+	puContent += '<p>A "reasonable person" is judged based on an objective standard and can be said to be a person who exercises the appropriate care and judgement in the particular circumstances.</p>';
+
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+});
+
+$('#Popup6').click(function(e) {
+	puHeader = 'Reasonable';
+
+	puContent = '<p>The term "purpose" does not refer to activities which an organisation may intend to undertake but rather to its <b><u>objectives</u></b> or <b><u>reasons</u></b>.</p>';
+
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+});
+
+
+
+</script>
+
+</body>
+</html>
