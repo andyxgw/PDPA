@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Introduction</title>
+<link rel="stylesheet" type="text/css" href="css/page.css" />
+</head>
+
+<body>
+
+<div id="SubPageContainer">
+
+	<div class="InfoTextPanel">
+		<div class="QuizPanel">
+			<p>Is the information below considered personal data?</p>
+			<p>Select your answer, then click “Submit”.</p>
+			<div class="QuizDivider"></div>
+			<div class="QuizGraphic">
+				<fieldset id="question1">
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td style="width:60%">
+							<div class="CardGraphic">
+								<div class="CG_Title">Order List for Sports </div>
+								<div class="CG_Content">
+									<table width="100%">
+										<tr>
+											<td valign="top" style="text-align:left;">
+												<b><u>Number of Participants</u></b><br />
+												Female: 26<br />
+												Male: 28
+											</td>
+											<td valign="top" style="text-align:left;">
+												<b><u>Food Preference</u></b><br />
+												Vegetarian: 3<br />
+												Normal: 31<br />
+												Halal: 20
+											</td>
+										</tr>
+										<tr>
+											<td valign="top" style="text-align:left;">
+												<b><u>T-shirt Size of Participants </u></b><br />
+												X-Large: 11<br />
+												Large: 15<br />
+												Medium: 13<br />
+												Small: 15
+											</td>
+											<td>
+												&nbsp;
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</td>
+						<td style="width:40%; text-align: left; padding: 1.5em; padding-left: 4.5em">
+							<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+							<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span></td>
+					</tr>
+				</table>
+			</fieldset>
+
+				<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+
+<script>
+PageNo = 6;
+TopicNumber = 6;
+TotalPagesInTopic = 1;
+PageInTopic = 1;
+
+$('#TopicHeader').text("Learning Activity 2");
+
+if($("#vPlayer").length > 0)
+{
+	$("#vPlayer").get(0).play();
+}
+</script>
+
+<script src="js/custom.js"></script>
+
+<script>
+var QuizResponse;
+var ResponseContent;
+var QuizStatus;
+
+IsMultipleSelectionQuiz(false, 2)
+
+$('#SubmitBtn').click(function(e) {
+	QuizResponse = ValidateSingleChoiceQuiz("question1");
+	ResponseContent = "All of the above are not considered personal data because they cannot be matched or associated with particular individuals.";
+	ShowQuizPopup(QuizResponse, ResponseContent);
+});
+</script>
+
+</body>
+</html>

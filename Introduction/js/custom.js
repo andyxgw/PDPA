@@ -29,14 +29,11 @@ if(HygieneFactorMode == true)
 	}
 }
 
-$('.popup-close2').click(function(e) {
-	$('.popup-wrap2').fadeOut(500);
-	$('.popup-box2').removeClass('transform-in').addClass('transform-out');
+$('#ReviewBtn').click(function(e) {
+	$('.popup-wrap3').fadeIn(250);
+	$('.popup-box3').removeClass('transform-out').addClass('transform-in');
 	e.preventDefault();
 });
-
-
-
 
 
 function ShowTextPopup(PopUpHeader, PopUpContent, PopUpFooter)
@@ -56,6 +53,116 @@ function ShowTextPopup(PopUpHeader, PopUpContent, PopUpFooter)
 		}
 }
 
+function ShowQuizPopup(QuizResponse, PopUpContent)
+{
+	$('.popup-wrap3').fadeIn(250);
+	$('.popup-box3').removeClass('transform-out').addClass('transform-in');
+	var RightIcon = '<span><img src="images/MarkerRight.png" class="quizImg" /></span>';
+	var WrongIcon = '<span><img src="images/MarkerWrong.png" class="quizImg" /></span>';
+	var PopUpHeader;
+
+	if(QuizResponse == true) {
+		PopUpHeader = "THAT IS CORRECT!";
+		$("#Q_header").html(PopUpHeader + RightIcon);
+	}
+	else {
+		PopUpHeader = "THAT IS INCORRECT!";
+		$("#Q_header").html(PopUpHeader + WrongIcon);
+	}
+
+	$("#Q_content").html(PopUpContent);
+	$("#SubmitBtn").hide();
+	$("#ReviewBtn").show();
+}
+
+function IsMultipleSelectionQuiz(QuizBoolean, NoOfOptions)
+{
+	if(QuizBoolean == false)
+	{
+
+		$("input:checkbox").click(function(){
+			var checkboxgroup = "input:checkbox[name='"+$(this).attr("name")+"']";
+			$(checkboxgroup).prop("checked",false);
+			$(this).prop("checked",true);
+		});
+
+	}
+}
+
+function ValidateCheckboxQuiz(QuestionID)
+{
+	var options;
+	var i;
+	var correct = false;
+
+	for(i = 0; i < options.length; i++)
+	{
+		if(options[i].value == "yes" && options[i].checked == true)
+		{
+			correct = true;
+			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg" />';
+		}
+		else {
+			correct = false;
+			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg" />';
+		}
+	}
+
+	if(correct)
+	{
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+function ValidateSingleChoiceQuiz(QuestionID)
+{
+	var options;
+	var i;
+	var correct = false;
+
+	options = document.getElementById(QuestionID).getElementsByTagName("input");
+
+	for(i = 0; i < options.length; i++)
+	{
+		if(options[i].value == "yes" && options[i].checked == true)
+		{
+			correct = true;
+			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
+		}
+		if(options[i].value == "no" && options[i].checked == true)
+		{
+			correct = false;
+			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
+		}
+		if(options[i].value == "yes" && options[i].checked == false)
+		{
+			correct = false;
+			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
+		}
+		if(options[i].value == "no" && options[i].checked == false)
+		{
+			correct = true;
+			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
+		}
+		if(options[i].checked == false)
+		{
+			correct = false;
+		}
+
+
+	}
+
+	if(correct)
+	{
+		return true;
+	}
+	else {
+		return false;
+	}
+}
 
 
 

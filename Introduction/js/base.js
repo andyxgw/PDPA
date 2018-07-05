@@ -100,11 +100,26 @@ $(document).ready(function(e) {
 		e.preventDefault();
 	});
 
+
 	$('.popup-close1').click(function(e) {
 		$('.popup-wrap1').fadeOut(500);
 		$('.popup-box1').removeClass('transform-in').addClass('transform-out');
 		$('#vPlayer1').trigger('pause');
 		ResumeVideoOrAudio();
+		e.preventDefault();
+	});
+
+	$('.popup-close2').click(function(e) {
+		$('.popup-wrap2').fadeOut(500);
+		$('.popup-box2').removeClass('transform-in').addClass('transform-out');
+		$('#vPlayer1').trigger('pause');
+		ResumeVideoOrAudio();
+		e.preventDefault();
+	});
+
+	$('#CloseBtn').click(function(e) {
+		$('.popup-wrap3').fadeOut(500);
+		$('.popup-box3').removeClass('transform-in').addClass('transform-out');
 		e.preventDefault();
 	});
 

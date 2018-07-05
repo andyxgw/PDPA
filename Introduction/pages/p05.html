@@ -16,19 +16,22 @@
 			<p>Select your answer(s) by checking on the boxes above the table, then click “Submit”.</p>
 			<div class="QuizDivider"></div>
 			<div class="QuizGraphic">
-				<table border="1" cellpadding="3" cellspacing="0">
+				<fieldset id="question1">
+				<table cellpadding="0" cellspacing="0">
 					<tr>
-						<td style="width:7em;text-align:center"><label class="check"><input type="checkbox" name="option1" value="correct"><div class="box"></div></label></td>
-						<td style="width:11em;text-align:center"><input type="checkbox" name="option2" value="correct"></td>
-						<td style="width:7.5em;text-align:center"><input type="checkbox" name="option3" value="correct"></td>
-						<td style="width:4em;text-align:center"><input type="checkbox" name="option4" value="correct"></td>
-						<td style="width:5em;text-align:center"><input type="checkbox" name="option5" value="correct"></td>
-						<td style="width:7.5em;text-align:center"><input type="checkbox" name="option6" value="correct"></td>
-						<td style="width:11.5em;text-align:center"><input type="checkbox" name="option7" value="correct"></td>
-						<td style="width:6.2em;text-align:center"><input type="checkbox" name="option8" value="correct"></td>
+						<td style="width:7em;"><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="response"></span></td>
+						<td style="width:11em;"><input id="chk2" name="option2" type="checkbox" value="yes" /><label for="chk2" /><span class="response"></span></td>
+						<td style="width:7.5em;"><input id="chk3" name="option3" type="checkbox" value="yes" /><label for="chk3" /><span class="response"></span></td>
+						<td style="width:4em;"><input id="chk4" name="option4" type="checkbox" value="yes" /><label for="chk4" /><span class="response"></span></td>
+						<td style="width:5em;"><input id="chk5" name="option5" type="checkbox" value="yes" /><label for="chk5" /><span class="response"></span></td>
+						<td style="width:7.5em;"><input id="chk6" name="option6" type="checkbox" value="yes" /><label for="chk6" /><span class="response"></span></td>
+						<td style="width:11.5em;"><input id="chk7" name="option7" type="checkbox" value="yes" /><label for="chk7" /><span class="response"></span></td>
+						<td style="width:6.2em;"><input id="chk8" name="option8" type="checkbox" value="yes" /><label for="chk8" /><span class="response"></span></td>
 					</tr>
 				</table>
+			</fieldset>
 				<img src="images/LA_Records.png">
+				<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -50,11 +53,20 @@ if($("#vPlayer").length > 0)
 {
 	$("#vPlayer").get(0).play();
 }
-
 </script>
 
 <script src="js/custom.js"></script>
 
+<script>
+var QuizResponse;
+var ResponseContent;
+var QuizStatus;
+$('#SubmitBtn').click(function(e) {
+	QuizResponse = ValidateCheckboxQuiz("question1");
+	ResponseContent = "All of the above are personal data because they can be matched or associated with particular individuals.";
+	ShowQuizPopup(QuizResponse, ResponseContent);
+});
+</script>
 
 </body>
 </html>
