@@ -516,18 +516,44 @@ a.article, a.article:hover {
 }
 
 
-.InfoTextPanel .QuizPanel
+
+
+.QuizIcon
 {
-  width: 100%;
-  padding: 1.5em 2em 1.5em 2em;
-  font-size: 2em;
-	text-align: left;
+	position: absolute;
+	bottom: 0em;
+	left: 10em;
 }
 
-.InfoTextPanel .QuizPanel p
+.QuizIcon img
 {
-	margin-bottom: 0.1em;
+	width: 28em;
+	height: auto;
 }
+
+.QuizBubble
+{
+	position: absolute;
+	bottom: 15em;
+	left: 32em;
+	width: 45em;
+	height: 18em;
+	background-image: url(../images/Bubble.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	text-align: left;
+	padding: 4em 2em 3em 5em;
+}
+
+.QuizOptionHor
+{
+	float: left;
+	width: 8em;
+	font-size: 2.2em;
+	padding-left: 1.5em;
+}
+
+
 
 .ButtonPanel
 {
@@ -553,6 +579,8 @@ a.article, a.article:hover {
 	width: 100%;
 	height: auto;
 }
+
+
 
 .QuizGraphic table tr td
 {
@@ -614,12 +642,60 @@ input[type="checkbox"]:checked + label:after {
   width: 2.1em;
 }
 
-
-
-
-
 #chk, #chk1, #chk2, #chk3, #chk4, #chk5, #chk6, #chk7, #chk8,#chk9, #chk10 {
   display: none;
+}
+
+.image-checkbox {
+    cursor: pointer;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 0.3em solid transparent;
+    margin-bottom: 0;
+    outline: 0;
+}
+.image-checkbox input[type="checkbox"] {
+    display: none;
+}
+.image-checkbox-checked {
+    border-color: #22b573;
+}
+.image-checkbox .fta {
+  position: absolute;
+  color: #22b573;
+  background-color: #fff;
+  padding: 0.3em;
+	font-size: 1.2em;
+	margin-top: -6.8em;
+	margin-left: 8.3em;
+}
+.image-checkbox-checked .fta {
+  display: block !important;
+}
+
+.image-text
+{
+	margin-top: 0.1em;
+	margin-bottom: 0.8em;
+	font-size: 1em;
+	display:block;
+}
+
+img.cbImage
+{
+	width: 12em;
+	height: auto;
+}
+
+.cbResponse
+{
+	width: 2.5em;
+	height: auto;
+	position: absolute;
+	z-index: 99;
+	margin-top: -5em;
+	margin-left: 4.5em;
 }
 
 button.SubmitBtn {

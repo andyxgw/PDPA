@@ -1,0 +1,26 @@
+.video-js {
+  background-color: transparent;
+
+  padding: 0;
+  font-size: 1em;
+  vertical-align: middle;
+  font-weight: normal;
+  font-style: normal;
+  font-family: Arial, sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.vjs-default-skin .vjs-mute-control,
+.vjs-default-skin .vjs-volume-menu-button {
+  cursor: pointer;
+  float: right;
+  display: inline-block !important;
+}
+
+.video-help
+{
+		position: relative;
+}

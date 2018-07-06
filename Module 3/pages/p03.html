@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Personal Liability</title>
+<link rel="stylesheet" type="text/css" href="css/page.css" />
+</head>
+
+<body>
+
+<div id="SubPageContainer">
+
+	<div class="InfoTextPanel">
+		<div class="TopPanel">
+			<div class="InfoText">Where an offence under this Act committed by a student organisation is proved</div>
+			<div class="clearfix">&nbsp;</div>
+			<div class="InfoText">
+				<ul>
+					<li>to have been committed with the consent or connivance of an <a id="Popup1" class="ModalLink">officer</a>, or</li>
+			<div class="clearfix">&nbsp;</div>
+					<li>to be attributable to any neglect on his part,</li>
+				</ul>
+			</div>
+			<div class="clearfix">&nbsp;</div>
+			<div class="InfoText"><b><u>the officer as well as the student organisation</u></b> shall be guilty of the offence and shall be liable to be proceeded against and punished accordingly.</div>
+			<div class="clearfix">&nbsp;</div>
+			<div class="CenterContainer">
+				<img src="images/img_Mod03_P03.png" class="IconImage1" />
+			</div>
+		</div>
+		<div class="BottomPanel">
+			<div class="InstructionText">
+				<div class="BulletTab"><img src="images/Symbol_Instruction.png" class="BulletImage"></div>
+				<div class="BulletText" style="text-align:center">Click on the highlighted word to learn more about<br/>the term.</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="SmallPopUp" class="popup-wrap2">
+		 <div class="popup-box2">
+			 <a class="close-btn2 popup-close2" href="#">x</a>
+			 <div class="PopUpPanel">
+				 <div class="TopPanel">
+					 <h1 id="PU_header"></h1>
+					 <div id="PU_content"></div>
+				 </div>
+				 <div class="BottomPanel">
+					 <div class="PopupInstructionText">
+						 <div id="PU_footer"></div>
+						<div class="clearfix"></div>
+		 			</div>
+				 </div>
+			 </div>
+		 </div>
+	</div>
+
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+
+<script>
+PageNo = 3;
+TopicNumber = 3;
+TotalPagesInTopic = 1;
+PageInTopic = 1;
+
+$('#TopicHeader').text("Personal Liability");
+
+if($("#vPlayer").length > 0)
+{
+	$("#vPlayer").get(0).play();
+}
+
+</script>
+
+<script src="js/custom.js"></script>
+
+<script>
+var puHeader = "";
+var puContent = "";
+var puFooter = "";;
+
+$('#Popup1').click(function(e) {
+	puHeader = 'An "officer" of the student organisation means:';
+
+	puContent = '<ul>';
+	puContent += '<li>the president,</li>';
+	puContent += '<li>the secretary,</li>';
+	puContent += '<li>any member of the management committee, or</li>';
+	puContent += '<li>any person holding an analogous position, and includes</li>';
+	puContent += '<li>any person purporting to act in any such capacity.</li>';
+	puContent += '</ul>';
+
+ 	puFooter = '<div class="PicPanel">';
+	puFooter += '<img src="images/img_Mod03_P03.png">';
+	puFooter += '</div>';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+});
+
+
+
+</script>
+
+</body>
+</html>

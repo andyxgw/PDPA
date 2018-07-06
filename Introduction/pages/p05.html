@@ -31,8 +31,9 @@
 				</table>
 			</fieldset>
 				<img src="images/LA_Records.png">
-				<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+				
 			</div>
+			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
 			<div class="clearfix"></div>
 		</div>
 	</div>
@@ -61,6 +62,9 @@ if($("#vPlayer").length > 0)
 var QuizResponse;
 var ResponseContent;
 var QuizStatus;
+
+IsMultipleSelectionQuiz(true);
+
 $('#SubmitBtn').click(function(e) {
 	QuizResponse = ValidateCheckboxQuiz("question1");
 	ResponseContent = "All of the above are personal data because they can be matched or associated with particular individuals.";

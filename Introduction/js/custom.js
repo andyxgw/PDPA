@@ -75,11 +75,10 @@ function ShowQuizPopup(QuizResponse, PopUpContent)
 	$("#ReviewBtn").show();
 }
 
-function IsMultipleSelectionQuiz(QuizBoolean, NoOfOptions)
+function IsMultipleSelectionQuiz(QuizBoolean)
 {
 	if(QuizBoolean == false)
 	{
-
 		$("input:checkbox").click(function(){
 			var checkboxgroup = "input:checkbox[name='"+$(this).attr("name")+"']";
 			$(checkboxgroup).prop("checked",false);
@@ -95,6 +94,8 @@ function ValidateCheckboxQuiz(QuestionID)
 	var i;
 	var correct = false;
 
+	options = document.getElementById(QuestionID).getElementsByTagName("input");
+
 	for(i = 0; i < options.length; i++)
 	{
 		if(options[i].value == "yes" && options[i].checked == true)
@@ -106,6 +107,48 @@ function ValidateCheckboxQuiz(QuestionID)
 			correct = false;
 			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg" />';
 		}
+
+		options[i].disabled =true;
+	}
+
+	if(correct)
+	{
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+function ValidateImageCheckboxQuiz(QuestionID)
+{
+	var options;
+	var i;
+	var correct = false;
+
+	options = document.getElementById(QuestionID).getElementsByTagName("input");
+
+	for(i = 0; i < options.length; i++)
+	{
+		if(options[i].value == "yes" && options[i].checked == true)
+		{
+			correct = true;
+			document.getElementsByClassName("cbResponse")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg" />';
+		}
+		else {
+			correct = false;
+			document.getElementsByClassName("cbResponse")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg" />';
+		}
+
+		$('.image-checkbox').on('click', function(e) {
+			if ($(this).hasClass("image-checkbox-checked")) {
+			   $(this).addClass("image-checkbox-checked");
+			}
+			else {
+				$(this).removeClass("image-checkbox-checked");
+			}
+
+		});
 	}
 
 	if(correct)
@@ -127,6 +170,10 @@ function ValidateSingleChoiceQuiz(QuestionID)
 
 	for(i = 0; i < options.length; i++)
 	{
+		if(options[i].checked == false)
+		{
+			correct = false;
+		}
 		if(options[i].value == "yes" && options[i].checked == true)
 		{
 			correct = true;
@@ -147,11 +194,9 @@ function ValidateSingleChoiceQuiz(QuestionID)
 			correct = true;
 			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
 		}
-		if(options[i].checked == false)
-		{
-			correct = false;
-		}
 
+
+		options[i].disabled =true;
 
 	}
 
@@ -163,6 +208,27 @@ function ValidateSingleChoiceQuiz(QuestionID)
 		return false;
 	}
 }
+
+
+// add/remove checked class
+$(".image-checkbox").each(function(){
+    if($(this).find('input[type="checkbox"]').first().attr("checked")){
+        $(this).addClass('image-checkbox-checked');
+    }else{
+        $(this).removeClass('image-checkbox-checked');
+    }
+});
+
+// sync the input state
+$(".image-checkbox").on("click", function(e){
+		if($("#SubmitBtn").is(":visible"))
+		{
+			$(this).toggleClass('image-checkbox-checked');
+	    var $checkbox = $(this).find('input[type="checkbox"]');
+	    $checkbox.prop("checked",!$checkbox.prop("checked"));
+		}
+    e.preventDefault();
+});
 
 
 

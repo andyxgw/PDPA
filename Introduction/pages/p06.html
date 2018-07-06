@@ -60,8 +60,9 @@
 				</table>
 			</fieldset>
 
-				<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+
 			</div>
+			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
 			<div class="clearfix"></div>
 		</div>
 	</div>
@@ -91,7 +92,7 @@ var QuizResponse;
 var ResponseContent;
 var QuizStatus;
 
-IsMultipleSelectionQuiz(false, 2)
+IsMultipleSelectionQuiz(false);
 
 $('#SubmitBtn').click(function(e) {
 	QuizResponse = ValidateSingleChoiceQuiz("question1");

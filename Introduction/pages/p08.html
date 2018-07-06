@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Introduction</title>
+<link rel="stylesheet" type="text/css" href="css/page.css" />
+</head>
+
+<body>
+
+<div id="SubPageContainer">
+
+	<div class="InfoTextPanel">
+		<div class="QuizPanel">
+			<p>Is the information below considered personal data?</p>
+			<p>Select your answer, then click “Submit”.</p>
+			<div class="QuizDivider"></div>
+			<div class="QuizGraphic">
+				<p>A group of students forms a new Craft Club. The members meet every fortnight to craft and occasionally sell their items at a flea market.</p>
+				<p>The club collects data of their members such as name, address, IC number, t-shirt size and mobile number.</p>
+				<p>Do the PDPA obligations apply to the club?</p>
+			</div>
+			<div class="ButtonPanel" style="margin-top: 14.5em;"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			<div class="clearfix"></div>
+		</div>
+
+		<div class="QuizIcon"><img id="CharMan" src="images/CharMan01.png" /></div>
+		<div class="QuizBubble">
+			<fieldset id="question1">
+			<div class="QuizOptionHor"><span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span></div>
+			<div class="QuizOptionHor"><span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span></div>
+		</fieldset>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+
+<script>
+PageNo = 8;
+TopicNumber = 8;
+TotalPagesInTopic = 1;
+PageInTopic = 1;
+
+$('#TopicHeader').text("Learning Activity 4");
+
+if($("#vPlayer").length > 0)
+{
+	$("#vPlayer").get(0).play();
+}
+</script>
+
+<script src="js/custom.js"></script>
+
+<script>
+var QuizResponse;
+var ResponseContent;
+var QuizStatus;
+
+IsMultipleSelectionQuiz(false);
+
+$('#SubmitBtn').click(function(e) {
+	QuizResponse = ValidateSingleChoiceQuiz("question1");
+	ResponseContent = "The PDPA obligations apply to <b><u>all</u></b> organisations regardless of whether they are incorporated or unincorporated and regardless of whether they are formed or recognised under the law of Singapore. ";
+	ShowQuizPopup(QuizResponse, ResponseContent);
+});
+</script>
+
+</body>
+</html>

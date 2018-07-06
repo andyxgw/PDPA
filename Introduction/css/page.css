@@ -19,6 +19,42 @@
 	border: 1px solid #d3d3d3;
 }
 
+.InfoTextPanel .FullWidthPanel
+{
+	width: 100%;
+	height: 100%;
+	padding: 2em;
+	font-size: 1.6em;
+	text-align: left;
+}
+
+.InfoTextPanel .FullWidthPanel p
+{
+	font-size: 1.6em;
+	text-align: left;
+	margin-top: 1.8em;
+}
+
+.InfoTextPanel .FullWidthPanel .ContentTitle
+{
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.InfoTextPanel .FullWidthPanel .ContentDesc
+{
+	margin-top: 1em;
+	font-weight: normal;
+	font-size: 1.2em;
+}
+
+.InfoTextPanel .FullWidthPanel .ContentDesc ol li
+{
+	margin-left: -1.2em;
+	margin-bottom: 0.5em;
+	font-size: 1.2em;
+}
+
 .InfoTextPanel .LeftPanel
 {
 	width: 53em;
@@ -28,6 +64,8 @@
 	float:left;
 	text-align: left;
 }
+
+
 
 .InfoTextPanel .LeftPanel .ContentTitle
 {
@@ -93,7 +131,15 @@
 
 .BulletText
 {
-	width: 25em;
+	width: 24em;
+	text-align: left;
+	float: left;
+	margin-left: 0.5em;
+}
+
+.BulletText1
+{
+	width: 29em;
 	text-align: left;
 	float: left;
 	margin-left: 0.5em;
@@ -104,7 +150,7 @@
   width: 100%;
   height: 28.4em;
   padding: 2.2em 2em 0em 2em;
-  font-size: 2em;
+  font-size: 2.1em;
 }
 
 .InfoTextPanel .TopPanel .InfoText
@@ -139,8 +185,27 @@
 .InfoTextPanel .BottomPanel
 {
     width: 100%;
-    height:15em;
+    height:12em;
     background: #646464;
+}
+
+.InfoTextPanel .QuizPanel
+{
+  width: 100%;
+  padding: 1.5em 2em 1.5em 2em;
+  font-size: 2em;
+	text-align: left;
+}
+
+.InfoTextPanel .QuizPanel p
+{
+	margin-bottom: 0.1em;
+}
+
+.InfoTextPanel .QuizPanel .QuizGraphic p
+{
+	font-size: 1.2em;
+	margin-bottom: 0.8em;
 }
 
 
@@ -219,10 +284,10 @@
 
 .InstructionText
 {
-	width: 30em;
+	width: 32em;
 	margin: 0em auto;
-	padding-top: 3em;
-	font-size: 1.8em;
+	padding-top: 2em;
+	font-size: 1.9em;
 	color: #ffffff;
 }
 

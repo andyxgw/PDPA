@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Introduction</title>
+<link rel="stylesheet" type="text/css" href="css/page.css" />
+</head>
+
+<body>
+
+<div id="SubPageContainer">
+
+	<div id="VideoContainer" class="VideoPanel">
+		<div id="container-video" class="VideoBox">
+		<video id="vPlayer" class="VideoSize" controls>
+			<source src="videos/vid_Mod03_Introduction.mp4" type="video/mp4">
+		</video>
+		</div>
+	</div>
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+
+<script>
+PageNo = 1;
+TopicNumber = 1;
+TotalPagesInTopic = 1;
+PageInTopic = 1;
+
+$('#TopicHeader').text("");
+$("#vPlayer").get(0).play();
+</script>
+
+<script src="js/custom.js"></script>
+
+
+</body>
+</html>
