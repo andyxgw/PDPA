@@ -4,7 +4,6 @@ UpdateProgress(PageNo, TopicNumber, PageInTopic, TotalPagesInTopic);
 
 console.log("Current Page: "+PageNo);
 
-
 if(HygieneFactorMode == true)
 {
 	if(PageNo > ContentPage)
@@ -29,13 +28,12 @@ if(HygieneFactorMode == true)
 	}
 }
 
-$('#ReviewBtn').click(function(e) {
-	$('.popup-wrap3').fadeIn(250);
-	$('.popup-box3').removeClass('transform-out').addClass('transform-in');
-	e.preventDefault();
-});
 
 
+
+/*------------------------------------------------------------------
+/ CUSTOM FUNCTIONS (Updated 09/07/2018. Andy)
+-------------------------------------------------------------------*/
 function ShowTextPopup(PopUpHeader, PopUpContent, PopUpFooter)
 {
     $('.popup-wrap2').fadeIn(250);
@@ -195,9 +193,7 @@ function ValidateSingleChoiceQuiz(QuestionID)
 			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
 		}
 
-
 		options[i].disabled =true;
-
 	}
 
 	if(correct)
@@ -208,6 +204,121 @@ function ValidateSingleChoiceQuiz(QuestionID)
 		return false;
 	}
 }
+
+function SetClickableArea(NumOfArea)
+{
+	for(var i=1; i<NumOfArea+1; i++)
+	{
+		$(".CanvasPanel").append('<input type="hidden" id="S'+i+'" value="0" />');
+	}
+}
+
+function ActivateClickableArea(VarName, PanelName)
+{
+	var VisitedColor = "#00ffff";
+	var DefaultColor = "#ffffff";
+
+
+	$(VarName).hover(function() {
+	  $(this).css("background", VisitedColor);
+	});
+
+	$(VarName).mouseout(function() {
+	  $(this).css("background", DefaultColor);
+	});
+
+	$(VarName).click(function(e){
+		var ClickIndex = VarName.substring(2);
+		var Alphabet = VarName.substring(2,1);
+		var TotalInputCount;
+
+		$(this).addClass('ClickableCanvasBox_Curr');
+		$(this).unbind('mouseenter mouseleave mouseout');
+		$(".CanvasBox2").hide();
+		$(PanelName).show();
+		TotalInputCount = $('.CanvasPanel input:hidden').length;
+
+		for(var i=1; i<TotalInputCount+1; i++)
+		{
+			if($("#S"+i).val() == 1)
+			{
+				$("#"+Alphabet+i).prepend('<span class="VisitedImage"/>');
+				$("#"+Alphabet+i).css("background","#cccccc");
+				$("#"+Alphabet+i).css("border","0.2em solid #a2abb4");
+			}
+		}
+		$("#S"+ClickIndex).val(1);
+	})
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------
+/ CUSTOM ACTIONS (Updated 09/07/2018. Andy)
+-------------------------------------------------------------------*/
+$('#ReviewBtn').click(function(e) {
+	$('.popup-wrap3').fadeIn(250);
+	$('.popup-box3').removeClass('transform-out').addClass('transform-in');
+	e.preventDefault();
+});
+
 
 
 // add/remove checked class

@@ -1,0 +1,330 @@
+.QuizIcon
+{
+	position: absolute;
+	bottom: 0em;
+	left: 10em;
+}
+
+.QuizIcon img
+{
+	width: 28em;
+	height: auto;
+}
+
+.QuizBubble
+{
+	position: absolute;
+	bottom: 15em;
+	left: 32em;
+	width: 45em;
+	height: 18em;
+	background-image: url(../images/Bubble.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	text-align: left;
+	padding: 4em 2em 3em 5em;
+}
+
+.QuizOptionHor
+{
+	float: left;
+	width: 8em;
+	font-size: 2.2em;
+	padding-left: 1.5em;
+}
+
+
+
+.ButtonPanel
+{
+	margin-top: 2em;
+	text-align: right;
+}
+
+.QuizDivider
+{
+	height: 0.2em;
+	border-bottom: 1px solid #252525;
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
+
+.QuizGraphic
+{
+	margin-top: 2em;
+}
+
+.QuizGraphic img
+{
+	width: 100%;
+	height: auto;
+}
+
+
+
+.QuizGraphic table tr td
+{
+	text-align: center;
+}
+
+.cb_label
+{
+	position: absolute;
+	line-height: 1.4em;
+	font-size: 1.4em;
+}
+
+/*
+Checkbox and Radio Button
+*/
+input[type="checkbox"] + label {
+	margin-top: 1em;
+	margin-bottom: -0.5em;
+	margin-left: 1.5em;
+  width: 1.6em;
+  height: 1.6em;
+  border: 0.2em solid #000000;
+  border-radius: 0%;
+	-webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all ease-out 200ms;
+  transition: all ease-out 200ms;
+  white-space: nowrap;
+  color: #000000;
+	-webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+input[type="checkbox"]+ label:after {
+    content: "";
+		position: absolute;
+    width: 0;
+    height: 1em;
+    border-bottom: 0.3em solid #22b573;
+    border-left: 0.3em solid #22b573;
+    top: 25%;
+    left: 50%;
+		-webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  opacity: 0;
+  -webkit-transition: all ease-out 200ms;
+  transition: all ease-out 200ms;
+}
+
+input[type="checkbox"]:checked + label {
+  border: 0.2em solid #22b573;
+}
+input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  width: 2.1em;
+}
+
+#chk, #chk1, #chk2, #chk3, #chk4, #chk5, #chk6, #chk7, #chk8,#chk9, #chk10 {
+  display: none;
+}
+
+.image-checkbox {
+    cursor: pointer;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 0.3em solid transparent;
+    margin-bottom: 0;
+    outline: 0;
+}
+.image-checkbox input[type="checkbox"] {
+    display: none;
+}
+.image-checkbox-checked {
+    border-color: #22b573;
+}
+.image-checkbox .fta {
+  position: absolute;
+  color: #22b573;
+  background-color: #fff;
+  padding: 0.3em;
+	font-size: 1.2em;
+	margin-top: -6.8em;
+	margin-left: 8.3em;
+}
+.image-checkbox-checked .fta {
+  display: block !important;
+}
+
+.image-text
+{
+	margin-top: 0.1em;
+	margin-bottom: 0.8em;
+	font-size: 1em;
+	display:block;
+}
+
+img.cbImage
+{
+	width: 12em;
+	height: auto;
+}
+
+.cbResponse
+{
+	width: 2.5em;
+	height: auto;
+	position: absolute;
+	z-index: 99;
+	margin-top: -5em;
+	margin-left: 4.5em;
+}
+
+button.SubmitBtn {
+    display: inline-block;
+    border: none;
+    padding: 1em 2em;
+    margin: 0;
+    text-decoration: none;
+    background: #181C62;
+    color: #ffffff;
+		font-weight: bold;
+    font-family: sans-serif;
+    font-size: 0.8em;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button.SubmitBtn:hover,
+button.SubmitBtn:focus {
+    background: #d71440;
+}
+
+button.SubmitBtn:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button.SubmitBtn:active {
+    transform: scale(0.99);
+}
+
+
+button.ReviewBtn {
+    /* display: inline-block; */
+		display: none;
+    border: none;
+    padding: 1em 2em;
+    margin: 0;
+    text-decoration: none;
+    background: #181C62;
+    color: #ffffff;
+		font-weight: bold;
+    font-family: sans-serif;
+    font-size: 0.8em;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button.ReviewBtn:hover,
+button.ReviewBtn:focus {
+    background: #d71440;
+}
+
+button.ReviewBtn:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button.ReviewBtn:active {
+    transform: scale(0.99);
+}
+
+
+
+button.CloseBtn {
+		display: inline-block;
+    border: none;
+    padding: 1em 2em;
+    margin: 0;
+    text-decoration: none;
+    background: #181C62;
+    color: #ffffff;
+		font-weight: bold;
+    font-family: sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button.CloseBtn:hover,
+button.CloseBtn:focus {
+    background: #d71440;
+}
+
+button.CloseBtn:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button.CloseBtn:active {
+    transform: scale(0.99);
+}
+
+
+
+.response
+{
+	position: absolute;
+	margin-top: 0.1em;
+}
+
+.response_single
+{
+	position: absolute;
+	margin-top: 0.1em;
+	margin-right: 1.2em;
+}
+
+img.responseImg
+{
+	width: 2em;
+	height: auto;
+}
+
+img.responseImg1
+{
+	width: 2em;
+	height: auto;
+	margin-left: -1.3em;
+}
+
+img.quizImg
+{
+	margin-left: 1em;
+	width: 1.1em;
+	height: auto;
+}
+
+#Q_header
+{
+	padding-top: 1.5em;
+	text-align: center;
+	color: #000000;
+}
+
+#Q_content
+{
+	font-size: 0.9em;
+	margin-top: -1em;
+}

@@ -1,0 +1,358 @@
+#SubPageContainer
+{
+	margin: 0px;
+	background-color: transparent;
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+.InfoTextPanel
+{
+	width: 128em;
+	height: 72em;
+	max-height: 72em;
+	margin: 2em auto 0 auto;
+	background: #e1e1e1;
+}
+
+.InfoTextPanel .FullWidthPanel
+{
+	width: 100%;
+	height: 100%;
+	padding: 2em;
+	font-size: 1.6em;
+	text-align: left;
+}
+
+.InfoTextPanel .FullWidthPanel p
+{
+	font-size: 1.6em;
+	text-align: left;
+	margin-top: 1.8em;
+}
+
+.InfoTextPanel .FullWidthPanel .ContentTitle
+{
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.InfoTextPanel .FullWidthPanel .ContentDesc
+{
+	margin-top: 1em;
+	font-weight: normal;
+	font-size: 1.2em;
+}
+
+.InfoTextPanel .FullWidthPanel .ContentDesc ol li
+{
+	margin-left: -1.2em;
+	margin-bottom: 0.5em;
+	font-size: 1.2em;
+}
+
+.InfoTextPanel .LeftPanel
+{
+	width: 53em;
+	height: 100%;
+	padding: 2em;
+	font-size: 1.6em;
+	float:left;
+	text-align: left;
+}
+
+.InfoTextPanel .LeftPanel .ContentTitle
+{
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.InfoTextPanel .LeftPanel .ContentDesc
+{
+	margin-top: 1em;
+	font-weight: normal;
+	font-size: 1.2em;
+}
+
+.InfoTextPanel .LeftPanel .ContentDesc ul li
+{
+	margin-left: -1.2em;
+	margin-bottom: 0.5em;
+}
+
+.InfoTextPanel .RightPanel
+{
+	width: 25em;
+	height: 100%;
+	padding: 0em;
+	font-size: 1.6em;
+	float:right;
+	text-align: left;
+	position: relative;
+}
+
+.CharImage
+{
+	max-width: 22em;
+	height: auto;
+	bottom: 0;
+	position: absolute;
+}
+
+.IconImage1
+{
+	max-width: 13em;
+	height: auto;
+}
+
+.DividerImage
+{
+	width: 0.1em;
+	height: auto;
+}
+
+.BulletTab
+{
+	margin-left: 0.5em;
+	float:left;
+}
+
+.BulletImage
+{
+	width: 1.8em;
+	height:auto;
+}
+
+.BulletText
+{
+	width: 24em;
+	text-align: left;
+	float: left;
+	margin-left: 0.5em;
+}
+
+.BulletText1
+{
+	width: 29em;
+	text-align: left;
+	float: left;
+	margin-left: 0.5em;
+}
+
+.InfoTextPanel .TopPanel
+{
+  width: 100%;
+  height: 28.4em;
+  padding: 2.2em 2em 0em 2em;
+  font-size: 2.1em;
+}
+
+.InfoTextPanel .TopPanel .InfoText
+{
+	text-align: left;
+}
+
+.InfoTextPanel .TopPanel .CenterContainer
+{
+  width: 60em;
+  margin: 2em auto;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel
+{
+  width: 100%;
+	height: 50em;
+  border: 1em solid #000000;
+}
+
+.InfoTextPanel .TopPanel .CenterContainer .LeftText
+{
+  float: left;
+  width: 28em;
+}
+
+.InfoTextPanel .TopPanel .CenterContainer .CenterText
+{
+  float: left;
+  width: 2em;
+}
+
+.InfoTextPanel .TopPanel .CenterContainer .RightText
+{
+  float: left;
+  width: 28em;
+}
+
+.InfoTextPanel .BottomPanel
+{
+    width: 100%;
+    height:12em;
+    background: #646464;
+}
+
+.InfoTextPanel .QuizPanel
+{
+  width: 100%;
+  padding: 1.5em 2em 1.5em 2em;
+  font-size: 2em;
+	text-align: left;
+}
+
+.InfoTextPanel .QuizPanel p
+{
+	margin-bottom: 0.1em;
+}
+
+.InfoTextPanel .QuizPanel .QuizGraphic p
+{
+	font-size: 1.2em;
+	margin-bottom: 0.8em;
+}
+
+
+
+
+
+
+
+
+.PopUpPanel .TopPanel
+{
+  width: 100%;
+	padding: 0em 1em 1.5em 1em;
+  font-size: 2em;
+}
+
+.PopUpPanel .TopPanel h1
+{
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #e16400;
+	margin-bottom: 1em;
+}
+
+.PopUpPanel .TopPanel ul li
+{
+	margin-left: -1.2em;
+	margin-bottom: 0.5em;
+	font-size: 0.7em;
+	text-align: left;
+}
+
+
+.PopUpPanel .BottomPanel
+{
+    width: 100%;
+    padding-top:2.2em;
+		padding-bottom:2.5em;
+    background: #646464;
+}
+
+.PopUpPanel .QuizBottomPanel
+{
+    width: 100%;
+    padding-top:2.2em;
+		padding-bottom:2.5em;
+		text-align: center;
+}
+
+.PopUpPanel .BottomPanel p
+{
+		text-align: left;
+}
+
+.PopUpPanel .BottomPanel .PicPanel
+{
+    width: 90%;
+		margin: 1em auto 0 auto;
+}
+
+.PopUpPanel .BottomPanel .PicPanel img
+{
+	width: 7em;
+	height: auto;
+	margin-right: 4.2em;
+}
+
+.PopUpPanel .TopPanel p
+{
+	text-align: left;
+	font-size: 0.7em;
+}
+
+
+.InstructionText
+{
+	width: 32em;
+	margin: 0em auto;
+	padding-top: 2em;
+	font-size: 1.9em;
+	color: #ffffff;
+}
+
+.PopupInstructionText
+{
+	width: 94%;
+	margin: 0em auto;
+	font-size: 1.4em;
+	color: #ffffff;
+}
+
+.PopupInstructionText .BulletNote
+{
+	width: 40em;
+	margin: 0em auto;
+	font-size: 0.9em;
+	color: #ffffff;
+}
+
+.PopupInstructionText .BulletText
+{
+	width: 37em;
+	text-align: left;
+	float: left;
+	margin-left: 0.3em;
+}
+
+a.ModalLink
+{
+	color: #e16400;
+}
+
+a.ModalLink:hover
+{
+	cursor: pointer;
+}
+
+
+.ImageClick
+{
+	cursor: pointer;
+}
+
+.CardGraphic
+{
+	border: 0.2em solid #000000;
+	box-shadow: 0 0.4em 0.8em 0 rgba(0, 0, 0, 0.2);
+	padding: 2em;
+	color: #000000;
+	background: #ffffff;
+}
+
+.CG_Title
+{
+	font-size: 1.4em;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	color: #e16400;
+}
+
+.CG_Content
+{
+	margin-top: 1.5em;
+	text-align: left;
+}

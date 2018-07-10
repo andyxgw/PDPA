@@ -15,73 +15,21 @@
 			<p>Is the information below considered personal data?</p>
 			<p>Select your answer, then click “Submit”.</p>
 			<div class="QuizDivider"></div>
-			<div>
-				<fieldset id="question1">
-				<table width="100%" cellpadding="0" cellspacing="0">
-					<tr>
-						<td style="text-align:center">
-							<label class="image-checkbox">
-        			<img class="cbImage" src="images/LA_01.png" />
-        			<input type="checkbox" name="answers" value="yes" />
-        			<i class="fta fa fa-check hidden"></i>
-							<div class="cbResponse"></div>
-							</label>
-							<span class="image-text">Photos</span>
-						</td>
-						<td style="text-align:center">
-							<label class="image-checkbox">
-        				<img class="cbImage" src="images/LA_02.png" />
-        				<input type="checkbox" name="answers" value="yes" />
-        				<i class="fta fa fa-check hidden"></i>
-								<div class="cbResponse"></div>
-    					</label>
-							<span class="image-text">Medical Records</span>
-						</td>
-						<td style="text-align:center">
-							<label class="image-checkbox">
-					        <img class="cbImage" src="images/LA_03.png" />
-					        <input type="checkbox" name="answers" value="yes" />
-					        <i class="fta fa fa-check hidden"></i>
-									<div class="cbResponse"></div>
-					    </label>
-							<span class="image-text">Student Survey Records</span>
-						</td>
-					</tr>
-					<tr>
-						<td style="text-align:center">
-							<label class="image-checkbox">
-        			<img class="cbImage" src="images/LA_04.png" />
-        			<input type="checkbox" name="answers" value="yes" />
-        			<i class="fta fa fa-check hidden"></i>
-							<div class="cbResponse"></div>
-							</label>
-							<span class="image-text">Payment Transactions</span>
-						</td>
-						<td style="text-align:center">
-							<label class="image-checkbox">
-        				<img class="cbImage" src="images/LA_05.png" />
-        				<input type="checkbox" name="answers" value="yes" />
-        				<i class="fta fa fa-check hidden"></i>
-								<div class="cbResponse"></div>
-    					</label>
-							<span class="image-text">Visitor's Log Book</span>
-						</td>
-						<td style="text-align:center">
-							<label class="image-checkbox">
-					        <img class="cbImage" src="images/LA_06.png" />
-					        <input type="checkbox" name="answers" value="yes" />
-					        <i class="fta fa fa-check hidden"></i>
-									<div class="cbResponse"></div>
-					    </label>
-							<span class="image-text">Expression of Individual's Opinion</span>
-						</td>
-					</tr>
-				</table>
-			</fieldset>
-
-
+			<div class="QuizGraphic">
+				<p>A group of students forms a new Craft Club. The members meet every fortnight to craft and occasionally sell their items at a flea market.</p>
+				<p>The club collects data of their members such as name, address, IC number, t-shirt size and mobile number.</p>
+				<p>Do the PDPA obligations apply to the club?</p>
 			</div>
-			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			<div class="ButtonPanel" style="margin-top: 14.5em;"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			<div class="clearfix"></div>
+		</div>
+
+		<div class="QuizIcon"><img id="CharMan" src="images/CharMan01.png" /></div>
+		<div class="QuizBubble">
+			<fieldset id="question1">
+			<div class="QuizOptionHor"><span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span></div>
+			<div class="QuizOptionHor"><span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span></div>
+		</fieldset>
 			<div class="clearfix"></div>
 		</div>
 	</div>
@@ -96,7 +44,7 @@ TopicNumber = 7;
 TotalPagesInTopic = 1;
 PageInTopic = 1;
 
-$('#TopicHeader').text("Learning Activity 3");
+$('#TopicHeader').text("Learning Activity 4");
 
 if($("#vPlayer").length > 0)
 {
@@ -111,11 +59,11 @@ var QuizResponse;
 var ResponseContent;
 var QuizStatus;
 
-IsMultipleSelectionQuiz(true);
+IsMultipleSelectionQuiz(false);
 
 $('#SubmitBtn').click(function(e) {
-	QuizResponse = ValidateImageCheckboxQuiz("question1");
-	ResponseContent = "All of the above are personal data.";
+	QuizResponse = ValidateSingleChoiceQuiz("question1");
+	ResponseContent = "The PDPA obligations apply to <b><u>all</u></b> organisations regardless of whether they are incorporated or unincorporated and regardless of whether they are formed or recognised under the law of Singapore. ";
 	ShowQuizPopup(QuizResponse, ResponseContent);
 });
 </script>

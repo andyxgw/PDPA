@@ -12,26 +12,55 @@
 
 	<div class="InfoTextPanel">
 		<div class="QuizPanel">
-			<p>Which of the following are considered personal data?</p>
-			<p>Select your answer(s) by checking on the boxes above the table, then click “Submit”.</p>
+			<p>Is the information below considered personal data?</p>
+			<p>Select your answer, then click “Submit”.</p>
 			<div class="QuizDivider"></div>
 			<div class="QuizGraphic">
 				<fieldset id="question1">
-				<table cellpadding="0" cellspacing="0">
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
 					<tr>
-						<td style="width:7em;"><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="response"></span></td>
-						<td style="width:11em;"><input id="chk2" name="option2" type="checkbox" value="yes" /><label for="chk2" /><span class="response"></span></td>
-						<td style="width:7.5em;"><input id="chk3" name="option3" type="checkbox" value="yes" /><label for="chk3" /><span class="response"></span></td>
-						<td style="width:4em;"><input id="chk4" name="option4" type="checkbox" value="yes" /><label for="chk4" /><span class="response"></span></td>
-						<td style="width:5em;"><input id="chk5" name="option5" type="checkbox" value="yes" /><label for="chk5" /><span class="response"></span></td>
-						<td style="width:7.5em;"><input id="chk6" name="option6" type="checkbox" value="yes" /><label for="chk6" /><span class="response"></span></td>
-						<td style="width:11.5em;"><input id="chk7" name="option7" type="checkbox" value="yes" /><label for="chk7" /><span class="response"></span></td>
-						<td style="width:6.2em;"><input id="chk8" name="option8" type="checkbox" value="yes" /><label for="chk8" /><span class="response"></span></td>
+						<td style="width:60%">
+							<div class="CardGraphic">
+								<div class="CG_Title">Order List for Sports </div>
+								<div class="CG_Content">
+									<table width="100%">
+										<tr>
+											<td valign="top" style="text-align:left;">
+												<b><u>Number of Participants</u></b><br />
+												Female: 26<br />
+												Male: 28
+											</td>
+											<td valign="top" style="text-align:left;">
+												<b><u>Food Preference</u></b><br />
+												Vegetarian: 3<br />
+												Normal: 31<br />
+												Halal: 20
+											</td>
+										</tr>
+										<tr>
+											<td valign="top" style="text-align:left;">
+												<b><u>T-shirt Size of Participants </u></b><br />
+												X-Large: 11<br />
+												Large: 15<br />
+												Medium: 13<br />
+												Small: 15
+											</td>
+											<td>
+												&nbsp;
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</td>
+						<td style="width:40%; text-align: left; padding: 1.5em; padding-left: 4.5em">
+							<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+							<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span></td>
 					</tr>
 				</table>
 			</fieldset>
-				<img src="images/LA_Records.png">
-				
+
+
 			</div>
 			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
 			<div class="clearfix"></div>
@@ -48,7 +77,7 @@ TopicNumber = 5;
 TotalPagesInTopic = 1;
 PageInTopic = 1;
 
-$('#TopicHeader').text("Learning Activity 1");
+$('#TopicHeader').text("Learning Activity 2");
 
 if($("#vPlayer").length > 0)
 {
@@ -63,11 +92,11 @@ var QuizResponse;
 var ResponseContent;
 var QuizStatus;
 
-IsMultipleSelectionQuiz(true);
+IsMultipleSelectionQuiz(false);
 
 $('#SubmitBtn').click(function(e) {
-	QuizResponse = ValidateCheckboxQuiz("question1");
-	ResponseContent = "All of the above are personal data because they can be matched or associated with particular individuals.";
+	QuizResponse = ValidateSingleChoiceQuiz("question1");
+	ResponseContent = "All of the above are not considered personal data because they cannot be matched or associated with particular individuals.";
 	ShowQuizPopup(QuizResponse, ResponseContent);
 });
 </script>

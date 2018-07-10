@@ -4,7 +4,7 @@ var CheckBoxMode = true;
 var TrackProgressInTopic = false;
 var HeaderNavigation = false;
 
-var TotalPages = 12;
+var TotalPages = 11;
 var LastPage = TotalPages - 1;
 var ContentPage = 0;
 var PagesArray = [];

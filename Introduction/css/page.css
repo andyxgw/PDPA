@@ -16,7 +16,6 @@
 	max-height: 72em;
 	margin: 2em auto 0 auto;
 	background: #e1e1e1;
-	border: 1px solid #d3d3d3;
 }
 
 .InfoTextPanel .FullWidthPanel
@@ -158,10 +157,33 @@
 	text-align: left;
 }
 
+.InfoTextPanel .TopPanel .InfoText h3
+{
+	text-align: left;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.InfoTextPanel .TopPanel .InfoText ol li
+{
+	margin-left: -1.4em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-size: 1.0em;
+	text-align: left;
+}
+
 .InfoTextPanel .TopPanel .CenterContainer
 {
   width: 60em;
   margin: 2em auto;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel
+{
+  width: 100%;
+	height: 50em;
+  border: 1em solid #000000;
 }
 
 .InfoTextPanel .TopPanel .CenterContainer .LeftText
@@ -185,7 +207,7 @@
 .InfoTextPanel .BottomPanel
 {
     width: 100%;
-    height:12em;
+    height:12.4em;
     background: #646464;
 }
 
@@ -296,6 +318,7 @@
 	width: 94%;
 	margin: 0em auto;
 	font-size: 1.4em;
+	line-height: 12em;
 	color: #ffffff;
 }
 

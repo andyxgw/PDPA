@@ -12,9 +12,22 @@
 
 	<div class="InfoTextPanel">
 		<div class="TopPanel">
-			<div class="InfoText">A specified message is a marketing message of a commercial nature. Typically, a  specified message has one of these two purposes.</div>
-			<div class="clearfix">&nbsp;</div>
-			<div class="InfoText">Click on each number to learn the purposes.</div>
+			<div class="InfoText">
+				<p>A specified message is a marketing message of a commercial nature. Typically, a  specified message has one of these two purposes.</p>
+				<p>Click on each number to learn the purposes.</p>
+			</div>
+
+			<div class="CanvasPanel">
+				<div class="CanvasBox1" style="top: 13em; width: 15em;">Purposes of a specified message</div>
+				<div class="LeftDiagonal" style="top: 13em; left: 25.1em;"></div>
+				<div class="RightDiagonal" style="top: 19em; left: 25.1em;"></div>
+				<div id="C1" class="ClickableCanvasBox" style="width: 2.5em; top: 10.5em; left: 22.5em;">1</div>
+				<div id="C2" class="ClickableCanvasBox" style="width: 2.5em; top: 18.2em; left: 22.5em;">2</div>
+
+				<div id="Box1" class="CanvasBox2" style="width: 26em; top: 9em; left: 26em;">To advertise, promote or offer to supply any goods or services</div>
+				<div id="Box2" class="CanvasBox2" style="width: 26em; top: 17em; left: 26em;">To advertise or promote a supplier/provider of any goods or services</div>
+			</div>
+
 		</div>
 	</div>
 
@@ -39,6 +52,11 @@ if($("#vPlayer").length > 0)
 
 <script src="js/custom.js"></script>
 
+<script>
+SetClickableArea(2);
+ActivateClickableArea("#C1", "#Box1");
+ActivateClickableArea("#C2", "#Box2");
+</script>
 
 </body>
 </html>

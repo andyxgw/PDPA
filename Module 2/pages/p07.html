@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Learning Activity 2</title>
+<title>Sending Specified Messages</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
+<link rel="stylesheet" type="text/css" href="css/quiz.css" />
 </head>
 
 <body>
@@ -11,7 +11,24 @@
 <div id="SubPageContainer">
 
 	<div class="InfoTextPanel">
-		&nbsp;
+		<div class="QuizPanel">
+			<p>Are the following text messages considered to be 'specified messages'?</p>
+			<p>Select your answer, then click “Submit”.</p>
+			<div class="QuizDivider"></div>
+			<div class="QuizGraphic">
+				<fieldset id="question1">
+				<div class="LeftPanel">
+					<img src="images/img_Mod02_P05c.png" />
+				</div>
+				<div class="RightPanel">
+					<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+					<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span>
+				</div>
+				</fieldset>
+				<div class="clearfix"></div>
+			</div>
+			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+		</div>
 	</div>
 
 </div>
@@ -24,7 +41,7 @@ TopicNumber = 7;
 TotalPagesInTopic = 1;
 PageInTopic = 1;
 
-$('#TopicHeader').text("Learning Activity 2");
+$('#TopicHeader').text("Sending Specified Messages");
 
 if($("#vPlayer").length > 0)
 {
@@ -35,6 +52,19 @@ if($("#vPlayer").length > 0)
 
 <script src="js/custom.js"></script>
 
+<script>
+var QuizResponse;
+var ResponseContent;
+var QuizStatus;
+
+IsMultipleSelectionQuiz(false);
+
+$('#SubmitBtn').click(function(e) {
+	QuizResponse = ValidateSingleChoiceQuiz("question1");
+	ResponseContent = "This message would be considered a specified message as the sender is advertising goods or services on behalf of the club’s sponsor.<br /><br />This message is to be sent only to recipients who have given written consent to receive marketing messages via SMS from the club.";
+	ShowQuizPopup(QuizResponse, ResponseContent);
+});
+</script>
 
 </body>
 </html>
