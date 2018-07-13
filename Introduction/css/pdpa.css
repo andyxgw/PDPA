@@ -180,6 +180,7 @@ body{
 		text-decoration: none;
 		outline: none;
 		background: #2a3c66;
+		cursor: pointer;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {

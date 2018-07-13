@@ -168,10 +168,6 @@ function ValidateSingleChoiceQuiz(QuestionID)
 
 	for(i = 0; i < options.length; i++)
 	{
-		if(options[i].checked == false)
-		{
-			correct = false;
-		}
 		if(options[i].value == "yes" && options[i].checked == true)
 		{
 			correct = true;
@@ -191,6 +187,10 @@ function ValidateSingleChoiceQuiz(QuestionID)
 		{
 			correct = true;
 			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
+		}
+		if(options[i].checked == false)
+		{
+			correct = false;
 		}
 
 		options[i].disabled =true;
@@ -251,7 +251,13 @@ function ActivateClickableArea(VarName, PanelName)
 	})
 }
 
-
+function ShowNextQuestionButton(MessageCount, MaxMessageCount)
+{
+	if(MessageCount <= MaxMessageCount)
+	{
+		$("#NextMsgBtn").show();
+	}
+}
 
 
 

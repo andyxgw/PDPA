@@ -16,6 +16,7 @@
 	max-height: 72em;
 	margin: 2em auto 0 auto;
 	background: #e1e1e1;
+	/*background: #646464; */
 }
 
 .InfoTextPanel .FullWidthPanel
@@ -44,14 +45,14 @@
 {
 	margin-top: 1em;
 	font-weight: normal;
-	font-size: 1.2em;
+	font-size: 1.4em;
 }
 
 .InfoTextPanel .FullWidthPanel .ContentDesc ol li
 {
 	margin-left: -1.2em;
 	margin-bottom: 0.5em;
-	font-size: 1.2em;
+	font-size: 1.4em;
 }
 
 .InfoTextPanel .LeftPanel
@@ -76,13 +77,13 @@
 {
 	margin-top: 1em;
 	font-weight: normal;
-	font-size: 1.2em;
+	font-size: 1.4em;
 }
 
 .InfoTextPanel .LeftPanel .ContentDesc ul li
 {
 	margin-left: -1.2em;
-	margin-bottom: 0.5em;
+	margin-bottom: 1em;
 }
 
 .InfoTextPanel .RightPanel
@@ -94,54 +95,6 @@
 	float:right;
 	text-align: left;
 	position: relative;
-}
-
-.CharImage
-{
-	max-width: 22em;
-	height: auto;
-	bottom: 0;
-	position: absolute;
-}
-
-.IconImage1
-{
-	max-width: 13em;
-	height: auto;
-}
-
-.DividerImage
-{
-	width: 0.1em;
-	height: auto;
-}
-
-.BulletTab
-{
-	margin-left: 0.5em;
-	float:left;
-}
-
-.BulletImage
-{
-	width: 1.8em;
-	height:auto;
-}
-
-.BulletText
-{
-	width: 24em;
-	text-align: left;
-	float: left;
-	margin-left: 0.5em;
-}
-
-.BulletText1
-{
-	width: 29em;
-	text-align: left;
-	float: left;
-	margin-left: 0.5em;
 }
 
 .InfoTextPanel .TopPanel
@@ -207,8 +160,9 @@
 .InfoTextPanel .BottomPanel
 {
     width: 100%;
-    height:12.4em;
-    background: #646464;
+    height:12.1em;
+		/* background: #646464; */
+    background: #FFFFFF;
 }
 
 .InfoTextPanel .QuizPanel
@@ -230,14 +184,64 @@
 	margin-bottom: 0.8em;
 }
 
+.SummaryPanel
+{
+	width: 128em;
+	height: 72em;
+	max-height: 72em;
+	margin: 2em auto 0 auto;
+	background: #e1e1e1;
+	color: #FFFFFF;
+}
 
+.SummaryPanel .LeftPanel
+{
+	width: 58em;
+	height: 100%;
+	padding: 2em;
+	font-size: 1.6em;
+	background: #808080;
+	float:left;
+	text-align: left;
+}
 
+.SummaryPanel .LeftPanel h3
+{
+	text-align: left;
+	font-size: 1.7em;
+	font-weight: bold;
+}
 
+.SummaryPanel .LeftPanel ol li
+{
+	margin-left: -1.4em;
+	margin-top: 1em;
+	margin-bottom: 1.5em;
+	font-size: 1.4em;
+	text-align: left;
+}
 
+.SummaryPanel .RightPanel
+{
+	width: 20em;
+	height: 100%;
+	padding-top: 5em;
+	padding-right: 2em;
+	font-size: 1.6em;
+	background: #E1E1E1;
+	color: #000000;
+	float:right;
+	text-align: left;
+	position: relative;
+}
 
-
-
-
+.SummaryPanel .RightPanel .BorderBox
+{
+	border: 0.2em solid #000000;
+	padding: 1.5em;
+	font-size: 1.4em;
+	border-radius: 1em;
+}
 
 .PopUpPanel .TopPanel
 {
@@ -304,13 +308,61 @@
 }
 
 
+.CharImage
+{
+	max-width: 22em;
+	height: auto;
+	bottom: 0;
+	position: absolute;
+}
+
+.IconImage1
+{
+	max-width: 13em;
+	height: auto;
+}
+
+.DividerImage
+{
+	width: 0.1em;
+	height: auto;
+}
+
+.BulletTab
+{
+	margin-left: 0.5em;
+	float:left;
+}
+
+.BulletImage
+{
+	width: 1.8em;
+	height:auto;
+}
+
+.BulletText
+{
+	width: 24em;
+	text-align: left;
+	float: left;
+	margin-left: 0.5em;
+}
+
+.BulletText1
+{
+	width: 29em;
+	text-align: left;
+	float: left;
+	margin-left: 0.5em;
+}
+
 .InstructionText
 {
 	width: 32em;
 	margin: 0em auto;
 	padding-top: 2em;
 	font-size: 1.9em;
-	color: #ffffff;
+	color: #000000;
 }
 
 .PopupInstructionText
@@ -318,7 +370,6 @@
 	width: 94%;
 	margin: 0em auto;
 	font-size: 1.4em;
-	line-height: 12em;
 	color: #ffffff;
 }
 
@@ -340,7 +391,8 @@
 
 a.ModalLink
 {
-	color: #e16400;
+	/* color: #e16400; */
+	color: #00ffff;
 }
 
 a.ModalLink:hover
@@ -348,100 +400,6 @@ a.ModalLink:hover
 	cursor: pointer;
 }
 
-
-#questionSpace
-{
-	text-align: left;
-	font-size: 2em;
-	position: relative;
-	margin-left: 3.5em;
-}
-
-#theQuestion
-{
-	text-align: left;
-	font-size: 1.3em;
-	font-weight: bold;
-	line-height: 1.4em;
-	margin-bottom: 1em;
-}
-
-.ChoiceMarker
-{
-	z-index: 100;
-	margin: 0px;
-	display: none;
-	position: absolute;
-	width: 1em;
-	height: auto;
-	left: -3.3em;
-}
-
-.ChoiceChecker
-{
-	z-index: 100;
-	margin: 0px;
-	display: block;
-	position: absolute;
-	margin-top: 0.1em;
-	left: -2em;
-}
-
-
-.ChoiceWrapper
-{
-	font-size: 1.3em;
-	margin-bottom: 1.2em;
-	z-index: 1;
-	margin: 0 0 0.4em 2em;
-	display: block;
-	position: relative;
-}
-
-.ChoiceWrapper p
-{
-	color: #a0a0a0;
-}
-
-.RespondTitle
-{
-	text-align: center;
-	font-size: 2.4em;
-}
-
-.RespondExplanation
-{
-	font-size: 2.4em;
-}
-
-.RespondWrapper
-{
-	z-index: 50;
-	display: none;
-	position: absolute;
-	width: 80em;
-	height: 18em;
-	left: 30em;
-	top: 43em;
-	background-image: url(../images/Graphics_RespondWrapper.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.RespondWrapper p
-{
-	margin-left: 1.5em;
-}
-
-.RespondMarker
-{
-	z-index: 100;
-	margin: 0px;
-	display: block;
-	position: absolute;
-	left: 40em;
-	top: -0.5em;
-}
 
 .ImageClick
 {
@@ -470,4 +428,17 @@ a.ModalLink:hover
 {
 	margin-top: 1.5em;
 	text-align: left;
+}
+
+.StandardGrey
+{
+	background: #808080;
+	color: #FFFFFF;
+	border: 0.1em solid #707070;
+}
+
+.StandardWhite
+{
+	background: #ffffff;
+	color: #000000;
 }

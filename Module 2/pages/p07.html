@@ -10,24 +10,41 @@
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
+	<div class="InfoTextPanel StandardGrey">
 		<div class="QuizPanel">
-			<p>Are the following text messages considered to be 'specified messages'?</p>
+			<p>Is the information below considered personal data?</p>
 			<p>Select your answer, then click “Submit”.</p>
 			<div class="QuizDivider"></div>
 			<div class="QuizGraphic">
+				<p>Martha fills up an online form. Before she clicks the “Submit” button, she agrees and consents to the clause to receive specified messages. Martha selects the options as shown here and submits the form.</p>
+
 				<fieldset id="question1">
-				<div class="LeftPanel">
-					<img src="images/img_Mod02_P05c.png" />
-				</div>
-				<div class="RightPanel">
-					<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
-					<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span>
-				</div>
-				</fieldset>
-				<div class="clearfix"></div>
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 1em;">
+					<tr>
+						<td style="width:60%">
+							<div class="CardGraphic">
+								<div class="CG_Content_1">
+									<p>I would like to receive marketing, advertising and promotional information from NTU Sports Club through the following modes of communication.</p>
+									<p><i class="fa fa-square-o"></i> Phone Call</p>
+									<p><i class="fa fa-check-square-o check-green"></i> SMS/MMS (text messages)</p>
+									<p><i class="fa fa-square-o"></i> Fax</p>
+									<p><i class="fa fa-check-square-o check-green"></i> Email</p>
+								</div>
+							</div>
+						</td>
+						<td style="width:40%; text-align: left; padding-left: 3em; vertical-align:top">
+							<p>Is this considered giving clear and unambiguous consent?</p>
+							<div style="padding-left: 2em; padding-top: 2em">
+							<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+							<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span></td>
+						</div>
+					</tr>
+				</table>
+			</fieldset>
+
 			</div>
 			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
 
@@ -61,7 +78,7 @@ IsMultipleSelectionQuiz(false);
 
 $('#SubmitBtn').click(function(e) {
 	QuizResponse = ValidateSingleChoiceQuiz("question1");
-	ResponseContent = "This message would be considered a specified message as the sender is advertising goods or services on behalf of the club’s sponsor.<br /><br />This message is to be sent only to recipients who have given written consent to receive marketing messages via SMS from the club.";
+	ResponseContent = "Martha is considered to have given clear and unambiguous consent.";
 	ShowQuizPopup(QuizResponse, ResponseContent);
 });
 </script>

@@ -180,6 +180,7 @@ body{
 		text-decoration: none;
 		outline: none;
 		background: #2a3c66;
+		cursor: pointer;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
@@ -432,7 +433,7 @@ a.article, a.article:hover {
 	cursor: pointer;
 }
 
-.PrevBtn:before { 
+.PrevBtn:before {
 	content: "\f053";
 	color: #ffffff;
 	font-size: 3.5em;

@@ -16,7 +16,7 @@
 	max-height: 72em;
 	margin: 2em auto 0 auto;
 	background: #e1e1e1;
-	border: 1px solid #d3d3d3;
+	/*background: #646464; */
 }
 
 .InfoTextPanel .FullWidthPanel
@@ -45,14 +45,14 @@
 {
 	margin-top: 1em;
 	font-weight: normal;
-	font-size: 1.2em;
+	font-size: 1.4em;
 }
 
 .InfoTextPanel .FullWidthPanel .ContentDesc ol li
 {
 	margin-left: -1.2em;
 	margin-bottom: 0.5em;
-	font-size: 1.2em;
+	font-size: 1.4em;
 }
 
 .InfoTextPanel .LeftPanel
@@ -77,114 +77,13 @@
 {
 	margin-top: 1em;
 	font-weight: normal;
-	font-size: 1.2em;
+	font-size: 1.4em;
 }
 
 .InfoTextPanel .LeftPanel .ContentDesc ul li
 {
 	margin-left: -1.2em;
-	margin-bottom: 0.5em;
-}
-
-.InfoTextPanel .RightPanel
-{
-	width: 25em;
-	height: 100%;
-	padding: 0em;
-	font-size: 1.6em;
-	float:right;
-	text-align: left;
-	position: relative;
-}
-
-.CharImage
-{
-	max-width: 22em;
-	height: auto;
-	bottom: 0;
-	position: absolute;
-}
-
-.IconImage1
-{
-	max-width: 13em;
-	height: auto;
-}
-
-.DividerImage
-{
-	width: 0.1em;
-	height: auto;
-}
-
-.BulletTab
-{
-	margin-left: 0.5em;
-	float:left;
-}
-
-.BulletImage
-{
-	width: 1.8em;
-	height:auto;
-}
-
-.BulletText
-{
-	width: 25em;
-	text-align: left;
-	float: left;
-	margin-left: 0.5em;
-}
-
-.VisitedImage
-{
-	background-image: url(../images/MarkerWhite.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-	position: absolute;
-	width: 80%;
-	height: 80%;
-	top: 0.3em;
-	left: 0.2em;
-}
-
-.InfoTextPanel
-{
-	width: 128em;
-	height: 72em;
-	max-height: 72em;
-	margin: 2em auto 0 auto;
-	background: #e1e1e1;
-}
-
-.InfoTextPanel .LeftPanel
-{
-	width: 53em;
-	height: 100%;
-	padding: 2em;
-	font-size: 1.6em;
-	float:left;
-	text-align: left;
-}
-
-.InfoTextPanel .LeftPanel .ContentTitle
-{
-	font-weight: bold;
-	font-size: 2em;
-}
-
-.InfoTextPanel .LeftPanel .ContentDesc
-{
-	margin-top: 1em;
-	font-weight: normal;
-	font-size: 1.2em;
-}
-
-.InfoTextPanel .LeftPanel .ContentDesc ul li
-{
-	margin-left: -1.2em;
-	margin-bottom: 0.5em;
+	margin-bottom: 1em;
 }
 
 .InfoTextPanel .RightPanel
@@ -203,7 +102,7 @@
   width: 100%;
   height: 28.4em;
   padding: 2.2em 2em 0em 2em;
-  font-size: 2em;
+  font-size: 2.1em;
 }
 
 .InfoTextPanel .TopPanel .InfoText
@@ -211,10 +110,20 @@
 	text-align: left;
 }
 
-.InfoTextPanel .TopPanel .CenterContainer
+.InfoTextPanel .TopPanel .InfoText h3
 {
-  width: 60em;
-  margin: 2em auto;
+	text-align: left;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.InfoTextPanel .TopPanel .InfoText ol li
+{
+	margin-left: -1.4em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-size: 1.0em;
+	text-align: left;
 }
 
 .InfoTextPanel .TopPanel .CanvasPanel
@@ -302,6 +211,13 @@
 }
 
 
+.InfoTextPanel .TopPanel .CenterContainer
+{
+  width: 60em;
+  margin: 2em auto;
+}
+
+
 .InfoTextPanel .TopPanel .CenterContainer .LeftText
 {
   float: left;
@@ -323,8 +239,9 @@
 .InfoTextPanel .BottomPanel
 {
     width: 100%;
-    height:15em;
-    background: #646464;
+    height:12.1em;
+		/* background: #646464; */
+    background: #FFFFFF;
 }
 
 .InfoTextPanel .QuizPanel
@@ -338,27 +255,83 @@
 .InfoTextPanel .QuizPanel p
 {
 	margin-bottom: 0.1em;
+	font-size:1.2em;
 }
 
-.QuizDivider
+.InfoTextPanel .QuizPanel .QuizGraphic p
 {
-	height: 0.2em;
-	border-bottom: 1px solid #252525;
+	font-size: 1.1em;
+	margin-bottom: 0.8em;
+}
+
+.SummaryPanel
+{
+	width: 128em;
+	height: 72em;
+	max-height: 72em;
+	margin: 2em auto 0 auto;
+	background: #e1e1e1;
+	color: #FFFFFF;
+}
+
+.SummaryPanel .LeftPanel
+{
+	width: 58em;
+	height: 100%;
+	padding: 2em;
+	font-size: 1.6em;
+	background: #808080;
+	float:left;
+	text-align: left;
+}
+
+.SummaryPanel .LeftPanel h3
+{
+	text-align: left;
+	font-size: 1.7em;
+	font-weight: bold;
+}
+
+.SummaryPanel .LeftPanel ol li
+{
+	margin-left: -1.4em;
 	margin-top: 1em;
-	margin-bottom: 2em;
+	margin-bottom: 1.5em;
+	font-size: 1.4em;
+	text-align: left;
 }
 
-.QuizGraphic
+.SummaryPanel .LeftPanel ol li ul li
 {
-	margin-top: 4em;
+	margin-left: -1em;
+	margin-top: 1em;
+	margin-bottom: 0.1em;
+	font-size: 1em;
+	text-align: left;
+	list-style-type: square;
 }
 
-.QuizGraphic img
+.SummaryPanel .RightPanel
 {
-	width: 100%;
-	height: auto;
+	width: 20em;
+	height: 100%;
+	padding-top: 5em;
+	padding-right: 2em;
+	font-size: 1.6em;
+	background: #E1E1E1;
+	color: #000000;
+	float:right;
+	text-align: left;
+	position: relative;
 }
 
+.SummaryPanel .RightPanel .BorderBox
+{
+	border: 0.2em solid #000000;
+	padding: 1.5em;
+	font-size: 1.4em;
+	border-radius: 1em;
+}
 
 .PopUpPanel .TopPanel
 {
@@ -425,14 +398,73 @@
 }
 
 
+.CharImage
+{
+	max-width: 22em;
+	height: auto;
+	bottom: 0;
+	position: absolute;
+}
+
+.IconImage1
+{
+	max-width: 13em;
+	height: auto;
+}
+
+.DividerImage
+{
+	width: 0.1em;
+	height: auto;
+}
+
+.BulletTab
+{
+	margin-left: 0.5em;
+	float:left;
+}
+
+.BulletImage
+{
+	width: 1.8em;
+	height:auto;
+}
+
+.BulletText
+{
+	width: 24em;
+	text-align: left;
+	float: left;
+	margin-left: 0.5em;
+}
+
+.BulletText1
+{
+	width: 29em;
+	text-align: left;
+	float: left;
+	margin-left: 0.5em;
+}
+
+.VisitedImage
+{
+	background-image: url(../images/MarkerWhite.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 80%;
+	height: 80%;
+	top: 0.3em;
+	left: 0.2em;
+}
 
 .InstructionText
 {
-	width: 30em;
+	width: 32em;
 	margin: 0em auto;
-	padding-top: 3em;
-	font-size: 1.8em;
-	color: #ffffff;
+	padding-top: 2em;
+	font-size: 1.9em;
+	color: #000000;
 }
 
 .PopupInstructionText
@@ -461,7 +493,8 @@
 
 a.ModalLink
 {
-	color: #e16400;
+	/* color: #e16400; */
+	color: #00ffff;
 }
 
 a.ModalLink:hover
@@ -469,100 +502,6 @@ a.ModalLink:hover
 	cursor: pointer;
 }
 
-
-#questionSpace
-{
-	text-align: left;
-	font-size: 2em;
-	position: relative;
-	margin-left: 3.5em;
-}
-
-#theQuestion
-{
-	text-align: left;
-	font-size: 1.3em;
-	font-weight: bold;
-	line-height: 1.4em;
-	margin-bottom: 1em;
-}
-
-.ChoiceMarker
-{
-	z-index: 100;
-	margin: 0px;
-	display: none;
-	position: absolute;
-	width: 1em;
-	height: auto;
-	left: -3.3em;
-}
-
-.ChoiceChecker
-{
-	z-index: 100;
-	margin: 0px;
-	display: block;
-	position: absolute;
-	margin-top: 0.1em;
-	left: -2em;
-}
-
-
-.ChoiceWrapper
-{
-	font-size: 1.3em;
-	margin-bottom: 1.2em;
-	z-index: 1;
-	margin: 0 0 0.4em 2em;
-	display: block;
-	position: relative;
-}
-
-.ChoiceWrapper p
-{
-	color: #a0a0a0;
-}
-
-.RespondTitle
-{
-	text-align: center;
-	font-size: 2.4em;
-}
-
-.RespondExplanation
-{
-	font-size: 2.4em;
-}
-
-.RespondWrapper
-{
-	z-index: 50;
-	display: none;
-	position: absolute;
-	width: 80em;
-	height: 18em;
-	left: 30em;
-	top: 43em;
-	background-image: url(../images/Graphics_RespondWrapper.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.RespondWrapper p
-{
-	margin-left: 1.5em;
-}
-
-.RespondMarker
-{
-	z-index: 100;
-	margin: 0px;
-	display: block;
-	position: absolute;
-	left: 40em;
-	top: -0.5em;
-}
 
 .ImageClick
 {
@@ -591,4 +530,34 @@ a.ModalLink:hover
 {
 	margin-top: 1.5em;
 	text-align: left;
+}
+
+.CG_Content_1
+{
+	text-align: left;
+	font-size: 0.8em;
+}
+
+.CG_Content_1 p
+{
+	padding-bottom: 0.1em;
+	font-size: 0.8em;
+}
+
+.check-green
+{
+	color: #00af00;
+}
+
+.StandardGrey
+{
+	background: #808080;
+	color: #FFFFFF;
+	border: 0.1em solid #707070;
+}
+
+.StandardWhite
+{
+	background: #ffffff;
+	color: #000000;
 }

@@ -72,6 +72,12 @@ $(document).ready(function(e) {
 		$('a[aria-expanded=true]').attr('aria-expanded', 'false');
 	});
 
+	$('.menulink').click(function(e) {
+		var ClickedID = $(this).attr("id");
+		var NavPageID = ClickedID.substring(1);
+		NavigatePage(NavPageID);
+	});
+
 	LoadPage();
 	tabModule.init();
 
@@ -122,6 +128,7 @@ $(document).ready(function(e) {
 		$('.popup-box3').removeClass('transform-in').addClass('transform-out');
 		e.preventDefault();
 	});
+
 
 
 });
@@ -386,7 +393,7 @@ function NavigatePage(varMode)
 	}
 	else
 	{
-		PageNo = parseInt(strVal);
+		PageNo = parseInt(varMode);
 		OkToProceed = true;
 	}
 

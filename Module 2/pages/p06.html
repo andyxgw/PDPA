@@ -3,31 +3,18 @@
 <meta charset="UTF-8" />
 <title>Sending Specified Messages</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
-<link rel="stylesheet" type="text/css" href="css/quiz.css" />
+<link href="css/video-js.css" rel="stylesheet" />
 </head>
 
 <body>
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		<div class="QuizPanel">
-			<p>Are the following text messages considered to be 'specified messages'?</p>
-			<p>Select your answer, then click “Submit”.</p>
-			<div class="QuizDivider"></div>
-			<div class="QuizGraphic">
-				<fieldset id="question1">
-				<div class="LeftPanel">
-					<img src="images/img_Mod02_P05b.png" />
-				</div>
-				<div class="RightPanel">
-					<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="no" /><label for="chk1" /><span class="cb_label">Yes</span><br />
-					<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="yes" /><label for="chk2" /><span class="cb_label">No</span>
-				</div>
-				</fieldset>
-				<div class="clearfix"></div>
-			</div>
-			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+	<div id="VideoContainer" class="VideoPanel">
+		<div id="container-video" class="VideoBox">
+		<video id="vPlayer" class="VideoSize video-js vjs-default-skin vjs-big-play-centered vjs-16-9" poster="images/vp_P06.png" data-setup='{"controls": true, "autoplay": false, "preload": "auto", "fluid": true}'>
+			<source src="videos/vid_Mod02_P06.mp4" type="video/mp4">
+		</video>
 		</div>
 	</div>
 
@@ -51,19 +38,9 @@ if($("#vPlayer").length > 0)
 </script>
 
 <script src="js/custom.js"></script>
-
+<script src="js/video.js"></script>
 <script>
-var QuizResponse;
-var ResponseContent;
-var QuizStatus;
-
-IsMultipleSelectionQuiz(false);
-
-$('#SubmitBtn').click(function(e) {
-	QuizResponse = ValidateSingleChoiceQuiz("question1");
-	ResponseContent = "This message is a request for a profile update as a member under the terms of a transaction which the recipient has previously agreed to enter into with the sender.";
-	ShowQuizPopup(QuizResponse, ResponseContent);
-});
+videojs("vPlayer");
 </script>
 
 </body>

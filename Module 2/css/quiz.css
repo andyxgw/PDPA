@@ -44,7 +44,7 @@
 .QuizDivider
 {
 	height: 0.2em;
-	border-bottom: 1px solid #252525;
+	border-bottom: 0.1em solid #FFFFFF;
 	margin-top: 1em;
 	margin-bottom: 2em;
 }
@@ -109,7 +109,7 @@ input[type="checkbox"] + label {
 	margin-left: 1.5em;
   width: 1.6em;
   height: 1.6em;
-  border: 0.2em solid #000000;
+  border: 0.2em solid #FFFFFF;
   border-radius: 0%;
 	-webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -273,8 +273,43 @@ button.ReviewBtn:active {
 }
 
 
+button.NextMsgBtn {
+    /* display: inline-block; */
+		display: none;
+    border: none;
+    padding: 1em 2em;
+    margin: 0;
+    text-decoration: none;
+    background: #181C62;
+    color: #ffffff;
+		font-weight: bold;
+    font-family: sans-serif;
+    font-size: 0.8em;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
 
-button.CloseBtn {
+button.NextMsgBtn:hover,
+button.NextMsgBtn:focus {
+    background: #d71440;
+}
+
+button.NextMsgBtn:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button.NextMsgBtn:active {
+    transform: scale(0.99);
+}
+
+
+button.CloseBtn
+{
 		display: inline-block;
     border: none;
     padding: 1em 2em;
@@ -293,19 +328,24 @@ button.CloseBtn {
     -moz-appearance: none;
 }
 
-button.CloseBtn:hover,
-button.CloseBtn:focus {
+button.CloseBtn:hover, button.CloseBtn:focus
+{
     background: #d71440;
 }
 
-button.CloseBtn:focus {
+button.CloseBtn:focus
+{
     outline: 1px solid #fff;
     outline-offset: -4px;
 }
 
-button.CloseBtn:active {
+button.CloseBtn:active
+{
     transform: scale(0.99);
 }
+
+
+
 
 
 

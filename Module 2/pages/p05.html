@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8" />
@@ -11,24 +10,70 @@
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
+	<div class="InfoTextPanel StandardGrey">
 		<div class="QuizPanel">
 			<p>Are the following text messages considered to be 'specified messages'?</p>
 			<p>Select your answer, then click “Submit”.</p>
 			<div class="QuizDivider"></div>
 			<div class="QuizGraphic">
+
 				<fieldset id="question1">
-				<div class="LeftPanel">
-					<img src="images/img_Mod02_P05a.png" />
-				</div>
-				<div class="RightPanel">
-					<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="no" /><label for="chk1" /><span class="cb_label">Yes</span><br />
-					<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="yes" /><label for="chk2" /><span class="cb_label">No</span>
-				</div>
+					<div class="LeftPanel">
+						<img src="images/img_Mod02_P05a.png" />
+					</div>
+					<div class="RightPanel">
+						<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="no" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+						<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="yes" /><label for="chk2" /><span class="cb_label">No</span>
+					</div>
 				</fieldset>
+
+				<fieldset id="question2" style="display: none;">
+					<div class="LeftPanel">
+						<img src="images/img_Mod02_P05b.png" />
+					</div>
+					<div class="RightPanel">
+						<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="no" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+						<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="yes" /><label for="chk2" /><span class="cb_label">No</span>
+					</div>
+				</fieldset>
+
+				<fieldset id="question3" style="display: none;">
+					<div class="LeftPanel">
+						<img src="images/img_Mod02_P05c.png" />
+					</div>
+					<div class="RightPanel">
+						<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+						<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span>
+					</div>
+				</fieldset>
+
+				<fieldset id="question4" style="display: none;">
+					<div class="LeftPanel">
+						<img src="images/img_Mod02_P05c.png" />
+					</div>
+					<div class="RightPanel">
+						<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+						<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span>
+					</div>
+				</fieldset>
+
+				<fieldset id="question5" style="display: none;">
+					<div class="LeftPanel">
+						<img src="images/img_Mod02_P05c.png" />
+					</div>
+					<div class="RightPanel">
+						<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="no" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+						<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="yes" /><label for="chk2" /><span class="cb_label">No</span>
+					</div>
+				</fieldset>
+
 				<div class="clearfix"></div>
 			</div>
-			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			<div class="ButtonPanel">
+				<button id="SubmitBtn" class="SubmitBtn">Submit</button>
+				<button id="ReviewBtn" class="ReviewBtn">Review</button>
+				<button id="NextMsgBtn" class="NextMsgBtn">Next Message</button>
+			</div>
 
 		</div>
 	</div>
@@ -57,14 +102,31 @@ if($("#vPlayer").length > 0)
 <script>
 var QuizResponse;
 var ResponseContent;
+var ResponseContentList = [];
 var QuizStatus;
+var MessageCount = 1;
+var MaxMessageCount = 5;
+
+ResponseContentList[0] = "This message notifies the student that a transaction has been successfully processed and completed.";
+ResponseContentList[1] = "This message is a request for a profile update as a member under the terms of a transaction which the recipient has previously agreed to enter into with the sender.";
+ResponseContentList[2] = "This message would be considered a specified message as the sender is advertising goods or services on behalf of the club’s sponsor.<br /><br />This message is to be sent only to recipients who have given written consent to receive marketing messages via SMS from the club.";
+ResponseContentList[3] = "This message would be considered a specified message as it relates to the supply of goods or services that the sender would like to offer or advertise.<br /><br />This message is to be sent only to recipients who have given written consent to receive marketing messages via SMS from the club.";
+ResponseContentList[4] = "This message provides a security code for the recipient’s online transaction.";
 
 IsMultipleSelectionQuiz(false);
 
 $('#SubmitBtn').click(function(e) {
-	QuizResponse = ValidateSingleChoiceQuiz("question1");
-	ResponseContent = "This message notifies the student that a transaction has been successfully processed and completed.";
+	QuizResponse = ValidateSingleChoiceQuiz("question"+MessageCount);
+	ResponseContent = ResponseContentList[MessageCount-1];
 	ShowQuizPopup(QuizResponse, ResponseContent);
+	ShowNextQuestionButton(MessageCount, MaxMessageCount);
+
+});
+
+$('#NextMsgBtn').click(function(e) {
+	MessageCount = MessageCount + 1;
+	$("#question"+(MessageCount-1)).hide();
+	$("#question"+MessageCount).show();
 });
 </script>
 
