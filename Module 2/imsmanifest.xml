@@ -4,9 +4,9 @@
 <manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="MANIFEST-1A3C4320468BD1AE844E1640B4858587" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
   <organizations default="ORG-842DDEA3C2E5AF4C78FC8BA0065CC6CE">
     <organization identifier="ORG-842DDEA3C2E5AF4C78FC8BA0065CC6CE" structure="hierarchical">
-      <title>Personal Data Protection Act</title>
+      <title>Module 2: The Do not Call Provisions</title>
       <item identifier="ITEM-724564F9336B271C60C4ECE45FB0C47D" identifierref="RES-9FB870BE29704450AB2D97AF52A73E8A" isvisible="true">
-        <title>PDPA – Module 2</title>
+        <title>Module 2: The Do not Call Provisions</title>
       </item>
     </organization>
   </organizations>

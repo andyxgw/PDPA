@@ -1,6 +1,6 @@
 ShortVideoMode(false);
-SetSlideData();
 UpdateProgress(PageNo, TopicNumber, PageInTopic, TotalPagesInTopic);
+CheckVideoVisibility();
 
 console.log("Current Page: "+PageNo);
 
@@ -205,6 +205,73 @@ function ValidateSingleChoiceQuiz(QuestionID)
 	}
 }
 
+function ValidateSerialSingleChoiceQuiz(QuestionID, SetNo, NumOptions)
+{
+	var options;
+	var i;
+	var correct = false;
+	var StartNum = 0;
+	var Increment = parseInt(SetNo-1) * parseInt(NumOptions);
+	var StartIndex = StartNum + Increment;
+
+	options = document.getElementById(QuestionID).getElementsByTagName("input");
+
+	for(i = 0; i < options.length; i++)
+	{
+		if(options[i].checked == false)
+		{
+			correct = false;
+		}
+		if(options[i].value == "yes" && options[i].checked == true)
+		{
+			correct = true;
+			document.getElementsByClassName("response")[StartIndex].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
+		}
+		if(options[i].value == "no" && options[i].checked == true)
+		{
+			correct = false;
+			document.getElementsByClassName("response")[StartIndex].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
+		}
+		if(options[i].value == "yes" && options[i].checked == false)
+		{
+			correct = false;
+			document.getElementsByClassName("response")[StartIndex].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
+		}
+		if(options[i].value == "no" && options[i].checked == false)
+		{
+			correct = true;
+			document.getElementsByClassName("response")[StartIndex].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
+		}
+
+
+		StartIndex++;
+		options[i].disabled =true;
+
+	}
+
+	if(correct)
+	{
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+function EnableCheckbox(QuestionID)
+{
+	var options;
+	var i;
+	var correct = false;
+
+	options = document.getElementById(QuestionID).getElementsByTagName("input");
+
+	for(i = 0; i < options.length; i++)
+	{
+		options[i].disabled = false;
+	}
+}
+
 function SetClickableArea(NumOfArea)
 {
 	for(var i=1; i<NumOfArea+1; i++)
@@ -253,7 +320,7 @@ function ActivateClickableArea(VarName, PanelName)
 
 function ShowNextQuestionButton(MessageCount, MaxMessageCount)
 {
-	if(MessageCount <= MaxMessageCount)
+	if(MessageCount < MaxMessageCount)
 	{
 		$("#NextMsgBtn").show();
 	}

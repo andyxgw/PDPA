@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<title>PDPA – Module 1</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/pdpa.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/modal.css">
+	<link rel="stylesheet" type="text/css" href="css/tabModule.css" />
+	<link rel="stylesheet" href="css/video-js.css" />
+</head>
+
+<body>
+
+
+
+
+
+
+
+<!-- MAIN CONTENT -->
+<div id="main_content">
+
+	<!-- HEADER -->
+	<header id="header">
+		<div class="logo"><img src="images/ntu.png" class="ntulogo"  border="0" /></div>
+		<div id="TopicHeader"></div>
+		<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><i class="glyphicon glyphicon glyphicon-menu-hamburger"></i></button>
+		<div class="cleardiv"></div>
+	</header>
+	<!-- END HEADER -->
+
+	<!-- Navigation -->
+	<nav id="sidebar">
+		<div id="dismiss">
+			<i class="glyphicon glyphicon-remove"></i>
+		</div>
+
+		<div class="sidebar-header">
+			<a id="homeBtn" href="javascript:void(0);"><i class="fa fa-home navBtn"></i></a>
+			<a id="glossaryBtn" href="javascript:void(0);"><i class="fa fa-book navBtn"></i></a>
+			<a id="helpBtn" href="javascript:void(0);"><i class="fa fa-question navBtn"></i></a>
+		</div>
+
+		<div id="MenuItem">
+			<ul class="list-unstyled components">
+				<li><a id="v1" class="menulink"><i id="b1" class="fa fa-square-o faCB"></i>  Introduction</a> </li>
+				<li><a id="v2" class="menulink"><i id="b2" class="fa fa-square-o faCB"></i>  Data Protection Provisions</a> </li>
+				<li><a id="v3" href="#menu1" data-toggle="collapse" aria-expanded="true"><i id="b3" class="fa fa-square-o faCB"></i> Consent</a>
+					<ul id="menu1" class="collapse list-unstyled">
+						<li><a id="v3_1" class="menulink"><i id="b3_1" class="fa fa-square-o faCB"></i>  Introduction</a></li>
+						<li><a id="v3_2" class="menulink"><i id="b3_2" class="fa fa-square-o faCB"></i>  Provision of Consent</a></li>
+						<li><a id="v3_3" class="menulink"><i id="b3_3" class="fa fa-square-o faCB"></i>  Deemed Consent</a></li>
+						<li><a id="v3_4" class="menulink"><i id="b3_4" class="fa fa-square-o faCB"></i>  Withdrawal of Consent</a></li>
+						<li><a id="v3_5" class="menulink"><i id="b3_5" class="fa fa-square-o faCB"></i>  Obtaining Personal Data from Third Parties</a></li>
+						<li><a id="v3_6" class="menulink"><i id="b3_6" class="fa fa-square-o faCB"></i>  Disclosing Personal Data to Third Parties</a></li>
+						<li><a id="v3_7" class="menulink"><i id="b3_7" class="fa fa-square-o faCB"></i>  Exceptions Provided by the PDPA</a></li>
+					</ul>
+				</li>
+				<li><a id="v4" href="#menu2" data-toggle="collapse" aria-expanded="false"><i id="b4" class="fa fa-square-o faCB"></i> Notification</a>
+					<ul id="menu2" class="collapse list-unstyled">
+						<li><a id="v4_1" class="menulink"><i id="b4_1" class="fa fa-square-o faCB"></i>  Introduction</a></li>
+						<li><a id="v4_2" class="menulink"><i id="b4_2" class="fa fa-square-o faCB"></i>  When to Notify</a></li>
+						<li><a id="v4_3" class="menulink"><i id="b4_3" class="fa fa-square-o faCB"></i>  Manner of Notification</a></li>
+					</ul>
+				</li>
+				<li><a id="v5" href="#menu3" data-toggle="collapse" aria-expanded="false"><i id="b5" class="fa fa-square-o faCB"></i> Purpose Limitation</a>
+					<ul id="menu3" class="collapse list-unstyled">
+						<li><a id="v5_1" class="menulink"><i id="b5_1" class="fa fa-square-o faCB"></i>  Introduction</a></li>
+						<li><a id="v5_2" class="menulink"><i id="b5_2" class="fa fa-square-o faCB"></i>  Purpose Limitation</a></li>
+						<li><a id="v5_3" class="menulink"><i id="b5_3" class="fa fa-square-o faCB"></i>  Learning Activity</a></li>
+					</ul>
+				</li>
+				<li><a id="v6" href="#menu4" data-toggle="collapse" aria-expanded="false"><i id="b6" class="fa fa-square-o faCB"></i> Access &amp; Correction</a>
+					<ul id="menu4" class="collapse list-unstyled">
+						<li><a id="v6_1" class="menulink"><i id="b6_1" class="fa fa-square-o faCB"></i>  Introduction</a></li>
+						<li><a id="v6_2" class="menulink"><i id="b6_2" class="fa fa-square-o faCB"></i>  Access</a></li>
+						<li><a id="v6_3" class="menulink"><i id="b6_3" class="fa fa-square-o faCB"></i>  Correction</a></li>
+					</ul>
+				</li>
+				<li><a id="v7" href="#menu5" data-toggle="collapse" aria-expanded="false"><i id="b7" class="fa fa-square-o faCB"></i> Accuracy</a>
+					<ul id="menu5" class="collapse list-unstyled">
+						<li><a id="v7_1" class="menulink"><i id="b7_1" class="fa fa-square-o faCB"></i>  Introduction</a></li>
+						<li><a id="v7_2" class="menulink"><i id="b7_2" class="fa fa-square-o faCB"></i>  Accuracy</a></li>
+						<li><a id="v7_3" class="menulink"><i id="b7_3" class="fa fa-square-o faCB"></i>  Learning Activity</a></li>
+					</ul>
+				</li>
+				<li><a id="v8" href="#menu6" data-toggle="collapse" aria-expanded="false"><i id="b8" class="fa fa-square-o faCB"></i> Protection</a>
+					<ul id="menu6" class="collapse list-unstyled">
+						<li><a id="v8_1" class="menulink"><i id="b8_1" class="fa fa-square-o faCB"></i>  Introduction</a></li>
+						<li><a id="v8_2" class="menulink"><i id="b8_2" class="fa fa-square-o faCB"></i>  Care of Personal Data</a></li>
+						<li><a id="v8_3" class="menulink"><i id="b8_3" class="fa fa-square-o faCB"></i>  Important Tips</a></li>
+					</ul>
+				</li>
+				<li><a id="v9" href="#menu7" data-toggle="collapse" aria-expanded="false"><i id="b9" class="fa fa-square-o faCB"></i> Retention Limitation</a>
+					<ul id="menu7" class="collapse list-unstyled">
+						<li><a id="v9_1" class="menulink"><i id="b9_1" class="fa fa-square-o faCB"></i>  Introduction</a></li>
+						<li><a id="v9_2" class="menulink"><i id="b9_2" class="fa fa-square-o faCB"></i>  Retention Limitation</a></li>
+						<li><a id="v9_3" class="menulink"><i id="b9_3" class="fa fa-square-o faCB"></i>  Purposes of Retention</a></li>
+						<li><a id="v9_4" class="menulink"><i id="b9_4" class="fa fa-square-o faCB"></i>  Learning Activity</a></li>
+					</ul>
+				</li>
+				<li><a id="v10" href="#menu8" data-toggle="collapse" aria-expanded="false"><i id="b10" class="fa fa-square-o faCB"></i> Transfer Limitation</a>
+					<ul class="collapse list-unstyled">
+						<li><a id="v10_1" class="menulink"><i id="b10_1" class="fa fa-square-o faCB"></i>  Introduction</a></li>
+						<li><a id="v10_2" class="menulink"><i id="b10_2" class="fa fa-square-o faCB"></i>  Transfer Limitation</a></li>
+						<li><a id="v10_3" class="menulink"><i id="b10_3" class="fa fa-square-o faCB"></i>  Transfer of Personal Data Overseas</a></li>
+					</ul>
+				</li>
+				<li><a id="v11" href="#menu9" data-toggle="collapse" aria-expanded="false"><i id="b11" class="fa fa-square-o faCB"></i> Openness</a>
+					<ul class="collapse list-unstyled">
+						<li><a id="v11_1" class="menulink"><i id="b11_1" class="fa fa-square-o faCB"></i>  Introduction</a></li>
+						<li><a id="v11_2" class="menulink"><i id="b11_2" class="fa fa-square-o faCB"></i>  Openness</a></li>
+						<li><a id="v11_3" class="menulink"><i id="b11_3" class="fa fa-square-o faCB"></i>  Organisational Processes</a></li>
+					</ul>
+				</li>
+				<li><a id="v12" class="menulink"><i id="b12" class="fa fa-square-o faCB"></i>  Broad Exclusions to the PDPA</a> </li>
+				<li><a id="v13" class="menulink"><i id="b13" class="fa fa-square-o faCB"></i>  Learning Activity</a> </li>
+				<li><a id="v14" class="menulink"><i id="b14" class="fa fa-square-o faCB"></i>  Personal Data Collected Before the PDPA Took Effect</a> </li>
+				<li><a id="v15" class="menulink"><i id="b15" class="fa fa-square-o faCB"></i>  Summary</a> </li>
+
+			</ul>
+		</div>
+
+	</nav>
+
+
+	<div id="content" class="container-fluid"></div>
+
+	<div id="FooterNav1" >
+			<div id="FooterNavigation" class="footerWrapper">
+				<div class="col1"><a class="PrevBtn" id="PrevBtn"></a></div>
+				<div class="col3"><a class="NextBtn" id="NextBtn"></a></div>
+				<div class="col2"><div id="PageReader" class="PageReader">Page 0 of 0</div></div>
+			</div>
+		</div>
+
+
+		<!-- Glossary Popup --->
+		<div id="GlossaryPopUp" class="popup-wrap">
+		    <div class="popup-box">
+		      <h1>Glossary</h1>
+		      <h3>Click on a term/phrase to learn more about it.</h3>
+		      <a class="close-btn popup-close" href="#">x</a>
+
+			  <div class="tabMenu-container">
+				<div class="tab tab-vert">
+					<ul class="tab-legend">
+						  <li class="active">collection</li>
+						  <li>data intermediary</li>
+						  <li>disclosure</li>
+						  <li>individuals</li>
+						  <li>organisations</li>
+						  <li>personal data</li>
+						  <li>publicly available</li>
+						  <li>purposes</li>
+						  <li>reasonable</li>
+						  <li>specified messages</li>
+						  <li>use</li>
+					</ul>
+					<ul class="tab-content">
+						<li>
+							<h2>collection (of personal data): </h2>
+							<p>"Collection" refers to any act or set of acts through which an organisation obtains control over or possession of personal data. </p>
+						</li>
+
+						<li>
+							<h2>data intermediary:</h2>
+							<p>A data intermediary is defined as an organisation that processes personal data on behalf of another organisation.</p>
+						</li>
+
+						<li>
+							<h2>disclosure (of personal data): </h2>
+							<p>"Disclosure" refers to any act or set of acts by which an organisation discloses, transfers or otherwise makes available personal data that is under its control or in its possession to any other organisation. </p>
+						</li>
+
+						<li>
+							<h2>individuals: </h2>
+							<p>The PDPA defines an individual as "a natural person, whether living or deceased".</p>
+						</li>
+
+						<li>
+							<h2>organisations: </h2>
+							<p>The term "organisation" broadly covers natural persons, corporate bodies (such as companies), unincorporated bodies of persons (such as associations or university student organisations), regardless of whether they are formed or recognised under the law of Singapore and regardless of whether they are residents or have an office or place of business in Singapore.</p>
+						</li>
+
+						<li>
+							<h2>personal data: </h2>
+							<p>All data, whether true or not, about an individual who can be identified </p>
+							<ol type="i" style="font-size: 0.7em">
+							<li>from that data;</li>
+							<li>or from that data and other information to which the organisation has or is likely to have access.</li>
+							</ol>
+							<p>Examples of personal data: IC/Matriculation number, CCTV footage, exam results, transaction records</p>
+						</li>
+
+						<li>
+							<h2>publicly available: </h2>
+							<p>Under the PDPA, “publicly available”, in relation to personal data about an individual, means personal data that is generally available to the public, and includes personal data which can be observed by reasonably expected means at a location or an event at which the individual appears and that is open to the public.</p>
+						</li>
+
+						<li>
+							<h2>purposes: </h2>
+							<p>The term "purpose" does not refer to activities which an organisation may intend to undertake but rather to its objectives or reasons.</p>
+						</li>
+
+						<li>
+							<h2>reasonable: </h2>
+							<p>Under the PDPA, organisations should act based on what a reasonable person would consider appropriate in the circumstances.</p>
+							<p>A “reasonable person” is judged based on an objective standard and can be said to be a person who exercises the appropriate care and judgement in the particular circumstances.</p>
+						</li>
+
+						<li>
+							<h2>specified messages: </h2>
+							<p>A message is a specified message if the purpose of the message, or one of its purposes, is: </p>
+							<ol type="a">
+							<li>to advertise, promote, or offer to supply or provide any of the following:
+								<ol type="i">
+									<li style="margin-left: -10px">goods or services; </li>
+									<li style="margin-left: -10px">land or an interest in land; or </li>
+									<li style="margin-left: -10px">a business opportunity or an investment opportunity. </li>
+								</ol>
+							</li>
+							<li>to advertise or promote a supplier/provider (or a prospective supplier/provider) of the items listed in sub-paragraphs (i) to (iii) above.</li>
+							</ol>
+						</li>
+
+						<li >
+							<h2>use (of personal data): </h2>
+							<p>"Use" refers to any act or set of acts by which an organisation employs personal data. </p>
+						</li>
+
+					</ul>
+				</div>
+		    </div>
+
+		    </div>
+		  </div>
+		  <!-- End of Glossary Popup --->
+
+
+			<!-- Instructional Video Popup --->
+			<div id="HelpPopUp" class="popup-wrap1">
+				 <div class="popup-box1">
+					 <a class="close-btn1 popup-close1" href="#">x</a>
+
+					 <div id="VideoContainer" class="VideoHelpPanel">
+						 <div id="container-video" class="VideoBox">
+						 <video id="vPlayer1" class="VideoSize video-js vjs-default-skin vjs-big-play-centered vjs-16-9" data-setup='{"controls": true, "autoplay": false, "preload": "auto", "fluid": true}'>
+							 <source src="videos/Instructions.mp4" type="video/mp4">
+						 </video>
+						 </div>
+					 </div>
+
+				 </div>
+			</div>
+ 			<!-- End of Instructional Video Popup --->
+
+
+
+</div>
+<!-- END MAIN CONTENT -->
+
+
+
+
+
+<audio id="VoiceOver"></audio>
+<audio id="VoiceOver1"></audio>
+<audio id="VoiceOver2"></audio>
+<audio id="VoiceOver3"></audio>
+<audio id="VoiceOver4"></audio>
+<audio id="VoiceOver5"></audio>
+
+
+<!-- Javascripts and Plugins --->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+<script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
+<script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/APIWrapper.js"></script>
+<script src="js/SCORMFunctions.js"></script>
+<script type="text/javascript" src="js/tabModule.js"></script>
+<script src="js/base.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,5 +1,4 @@
 ShortVideoMode(false);
-SetSlideData();
 UpdateProgress(PageNo, TopicNumber, PageInTopic, TotalPagesInTopic);
 
 console.log("Current Page: "+PageNo);
@@ -29,16 +28,12 @@ if(HygieneFactorMode == true)
 	}
 }
 
-$('.popup-close2').click(function(e) {
-	$('.popup-wrap2').fadeOut(500);
-	$('.popup-box2').removeClass('transform-in').addClass('transform-out');
-	e.preventDefault();
-});
 
 
 
-
-
+/*------------------------------------------------------------------
+/ CUSTOM FUNCTIONS (Updated 09/07/2018. Andy)
+-------------------------------------------------------------------*/
 function ShowTextPopup(PopUpHeader, PopUpContent, PopUpFooter)
 {
     $('.popup-wrap2').fadeIn(250);
@@ -58,6 +53,30 @@ function ShowTextPopup(PopUpHeader, PopUpContent, PopUpFooter)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------
+/ CUSTOM ACTIONS (Updated 17/07/2018. Andy)
+-------------------------------------------------------------------*/
+$('.popup-close2').click(function(e) {
+	$('.popup-wrap2').fadeOut(500);
+	$('.popup-box2').removeClass('transform-in').addClass('transform-out');
+	e.preventDefault();
+});
+
+$('.TextLink').click(function(e) {
+	$(this).css("color", "#d8a749");
+});
 
 
 

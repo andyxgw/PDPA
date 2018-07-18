@@ -502,6 +502,17 @@ a.ModalLink:hover
 	cursor: pointer;
 }
 
+a.TextLink
+{
+	color: #00ffff;
+	outline: 0;
+}
+
+a.TextLink:hover
+{
+	text-decoration: underline;
+}
+
 
 .ImageClick
 {

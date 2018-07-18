@@ -22,8 +22,8 @@
 						<img src="images/img_Mod02_P05a.png" />
 					</div>
 					<div class="RightPanel">
-						<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="no" /><label for="chk1" /><span class="cb_label">Yes</span><br />
-						<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="yes" /><label for="chk2" /><span class="cb_label">No</span>
+						<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="no" /><label for="chk1" /><span class="cb_label">Yes</span><br /> <!-- 0 -->
+						<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="yes" /><label for="chk2" /><span class="cb_label">No</span><!-- 1 -->
 					</div>
 				</fieldset>
 
@@ -32,8 +32,8 @@
 						<img src="images/img_Mod02_P05b.png" />
 					</div>
 					<div class="RightPanel">
-						<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="no" /><label for="chk1" /><span class="cb_label">Yes</span><br />
-						<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="yes" /><label for="chk2" /><span class="cb_label">No</span>
+						<span class="response"></span><input id="chk3" name="option1" type="checkbox" value="no" /><label for="chk3" /><span class="cb_label">Yes</span><br /><!-- 2 -->
+						<span class="response"></span><input id="chk4" name="option1" type="checkbox" value="yes" /><label for="chk4" /><span class="cb_label">No</span><!-- 3 -->
 					</div>
 				</fieldset>
 
@@ -42,28 +42,28 @@
 						<img src="images/img_Mod02_P05c.png" />
 					</div>
 					<div class="RightPanel">
-						<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
-						<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span>
+						<span class="response"></span><input id="chk5" name="option1" type="checkbox" value="yes" /><label for="chk5" /><span class="cb_label">Yes</span><br /><!-- 4 -->
+						<span class="response"></span><input id="chk6" name="option1" type="checkbox" value="no" /><label for="chk6" /><span class="cb_label">No</span><!-- 5 -->
 					</div>
 				</fieldset>
 
 				<fieldset id="question4" style="display: none;">
 					<div class="LeftPanel">
-						<img src="images/img_Mod02_P05c.png" />
+						<img src="images/img_Mod02_P05d.png" />
 					</div>
 					<div class="RightPanel">
-						<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
-						<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span>
+						<span class="response"></span><input id="chk7" name="option1" type="checkbox" value="yes" /><label for="chk7" /><span class="cb_label">Yes</span><br /><!-- 6 -->
+						<span class="response"></span><input id="chk8" name="option1" type="checkbox" value="no" /><label for="chk8" /><span class="cb_label">No</span><!-- 7 -->
 					</div>
 				</fieldset>
 
 				<fieldset id="question5" style="display: none;">
 					<div class="LeftPanel">
-						<img src="images/img_Mod02_P05c.png" />
+						<img src="images/img_Mod02_P05e.png" />
 					</div>
 					<div class="RightPanel">
-						<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="no" /><label for="chk1" /><span class="cb_label">Yes</span><br />
-						<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="yes" /><label for="chk2" /><span class="cb_label">No</span>
+						<span class="response"></span><input id="chk9" name="option1" type="checkbox" value="no" /><label for="chk9" /><span class="cb_label">Yes</span><br /><!-- 8 -->
+						<span class="response"></span><input id="chk10" name="option1" type="checkbox" value="yes" /><label for="chk10" /><span class="cb_label">No</span><!-- 9 -->
 					</div>
 				</fieldset>
 
@@ -116,17 +116,24 @@ ResponseContentList[4] = "This message provides a security code for the recipien
 IsMultipleSelectionQuiz(false);
 
 $('#SubmitBtn').click(function(e) {
-	QuizResponse = ValidateSingleChoiceQuiz("question"+MessageCount);
+	QuizResponse = ValidateSerialSingleChoiceQuiz("question"+MessageCount, MessageCount, 2);
 	ResponseContent = ResponseContentList[MessageCount-1];
 	ShowQuizPopup(QuizResponse, ResponseContent);
 	ShowNextQuestionButton(MessageCount, MaxMessageCount);
-
+	console.log(QuizResponse);
 });
 
 $('#NextMsgBtn').click(function(e) {
-	MessageCount = MessageCount + 1;
-	$("#question"+(MessageCount-1)).hide();
-	$("#question"+MessageCount).show();
+	if(MessageCount <= 5)
+	{
+		MessageCount = MessageCount + 1;
+		$("#question"+(MessageCount-1)).hide();
+		$("#question"+MessageCount).show();
+		EnableCheckbox("question"+MessageCount);
+		$("#NextMsgBtn").hide();
+		$("#ReviewBtn").hide();
+		$("#SubmitBtn").show();
+	}
 });
 </script>
 

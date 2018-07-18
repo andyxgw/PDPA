@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This is a Reload version 2.5.5 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="MANIFEST-1A3C4320468BD1AE844E1640B4858587" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <organizations default="ORG-842DDEA3C2E5AF4C78FC8BA0065CC6CE">
+    <organization identifier="ORG-842DDEA3C2E5AF4C78FC8BA0065CC6CE" structure="hierarchical">
+      <title>Module 1: The Data Protection Provisions</title>
+      <item identifier="ITEM-724564F9336B271C60C4ECE45FB0C47D" identifierref="RES-9FB870BE29704450AB2D97AF52A73E8A" isvisible="true">
+        <title>Module 1: The Data Protection Provisions/title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-9FB870BE29704450AB2D97AF52A73E8A" adlcp:scormtype="sco" type="webcontent" href="index.html">
+      <file href="index.html" />
+    </resource>
+  </resources>
+</manifest>
+

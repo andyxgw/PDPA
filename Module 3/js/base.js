@@ -384,7 +384,6 @@ function NavigatePage(varMode)
 	if(OkToProceed == true)
 	{
 		StopVideoOrAudio();
-		SetSlideData();
 		LoadPage();
 	}
 }

@@ -1,6 +1,6 @@
 ShortVideoMode(false);
-SetSlideData();
 UpdateProgress(PageNo, TopicNumber, PageInTopic, TotalPagesInTopic);
+CheckVideoVisibility();
 
 console.log("Current Page: "+PageNo);
 
@@ -341,7 +341,9 @@ $(".image-checkbox").on("click", function(e){
     e.preventDefault();
 });
 
-
+$('.TextLink').click(function(e) {
+	$(this).css("color", "#d8a749");
+});
 
 
 

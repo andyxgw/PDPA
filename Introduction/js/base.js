@@ -16,6 +16,8 @@ var TopicNumber;
 var TotalPagesInTopic;
 var PageInTopic;
 var PlayerID;
+var InitialPlayerID;
+var CurrPlayerID;
 
 var TotalPagesWithSubPages = 0;
 var PagesWithSubPagesArray = [];
@@ -85,32 +87,30 @@ $(document).ready(function(e) {
 		$('.popup-wrap').fadeIn(250);
 		$('.popup-box').removeClass('transform-out').addClass('transform-in');
 		$('#sidebar').removeClass('active');
-		e.preventDefault();
 		StopVideoOrAudio();
-
+		e.preventDefault();
 	  });
 
 	$('.popup-close').click(function(e) {
 		$('.popup-wrap').fadeOut(500);
 		$('.popup-box').removeClass('transform-in').addClass('transform-out');
-		e.preventDefault();
 		ResumeVideoOrAudio();
-
+		e.preventDefault();
 	});
 
 	$('#helpBtn').click(function(e) {
 		$('.popup-wrap1').fadeIn(250);
 		$('.popup-box1').removeClass('transform-out').addClass('transform-in');
 		StopVideoOrAudio();
-		$('#vPlayer1').trigger('play');
+		CurrPlayerID = "vPlayer1";
+		videojs(CurrPlayerID).play();
 		e.preventDefault();
 	});
-
 
 	$('.popup-close1').click(function(e) {
 		$('.popup-wrap1').fadeOut(500);
 		$('.popup-box1').removeClass('transform-in').addClass('transform-out');
-		$('#vPlayer1').trigger('pause');
+		videojs(CurrPlayerID).pause();
 		ResumeVideoOrAudio();
 		e.preventDefault();
 	});
@@ -265,11 +265,15 @@ function UpdateProgress(PageNo, TopicNumber, PageInTopic, TotalPagesInTopic)
   }
 	else
 	{
+			BoxNo = TopicNumber;
 			if(PageInTopic == TotalPagesInTopic)
 			{
-				BoxNo = TopicNo;
 				$("#b"+BoxNo+"_"+PageInTopic).attr("class", "fa fa-check-square-o faCB_visited");
 				$("#b"+BoxNo).attr("class", "fa fa-check-square-o faCB_visited");
+			}
+			else
+			{
+				$("#b"+BoxNo+"_"+PageInTopic).attr("class", "fa fa-check-square-o faCB_visited");
 			}
 	}
 }
@@ -400,7 +404,6 @@ function NavigatePage(varMode)
 	if(OkToProceed == true)
 	{
 		StopVideoOrAudio();
-		SetSlideData();
 		LoadPage();
 	}
 }
@@ -408,86 +411,36 @@ function NavigatePage(varMode)
 
 function StopVideoOrAudio()
 {
-	if ($('#vPlayer').length != 0 )
+	if(InitialPlayerID != "")
 	{
-		$('#vPlayer').trigger('pause');
-		PlayerID = '#vPlayer'
-	}
-
-	if ($('#vPlayer2').length != 0 )
-	{
-		$('#vPlayer2').pause;
-		PlayerID = '#vPlayer2'
-	}
-
-	if ($('#vPlayer3').length != 0 )
-	{
-		$('#vPlayer3').trigger('pause');
-		PlayerID = '#vPlayer3'
-	}
-
-	if ($('#vPlayer4').length != 0 )
-	{
-		$('#vPlayer4').trigger('pause');
-		PlayerID = '#vPlayer4'
-	}
-
-	if ($('#vPlayer5').length != 0 )
-	{
-		$('#vPlayer5').trigger('pause');
-		PlayerID = '#vPlayer5'
-	}
-
-	if ($('#vPlayer6').length != 0 )
-	{
-		$('#vPlayer6').trigger('pause');
-		PlayerID = '#vPlayer6'
-	}
-
-	if(document.getElementById('VoiceOver') != null) {
-		var audioVO = document.getElementById('VoiceOver');
-		audioVO.pause();
-	}
-
-	if(document.getElementById('VoiceOver1') != null) {
-		var audioVO1 = document.getElementById('VoiceOver1');
-		audioVO1.pause();
-	}
-
-	if(document.getElementById('VoiceOver2') != null) {
-		var audioVO2 = document.getElementById('VoiceOver2');
-		audioVO2.pause();
-	}
-
-	if(document.getElementById('VoiceOver3') != null) {
-		var audioVO3 = document.getElementById('VoiceOver3');
-		audioVO3.pause();
-	}
-
-	if(document.getElementById('VoiceOver4') != null) {
-		var audioVO4 = document.getElementById('VoiceOver4');
-		audioVO4.pause();
-	}
-
-	if(document.getElementById('VoiceOver5') != null) {
-		var audioVO5 = document.getElementById('VoiceOver5');
-		audioVO5.pause();
-	}
-
-	if(document.getElementById('VoiceOver6') != null) {
-		var audioVO6 = document.getElementById('VoiceOver6');
-		audioVO6.pause();
-	}
-
-	if(document.getElementById('VoiceOver7') != null) {
-		var audioVO7 = document.getElementById('VoiceOver7');
-		audioVO7.pause();
+		videojs(InitialPlayerID).pause();
 	}
 }
 
 function ResumeVideoOrAudio()
 {
-	$(PlayerID).trigger('play');
+	if(InitialPlayerID != "")
+	{
+		videojs(InitialPlayerID).play();
+	}
+}
+
+function CheckVideoVisibility()
+{
+	InitialPlayerID = "";
+
+	if($("#vPlayer").is(":visible"))
+	{
+		InitialPlayerID = "vPlayer";
+	}
+	if($("#vPlayer1").is(":visible"))
+	{
+		InitialPlayerID = "vPlayer1";
+	}
+	if($("#vPlayer2").is(":visible"))
+	{
+		InitialPlayerID = "vPlayer2";
+	}
 }
 
 
