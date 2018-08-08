@@ -10,8 +10,12 @@
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div id="VideoContainer" class="VideoPanel">
+		<div id="container-video" class="VideoBox">
+		<video id="vPlayer" class="VideoSize video-js vjs-default-skin vjs-big-play-centered vjs-16-9" poster="images/vp_P50.png" data-setup='{"controls": true, "autoplay": false, "preload": "auto", "fluid": true}'>
+			<source src="videos/vid_Mod01_P50.mp4" type="video/mp4">
+		</video>
+		</div>
 	</div>
 
 </div>
@@ -20,21 +24,19 @@
 
 <script>
 PageNo = 50;
-TopicNumber = 50;
+TopicNumber = 14;
 TotalPagesInTopic = 1;
 PageInTopic = 1;
 
 $('#TopicHeader').text("Personal Data Collected Before the PDPA Took Effect");
 
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
-
 </script>
 
 <script src="js/custom.js"></script>
-
+<script src="js/video.js"></script>
+<script>
+videojs("vPlayer");
+</script>
 
 </body>
 </html>

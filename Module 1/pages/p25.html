@@ -4,15 +4,31 @@
 <meta charset="UTF-8" />
 <title>Access &amp; Correction</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
+<link href="css/video-js.css" rel="stylesheet" />
 </head>
 
 <body>
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="TopPanel">
+			<div class="InfoText">
+				<h3>Access</h3>
+			</div>
+
+			<div id="VideoContainer" class="VideoPanel_Medium">
+				<div id="container-video" class="VideoBox">
+				<video id="vPlayer" class="VideoSize video-js vjs-default-skin vjs-big-play-centered vjs-16-9" poster="images/vp_P25.png" data-setup='{"controls": true, "autoplay": false, "preload": "auto", "fluid": true}'>
+					<source src="videos/vid_Mod01_P25.mp4" type="video/mp4">
+				</video>
+				</div>
+			</div>
+
+		</div>
+
 	</div>
+
 
 </div>
 
@@ -20,20 +36,20 @@
 
 <script>
 PageNo = 25;
-TopicNumber = 25;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 6;
+TotalPagesInTopic = 3;
+PageInTopic = 2;
 
 $('#TopicHeader').text("Access & Correction");
-
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
 
 </script>
 
 <script src="js/custom.js"></script>
+<script src="js/video.js"></script>
+<script>
+videojs("vPlayer");
+</script>
+
 
 
 </body>

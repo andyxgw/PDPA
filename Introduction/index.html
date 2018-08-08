@@ -5,8 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 	<title>PDPA</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/pdpa.css">
@@ -14,16 +14,11 @@
 	<link rel="stylesheet" href="css/modal.css">
 	<link rel="stylesheet" type="text/css" href="css/tabModule.css" />
 	<link rel="stylesheet" type="text/css" href="css/quiz.css" />
+	<link rel="stylesheet" href="css/page.css">
 	<link rel="stylesheet" href="css/video-js.css" />
 </head>
 
-<body>
-
-
-
-
-
-
+<body onLoad="doEntryTasks();" >
 
 <!-- MAIN CONTENT -->
 <div id="main_content">
@@ -32,7 +27,7 @@
 	<header id="header">
 		<div class="logo"><img src="images/ntu.png" class="ntulogo"  border="0" /></div>
 		<div id="TopicHeader"></div>
-		<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><i class="glyphicon glyphicon glyphicon-menu-hamburger"></i></button>
+		<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><i class="fa fa-bars"></i></button>
 		<div class="cleardiv"></div>
 	</header>
 	<!-- END HEADER -->
@@ -40,7 +35,7 @@
 	<!-- Navigation -->
 	<nav id="sidebar">
 		<div id="dismiss">
-			<i class="glyphicon glyphicon-remove"></i>
+			<i class="fa fa-times"></i>
 		</div>
 
 		<div class="sidebar-header">
@@ -285,8 +280,7 @@
 
 
 <!-- Javascripts and Plugins --->
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/jquery.ui.touch-punch.min.js"></script>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>

@@ -2,16 +2,41 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Retention Limitation</title>
+<title>Consent</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
+<link rel="stylesheet" type="text/css" href="css/quiz.css" />
 </head>
 
 <body>
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="QuizPanel">
+			<h3>Learning Activity</h3>
+			<p>Answer the question below.</p>
+			<p>Select your answer, then click “Submit”.</p>
+			<div class="QuizDivider"></div>
+			<div class="QuizGraphic">
+				<p>ABC Club has collected the personal data of foreign students who joined the Club
+during their summer exchange programme with the University. The duration of the
+programme was six months. The Club retains and continues to use the data (with the
+consent of the individuals), even after the students have completed the programme,
+for the purpose of maintaining the network of the club alumni.
+</p>
+<p>Is the Club allowed to retain the personal data?</p>
+
+			</div>
+			<div class="QuizOptions">
+			<fieldset id="question1">
+			<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+			<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span>
+			</fieldset>
+		</div>
+
+			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			<div class="clearfix"></div>
+		</div>
 	</div>
 
 </div>
@@ -20,21 +45,37 @@
 
 <script>
 PageNo = 41;
-TopicNumber = 41;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 9;
+TotalPagesInTopic = 4;
+PageInTopic = 4;
 
 $('#TopicHeader').text("Retention Limitation");
-
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
 
 </script>
 
 <script src="js/custom.js"></script>
 
+<script>
+var QuizResponse;
+var ResponseContent;
+var QuizStatus;
+
+IsQuizPage();
+IsMultipleSelectionQuiz(false);
+
+$('#SubmitBtn').click(function(e) {
+	ValidateStatus = ValidateSelection("question1");
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateSingleChoiceQuiz("question1");
+		ResponseContent = "The Club has a valid purpose for retaining personal data.  However, it should set a period for how long the personal data would be kept. ";
+		ShowQuizPopup(QuizResponse, ResponseContent);
+	}
+	else {
+		ShowQuizPopup("NA", "");
+	}
+});
+</script>
 
 </body>
 </html>

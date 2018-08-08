@@ -22,7 +22,7 @@ input[type="checkbox"] + label
 
 	<div class="InfoTextPanel StandardGrey">
 		<div class="QuizPanel">
-			<p>Is the information below considered personal data?</p>
+			<p>What should Billy's reply be in this situation?</p>
 			<p>Select your answer, then click “Submit”.</p>
 			<div class="QuizDivider"></div>
 			<div class="QuizGraphic">
@@ -68,13 +68,23 @@ if($("#vPlayer").length > 0)
 var QuizResponse;
 var ResponseContent;
 var QuizStatus;
+var ValidateStatus;
 
+IsQuizPage();
 IsMultipleSelectionQuiz(false);
 
 $('#SubmitBtn').click(function(e) {
-	QuizResponse = ValidateSingleChoiceQuiz("question1");
-	ResponseContent = "The PDPA obligations apply to <b><u>all</u></b> organisations regardless of whether they are incorporated or unincorporated and regardless of whether they are formed or recognised under the law of Singapore. ";
-	ShowQuizPopup(QuizResponse, ResponseContent);
+	ValidateStatus = ValidateSelection("question1");
+	
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateSingleChoiceQuiz("question1");
+		ResponseContent = "The PDPA obligations apply to <b><u>all</u></b> organisations regardless of whether they are incorporated or unincorporated and regardless of whether they are formed or recognised under the law of Singapore. ";
+		ShowQuizPopup(QuizResponse, ResponseContent);
+	}
+	else {
+		ShowQuizPopup("NA", "");
+	}
 });
 </script>
 

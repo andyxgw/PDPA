@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Transfer Limitation</title>
+<title>Retention Limitation</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
 </head>
 
@@ -10,8 +10,31 @@
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="TopPanel">
+			<div class="InfoText">
+				<h3>Transfer of Personal Data Overseas</h3>
+				<p>Be aware that transferring personal data out of Singapore is not limited to just the <b><u>physical</u></b> transfer of the personal data to the intended recipient.</p>
+				<p>Click on each picture to see examples of situations in which personal data can be transferred overseas.</p>
+			</div>
+			<div class="CanvasPanel">
+				<div class="CanvasImg" style="top: 14em; left: 21em;"><img id="C1" class="ClickableImg" src="images/btn_Mod01_P44a_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P44a_Focusing.png" data-visitedimg="btn_Mod01_P44a_Visited.png"/></div>
+				<div class="CanvasImg" style="top: 14em; left: 31em;"><img id="C2" class="ClickableImg" src="images/btn_Mod01_P44b_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P44b_Focusing.png" data-visitedimg="btn_Mod01_P44b_Visited.png"/></div>
+				<div class="CanvasImg" style="top: 14em; left: 41em;"><img id="C3" class="ClickableImg" src="images/btn_Mod01_P44c_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P44c_Focusing.png" data-visitedimg="btn_Mod01_P44c_Visited.png"/></div>
+
+				<!--
+				<div id="VL1" class="VertLine" style="top: 17.5em; left: 24em;"></div>
+				<div id="VL2" class="VertLine" style="top: 17.5em; left: 34em;"></div>
+				<div id="VL3" class="VertLine" style="top: 17.5em; left: 44em;"></div>
+			-->
+
+				<div id="Box1" class="CanvasBox" style="top: 19em; left: 12em;">Sending emails/letters/fax messages containing personal data overseas</div>
+				<div id="Box2" class="CanvasBox" style="top: 19em; left: 12em;">Passing the recipient physical storage media such as thumb drives and CD, which contain personal data</div>
+				<div id="Box3" class="CanvasBox" style="top: 19em; left: 12em;">Verbally providing personal data to a recipient overseas through a phone call, including leaving a voice message</div>
+			</div>
+		</div>
+
+
 	</div>
 
 </div>
@@ -20,21 +43,25 @@
 
 <script>
 PageNo = 44;
-TopicNumber = 44;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 10;
+TotalPagesInTopic = 3;
+PageInTopic = 3;
 
 $('#TopicHeader').text("Transfer Limitation");
-
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
-
 </script>
 
 <script src="js/custom.js"></script>
 
+<script>
+ToggleHoverState($("#C1").attr("id"), $("#C1").attr("src"), $("#C1").attr("data-hoverimg"));
+ToggleHoverState($("#C2").attr("id"), $("#C2").attr("src"), $("#C2").attr("data-hoverimg"));
+ToggleHoverState($("#C3").attr("id"), $("#C3").attr("src"), $("#C3").attr("data-hoverimg"));
+
+ActivateClickableImage("#C1", "#Box1", $("#C1").attr("data-hoverimg"));
+ActivateClickableImage("#C2", "#Box2", $("#C2").attr("data-hoverimg"));
+ActivateClickableImage("#C3", "#Box3", $("#C3").attr("data-hoverimg"));
+
+</script>
 
 </body>
 </html>

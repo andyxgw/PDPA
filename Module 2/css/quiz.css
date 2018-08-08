@@ -86,8 +86,6 @@
 	font-size: 1.1em;
 }
 
-
-
 .QuizGraphic table tr td
 {
 	text-align: center;
@@ -126,6 +124,18 @@ input[type="checkbox"]+ label:after {
     content: "";
 		position: absolute;
     width: 0;
+    height: 1.25em;
+    background: #000000;
+  opacity: 0;
+	left: 0%;
+  -webkit-transition: all ease-out 100ms;
+  transition: all ease-out 100ms;
+}
+/*
+input[type="checkbox"]+ label:after {
+    content: "";
+		position: absolute;
+    width: 0;
     height: 1em;
     border-bottom: 0.3em solid #22b573;
     border-left: 0.3em solid #22b573;
@@ -139,14 +149,79 @@ input[type="checkbox"]+ label:after {
   -webkit-transition: all ease-out 200ms;
   transition: all ease-out 200ms;
 }
+*/
 
+input[type="checkbox"]+ label.CorrectAnswer:after {
+    content: "";
+		position: absolute;
+    width: 0;
+    height: 1em;
+    border-bottom: 0.3em solid #22b573;
+    border-left: 0.3em solid #22b573;
+    top: 25%;
+    left: 50%;
+		-webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  opacity: 0;
+  -webkit-transition: all ease-out 100ms;
+  transition: all ease-out 100ms;
+}
+
+input[type="checkbox"]+ label.CorrectAnswer1:after {
+    content: "";
+		position: absolute;
+    width: 0;
+  opacity: 0;
+	height: 1em;
+	border-bottom: 0.3em solid #22b573;
+	border-left: 0.3em solid #22b573;
+	top: 25%;
+	left: 50%;
+	-webkit-transform-origin: bottom left;
+				transform-origin: bottom left;
+-webkit-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+opacity: 0;
+-webkit-transition: all ease-out 100ms;
+transition: all ease-out 100ms;
+}
+
+input[type="checkbox"]:checked + label {
+  border: 0.2em solid #FFFFFF;
+}
+
+input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+	width: 1.25em;
+	/*width: 0.95em;
+	margin-left: 0.2em;
+	margin-top: 0.2em;*/
+}
+
+input[type="checkbox"]:checked + label.CorrectAnswer1:after {
+  opacity: 1;
+  width: 2.1em;
+	background: transparent;
+}
+
+
+input.CorrectInput[type="checkbox"]:checked + label:after {
+	opacity: 1;
+  width: 2.1em;
+	background: transparent;
+}
+/*
 input[type="checkbox"]:checked + label {
   border: 0.2em solid #22b573;
 }
+
 input[type="checkbox"]:checked + label:after {
   opacity: 1;
   width: 2.1em;
 }
+*/
 
 #chk, #chk1, #chk2, #chk3, #chk4, #chk5, #chk6, #chk7, #chk8,#chk9, #chk10 {
   display: none;
@@ -161,12 +236,16 @@ input[type="checkbox"]:checked + label:after {
     margin-bottom: 0;
     outline: 0;
 }
+
 .image-checkbox input[type="checkbox"] {
     display: none;
 }
+
 .image-checkbox-checked {
-    border-color: #22b573;
+    /*border-color: #22b573; */
+		border-color: #000000;
 }
+
 .image-checkbox .fta {
   position: absolute;
   color: #22b573;
@@ -175,9 +254,27 @@ input[type="checkbox"]:checked + label:after {
 	font-size: 1.2em;
 	margin-top: -6.8em;
 	margin-left: 8.3em;
+	display: none;
 }
-.image-checkbox-checked .fta {
-  display: block !important;
+
+.image-checkbox-checked-correct {
+    /* border-color: #22b573; */
+
+}
+
+.image-checkbox-checked-correct .fta {
+  position: absolute;
+  color: #bcbbbb;
+  background-color: #888888;
+  padding: 0.3em;
+	font-size: 1.2em;
+	margin-top: -6.8em;
+	margin-left: 8.3em;
+	display: none;
+}
+
+.image-checkbox-checked .fta, .image-checkbox-checked-correct .fta {
+  /*display: block !important; */
 }
 
 .image-text
@@ -272,7 +369,6 @@ button.ReviewBtn:active {
     transform: scale(0.99);
 }
 
-
 button.NextMsgBtn {
     /* display: inline-block; */
 		display: none;
@@ -308,8 +404,7 @@ button.NextMsgBtn:active {
 }
 
 
-button.CloseBtn
-{
+button.CloseBtn {
 		display: inline-block;
     border: none;
     padding: 1em 2em;
@@ -328,24 +423,19 @@ button.CloseBtn
     -moz-appearance: none;
 }
 
-button.CloseBtn:hover, button.CloseBtn:focus
-{
+button.CloseBtn:hover,
+button.CloseBtn:focus {
     background: #d71440;
 }
 
-button.CloseBtn:focus
-{
+button.CloseBtn:focus {
     outline: 1px solid #fff;
     outline-offset: -4px;
 }
 
-button.CloseBtn:active
-{
+button.CloseBtn:active {
     transform: scale(0.99);
 }
-
-
-
 
 
 
@@ -353,6 +443,7 @@ button.CloseBtn:active
 {
 	position: absolute;
 	margin-top: 0.1em;
+	margin-left: -0.4em;
 }
 
 .response_single
@@ -364,7 +455,7 @@ button.CloseBtn:active
 
 img.responseImg
 {
-	width: 2em;
+	width: 3em;
 	height: auto;
 }
 
@@ -377,8 +468,8 @@ img.responseImg1
 
 img.quizImg
 {
-	margin-left: 1em;
-	width: 1.1em;
+	margin-right: 0.2em;
+	width: 1.2em;
 	height: auto;
 }
 
@@ -393,4 +484,9 @@ img.quizImg
 {
 	font-size: 0.9em;
 	margin-top: -1em;
+}
+
+.SelectedInput
+{
+	background: #000000;
 }

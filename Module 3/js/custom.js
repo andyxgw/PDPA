@@ -75,7 +75,8 @@ $('.popup-close2').click(function(e) {
 });
 
 $('.TextLink').click(function(e) {
-	$(this).css("color", "#d8a749");
+	$(this).addClass("TextLinkVisited");
+	//$(this).css("color", "#d8a749");
 });
 
 

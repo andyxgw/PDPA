@@ -10,8 +10,25 @@
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="TopPanel">
+			<div class="InfoText">
+				<h3>Disclosing Personal Data to Third Parties</h3>
+				<p>An organisation must practise duty of care when disclosing personal data to third parties.</p>
+				<p>Click on each picture to learn what an organisation should do.</p>
+			</div>
+			<div class="CanvasPanel">
+				<div class="CanvasImg" style="left: 20em;"><img id="C1" class="ClickableImg" src="images/btn_Mod01_P15a_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P15a_Focusing.png" data-visitedimg="btn_Mod01_P15a_Visited.png"/></div>
+				<div class="CanvasImg" style="left: 40em;"><img id="C2" class="ClickableImg" src="images/btn_Mod01_P15b_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P15b_Focusing.png" data-visitedimg="btn_Mod01_P15b_Visited.png"/></div>
+
+				<div id="VL1" class="VertLine" style="top: 17.9em; left: 23em;"></div>
+				<div id="VL2" class="VertLine" style="top: 17.9em; left: 43em;"></div>
+
+				<div id="Box1" class="CanvasBox" style="top: 17em; left: 11em;">The organisation <b><u>must notify</u></b> the third party of the purposes for which the personal data may be used and <b></u>obtain</u></b> the individual’s consent prior to disclosure to the third party.</div>
+				<div id="Box2" class="CanvasBox" style="top: 17em; left: 11em;">The organisation <b><u>must not</u></b> disclose more information than is agreed to by the individual. </div>
+
+			</div>
+		</div>
 	</div>
 
 </div>
@@ -20,9 +37,9 @@
 
 <script>
 PageNo = 15;
-TopicNumber = 15;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 3;
+TotalPagesInTopic = 7;
+PageInTopic = 6;
 
 $('#TopicHeader').text("Consent");
 
@@ -34,7 +51,15 @@ if($("#vPlayer").length > 0)
 </script>
 
 <script src="js/custom.js"></script>
+<script>
+SetClickableArea(2);
 
+ToggleHoverState($("#C1").attr("id"), $("#C1").attr("src"), $("#C1").attr("data-hoverimg"));
+ToggleHoverState($("#C2").attr("id"), $("#C2").attr("src"), $("#C2").attr("data-hoverimg"));
+
+ActivateClickableImage("#C1", "#Box1", "btn_Mod01_P15a_Focusing.png");
+ActivateClickableImage("#C2", "#Box2", "btn_Mod01_P15b_Focusing.png");
+</script>
 
 </body>
 </html>

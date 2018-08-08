@@ -61,16 +61,26 @@ function ShowQuizPopup(QuizResponse, PopUpContent)
 
 	if(QuizResponse == true) {
 		PopUpHeader = "THAT IS CORRECT!";
-		$("#Q_header").html(PopUpHeader + RightIcon);
+		$("#Q_header").html(RightIcon + PopUpHeader);
+		$("#SubmitBtn").hide();
+		$("#ReviewBtn").show();
+	}
+	else if(QuizResponse == false){
+		PopUpHeader = "THAT IS INCORRECT!";
+		$("#Q_header").html(WrongIcon + PopUpHeader);
+		$("#SubmitBtn").hide();
+		$("#ReviewBtn").show();
 	}
 	else {
-		PopUpHeader = "THAT IS INCORRECT!";
-		$("#Q_header").html(PopUpHeader + WrongIcon);
+		PopUpContent = "Please indicate your selection.";
+		$("#Q_header").html("");
 	}
-
 	$("#Q_content").html(PopUpContent);
-	$("#SubmitBtn").hide();
-	$("#ReviewBtn").show();
+}
+
+function IsQuizPage()
+{
+	DisableNextBtn();
 }
 
 function IsMultipleSelectionQuiz(QuizBoolean)
@@ -163,38 +173,49 @@ function ValidateSingleChoiceQuiz(QuestionID)
 	var options;
 	var i;
 	var correct = false;
+	var selection = 0;
 
 	options = document.getElementById(QuestionID).getElementsByTagName("input");
 
 	for(i = 0; i < options.length; i++)
 	{
-		if(options[i].value == "yes" && options[i].checked == true)
-		{
-			correct = true;
-			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
-		}
-		if(options[i].value == "no" && options[i].checked == true)
-		{
-			correct = false;
-			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
-		}
-		if(options[i].value == "yes" && options[i].checked == false)
-		{
-			correct = false;
-			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
-		}
-		if(options[i].value == "no" && options[i].checked == false)
-		{
-			correct = true;
-			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
-		}
 		if(options[i].checked == false)
 		{
 			correct = false;
 		}
+		if(options[i].value == "yes" && options[i].checked == true)
+		{
+			correct = true;
+			options[i].nextSibling.style.border = "0.2em solid #22b573";
+			options[i].nextSibling.className += " CorrectAnswer1 SelectedInput";
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerCorrectAnswerRight.png" class="responseImg" />';
+		}
+		if(options[i].value == "no" && options[i].checked == true)
+		{
+			correct = false;
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerCorrectAnswerRight.png" class="responseImg" />';
+		}
+		if(options[i].value == "yes" && options[i].checked == false)
+		{
+			correct = false;
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
+			options[i].checked = true;
+			options[i].nextSibling.style.border = "0.2em solid #22b573";
+			options[i].className += " CorrectInput";
+			options[i].nextSibling.className += " CorrectAnswer";
+		}
+		if(options[i].value == "no" && options[i].checked == false)
+		{
+			correct = true;
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
+		}
 
 		options[i].disabled =true;
 	}
+
+	EnableNextBtn();
 
 	if(correct)
 	{
@@ -205,7 +226,7 @@ function ValidateSingleChoiceQuiz(QuestionID)
 	}
 }
 
-function ValidateSerialSingleChoiceQuiz(QuestionID, SetNo, NumOptions)
+function ValidateSerialSingleChoiceQuiz(QuestionID, NumOfQuestion, SetNo, NumOptions)
 {
 	var options;
 	var i;
@@ -225,28 +246,38 @@ function ValidateSerialSingleChoiceQuiz(QuestionID, SetNo, NumOptions)
 		if(options[i].value == "yes" && options[i].checked == true)
 		{
 			correct = true;
-			document.getElementsByClassName("response")[StartIndex].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
+			options[i].nextSibling.style.border = "0.2em solid #22b573";
+			options[i].nextSibling.className += " CorrectAnswer1 SelectedInput";
+			//document.getElementsByClassName("response")[StartIndex].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
 		}
 		if(options[i].value == "no" && options[i].checked == true)
 		{
 			correct = false;
-			document.getElementsByClassName("response")[StartIndex].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
+			//document.getElementsByClassName("response")[StartIndex].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
 		}
 		if(options[i].value == "yes" && options[i].checked == false)
 		{
 			correct = false;
-			document.getElementsByClassName("response")[StartIndex].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
+			options[i].checked = true;
+			options[i].nextSibling.style.border = "0.2em solid #22b573";
+			options[i].className += " CorrectInput";
+			options[i].nextSibling.className += " CorrectAnswer";
+			//document.getElementsByClassName("response")[StartIndex].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
 		}
 		if(options[i].value == "no" && options[i].checked == false)
 		{
 			correct = true;
-			document.getElementsByClassName("response")[StartIndex].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
+			//document.getElementsByClassName("response")[StartIndex].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
 		}
-
 
 		StartIndex++;
 		options[i].disabled =true;
 
+	}
+
+	if(SetNo == NumOfQuestion)
+	{
+		EnableNextBtn();
 	}
 
 	if(correct)
@@ -254,6 +285,30 @@ function ValidateSerialSingleChoiceQuiz(QuestionID, SetNo, NumOptions)
 		return true;
 	}
 	else {
+		return false;
+	}
+}
+
+function ValidateSelection(QuestionID)
+{
+	var selection = 0;
+
+	options = document.getElementById(QuestionID).getElementsByTagName("input");
+
+	for(i = 0; i < options.length; i++)
+	{
+		if(options[i].checked == true)
+		{
+			selection = selection + 1;
+		}
+	}
+
+	if(selection > 0)
+	{
+		return true;
+	}
+	else
+	{
 		return false;
 	}
 }

@@ -12,8 +12,8 @@
 
 	<div class="InfoTextPanel StandardGrey">
 		<div class="QuizPanel">
-			<p>Is the information below considered personal data?</p>
-			<p>Select your answer, then click “Submit”.</p>
+			<p>Which of the following are considered personal data?</p>
+			<p>Select your answer(s) by clicking on the image(s), then click “Submit”.</p>
 			<div class="QuizDivider"></div>
 			<div>
 				<fieldset id="question1">
@@ -110,13 +110,24 @@ if($("#vPlayer").length > 0)
 var QuizResponse;
 var ResponseContent;
 var QuizStatus;
+var ValidateStatus;
 
+IsQuizPage();
 IsMultipleSelectionQuiz(true);
 
 $('#SubmitBtn').click(function(e) {
-	QuizResponse = ValidateImageCheckboxQuiz("question1");
-	ResponseContent = "All of the above are personal data.";
-	ShowQuizPopup(QuizResponse, ResponseContent);
+	ValidateStatus = ValidateSelection("question1");
+
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateImageCheckboxQuiz("question1");
+		ResponseContent = "All of the above are personal data.";
+		ShowQuizPopup(QuizResponse, ResponseContent);
+	}
+	else
+	{
+		ShowQuizPopup("NA", "");
+	}
 });
 </script>
 

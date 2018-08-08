@@ -4,14 +4,33 @@
 <meta charset="UTF-8" />
 <title>Consent</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
+<link rel="stylesheet" type="text/css" href="css/quiz.css" />
 </head>
 
 <body>
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="QuizPanel">
+			<h3>Provision of Consent: Learning Activity 1</h3>
+			<p>Answer the question below.</p>
+			<p>Select your answer, then click “Submit”.</p>
+			<div class="QuizDivider"></div>
+			<div class="QuizGraphic">
+				<p>The Dance Club holds free Zumba classes which are open to employees, students and members of the public. The Club plans to have some photos taken during the classes and upload the photos to its Facebook page and website.</p>
+				<p>Is the Club required to seek consent from the participants before uploading the photos?</p>
+			</div>
+			<div class="QuizOptions">
+			<fieldset id="question1">
+			<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+			<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span>
+			</fieldset>
+		</div>
+
+			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			<div class="clearfix"></div>
+		</div>
 	</div>
 
 </div>
@@ -22,7 +41,7 @@
 PageNo = 7;
 TopicNumber = 3;
 TotalPagesInTopic = 7;
-PageInTopic = 5;
+PageInTopic = 2;
 
 $('#TopicHeader').text("Consent");
 
@@ -35,6 +54,27 @@ if($("#vPlayer").length > 0)
 
 <script src="js/custom.js"></script>
 
+<script>
+var QuizResponse;
+var ResponseContent;
+var QuizStatus;
+
+IsQuizPage();
+IsMultipleSelectionQuiz(false);
+
+$('#SubmitBtn').click(function(e) {
+	ValidateStatus = ValidateSelection("question1");
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateSingleChoiceQuiz("question1");
+		ResponseContent = "An image of an identifiable individual captured on a photograph is considered as the individual’s personal data.<br/><br/>The Data Protection Provisions require an organisation to obtain the consent of the individual before collecting, using or disclosing his/her personal data.";
+		ShowQuizPopup(QuizResponse, ResponseContent);
+	}
+	else {
+		ShowQuizPopup("NA", "");
+	}
+});
+</script>
 
 </body>
 </html>

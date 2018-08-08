@@ -4,15 +4,31 @@
 <meta charset="UTF-8" />
 <title>Consent</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
+<link href="css/video-js.css" rel="stylesheet" />
 </head>
 
 <body>
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="TopPanel">
+			<div class="InfoText">
+				<h3>Withdrawal of Consent</h3>
+			</div>
+
+			<div id="VideoContainer" class="VideoPanel_Medium">
+				<div id="container-video" class="VideoBox">
+				<video id="vPlayer" class="VideoSize video-js vjs-default-skin vjs-big-play-centered vjs-16-9" poster="images/vp_P11.png" data-setup='{"controls": true, "autoplay": false, "preload": "auto", "fluid": true}'>
+					<source src="videos/vid_Mod01_P11.mp4" type="video/mp4">
+				</video>
+				</div>
+			</div>
+
+		</div>
+
 	</div>
+
 
 </div>
 
@@ -20,21 +36,19 @@
 
 <script>
 PageNo = 11;
-TopicNumber = 11;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 3;
+TotalPagesInTopic = 7;
+PageInTopic = 4;
 
 $('#TopicHeader').text("Consent");
-
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
 
 </script>
 
 <script src="js/custom.js"></script>
-
+<script src="js/video.js"></script>
+<script>
+videojs("vPlayer");
+</script>
 
 </body>
 </html>

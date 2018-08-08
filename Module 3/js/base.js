@@ -1,5 +1,5 @@
 var HygieneFactorMode = false;
-var SubPagesMode = true;
+var SubPagesMode = false;
 var CheckBoxMode = true;
 var TrackProgressInTopic = false;
 var HeaderNavigation = false;
@@ -75,11 +75,17 @@ $(document).ready(function(e) {
 	$('.menulink').click(function(e) {
 		var ClickedID = $(this).attr("id");
 		var NavPageID = ClickedID.substring(1);
-		NavigatePage(NavPageID);
+		VerifyToProceed(NavPageID);
 	});
 
-	LoadPage();
 	tabModule.init();
+	DisableRightClick(true);
+
+	$('#homeBtn').click(function(e) {
+		//$('#sidebar').removeClass('active');
+		NavigatePage(StartPageNo);
+		e.preventDefault();
+	  });
 
 	$('#glossaryBtn').click(function(e) {
 		$('.popup-wrap').fadeIn(250);
@@ -176,6 +182,15 @@ function disableScrollBars() {
 	document.body.scroll = "no"; // ie only
 }
 
+function DisableRightClick(booleanOption)
+{
+	if(booleanOption == true)
+	{
+		document.addEventListener("contextmenu", function(e){
+			e.preventDefault();
+		}, false);
+	}
+}
 
 
 // Load Specific Page
@@ -258,7 +273,13 @@ function UpdateProgress(PageNo, TopicNumber, PageInTopic, TotalPagesInTopic)
 	}
 }
 
-
+function GetProgress(IndexPageNo)
+{
+	if(SubPagesMode == false)
+	{
+		$("#b" + IndexPageNo).attr("class", "fa fa-check-square-o faCB_visited");
+	}
+}
 
 function DisablePrevBtn()
 {
@@ -388,6 +409,13 @@ function NavigatePage(varMode)
 	}
 }
 
+function VerifyToProceed(DestPageNo)
+{
+	if(PagesArray[DestPageNo-1] == 1)
+	{
+		NavigatePage(DestPageNo);
+	}
+}
 
 function StopVideoOrAudio()
 {

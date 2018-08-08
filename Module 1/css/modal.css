@@ -1,4 +1,4 @@
-.popup-wrap, .popup-wrap1 {
+.popup-wrap, .popup-wrap1, .popup-wrap2, .popup-wrap3 {
   width:100%;
   height:100%;
   display:none;
@@ -6,21 +6,10 @@
   top:0px;
   left:0px;
   content:'';
-  background:rgba(0,0,0,0.85);
+  background:rgba(0,0,0,0.8);
    z-index: 999998;
 }
 
-.popup-wrap2 {
-  width:100%;
-  height:100%;
-  display:none;
-  position:absolute;
-  top:0px;
-  left:0px;
-  content:'';
-  background:rgba(0,0,0,0.9);
-   z-index: 999998;
-}
 
 .popup-box, .popup-box1{
   width:80em;
@@ -38,7 +27,7 @@
 font-size: 1.5em;
 }
 
-.popup-box2 {
+.popup-box2, .popup-box3 {
   width:76em;
   padding:1em 0em 0em 0em;
   transform:translate(-50%, -50%) scale(0.5);
@@ -54,7 +43,7 @@ font-size: 1.5em;
 font-size: 1.5em;
 }
 
- .popup-box .close-btn, .popup-box1 .close-btn1, .popup-box2 .close-btn2 {
+ .popup-box .close-btn, .popup-box1 .close-btn1, .popup-box2 .close-btn2, .popup-box3 .close-btn3 {
     width:1.2em;
     height:1.2em;
 	font-size: 2em;
@@ -87,7 +76,12 @@ font-size: 1.5em;
   background: rgba(215, 20, 64, 1);
 }
 
-.popup-box h1, .popup-box1 h1, .popup-box2 h1
+.popup-box3 .close-btn3:hover
+{
+  background: rgba(215, 20, 64, 1);
+}
+
+.popup-box h1, .popup-box1 h1, .popup-box2 h1, .popup-box3 h1
 {
 	font-size: 2.1em;
 	text-align: left;
@@ -95,7 +89,7 @@ font-size: 1.5em;
 	color: #D71440;
 }
 
-.popup-box h3, .popup-box1 h3, .popup-box2 h3
+.popup-box h3, .popup-box1 h3, .popup-box2 h3, .popup-box3 h3
 {
 	font-size: 1.2em;
 	text-align: left;

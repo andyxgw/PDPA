@@ -2,16 +2,39 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Purpose Limitation</title>
+<title>Consent</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
+<link rel="stylesheet" type="text/css" href="css/quiz.css" />
 </head>
 
 <body>
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="QuizPanel">
+			<h3> Learning Activity</h3>
+			<p>Answer the question below.</p>
+			<p>Select your answer, then click “Submit”.</p>
+			<div class="QuizDivider"></div>
+			<div class="QuizGraphic">
+				<p>Fatimah signs up for a dance class organised by the University’s dance club.
+The club makes it a condition that participants must agree to receiving
+marketing messages about its future dance events, otherwise, it will not
+accept their sign-ups. However, Fatimah is not keen to receive such
+marketing messages.</p>
+				<p>Can the dance club refuse Fatimah’s sign-up?</p>
+			</div>
+			<div class="QuizOptions">
+			<fieldset id="question1">
+			<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="no" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+			<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="yes" /><label for="chk2" /><span class="cb_label">No</span>
+			</fieldset>
+		</div>
+
+			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			<div class="clearfix"></div>
+		</div>
 	</div>
 
 </div>
@@ -20,9 +43,9 @@
 
 <script>
 PageNo = 23;
-TopicNumber = 23;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 5;
+TotalPagesInTopic = 3;
+PageInTopic = 3;
 
 $('#TopicHeader').text("Purpose Limitation");
 
@@ -35,6 +58,27 @@ if($("#vPlayer").length > 0)
 
 <script src="js/custom.js"></script>
 
+<script>
+var QuizResponse;
+var ResponseContent;
+var QuizStatus;
+
+IsQuizPage();
+IsMultipleSelectionQuiz(false);
+
+$('#SubmitBtn').click(function(e) {
+	ValidateStatus = ValidateSelection("question1");
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateSingleChoiceQuiz("question1");
+		ResponseContent = "Organisations are not allowed to compel an individual to consent to the collection, use and disclosure of personal data beyond what is reasonable to provide the product or service.";
+		ShowQuizPopup(QuizResponse, ResponseContent);
+	}
+	else {
+		ShowQuizPopup("NA", "");
+	}
+});
+</script>
 
 </body>
 </html>

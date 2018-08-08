@@ -4,14 +4,49 @@
 <meta charset="UTF-8" />
 <title>Protection</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
+<link rel="stylesheet" type="text/css" href="css/quiz.css" />
 </head>
 
 <body>
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+
+		<div class="TopPanel">
+			<div class="InfoText">
+				<h3>Important Tips</h3>
+				<p>A common breach of the PDPA is the unauthorised disclosure of personal data. </p>
+				<div style="margin-bottom: 2em;">
+					<div style="float:left"><img id="CharMan" src="images/CharMan01.png" style="height: 10em; width: auto;" /></div>
+					<div class="QuizBubbleFixed" style="float:left; height: 10em; width: 40em; padding: 1.4em 17em 3em 2.5em; color: #000000; line-height: 1.1em;">
+						I am creating a list of personal data, consisting of the names of individuals, ID numbers, contact numbers and email addresses. How can I protect this data?
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<p>Click on each picture for tips on how Adam can protect his data.</p>
+			</div>
+
+
+			<div class="CanvasPanel" style="width: 45em; height: 5em; margin: 0em auto 1em auto; max-height: 5em;">
+
+
+				<div style="float:left; width:15em;"><img id="C1" class="ClickableImg" src="images/btn_Mod01_P37a_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P37a_Focusing.png" data-visitedimg="btn_Mod01_P37a_Visited.png" style="width: 35%"/></div>
+				<div style="float:left; width:15em;"><img id="C2" class="ClickableImg" src="images/btn_Mod01_P37b_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P37b_Focusing.png" data-visitedimg="btn_Mod01_P37b_Visited.png" style="width: 35%"/></div>
+				<div style="float:left; width:15em;"><img id="C3" class="ClickableImg" src="images/btn_Mod01_P37c_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P37c_Focusing.png" data-visitedimg="btn_Mod01_P37c_Visited.png" style="width: 35%"/></div>
+				<div class="clearfix"></div>
+				<div style="width:35em; margin: 1em auto 0 auto;">
+					<div id="Box1" class="CanvasBoxRelative">Password-protect the list</div>
+					<div id="Box2" class="CanvasBoxRelative">Control circulation of the list so that access to the list is restricted to authorised persons only</div>
+					<div id="Box3" class="CanvasBoxRelative">Destroy the list as soon as there is no longer any use for the personal data</div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
 	</div>
 
 </div>
@@ -20,21 +55,27 @@
 
 <script>
 PageNo = 37;
-TopicNumber = 37;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 8;
+TotalPagesInTopic = 3;
+PageInTopic = 3;
 
 $('#TopicHeader').text("Protection");
-
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
 
 </script>
 
 <script src="js/custom.js"></script>
 
+<script>
+
+ToggleHoverState($("#C1").attr("id"), $("#C1").attr("src"), $("#C1").attr("data-hoverimg"));
+ToggleHoverState($("#C2").attr("id"), $("#C2").attr("src"), $("#C2").attr("data-hoverimg"));
+ToggleHoverState($("#C3").attr("id"), $("#C3").attr("src"), $("#C3").attr("data-hoverimg"));
+
+ActivateClickableImage("#C1", "#Box1", $("#C1").attr("data-hoverimg"));
+ActivateClickableImage("#C2", "#Box2", $("#C2").attr("data-hoverimg"));
+ActivateClickableImage("#C3", "#Box3", $("#C3").attr("data-hoverimg"));
+
+</script>
 
 </body>
 </html>

@@ -106,6 +106,7 @@ var ResponseContentList = [];
 var QuizStatus;
 var MessageCount = 1;
 var MaxMessageCount = 5;
+var ValidateStatus;
 
 ResponseContentList[0] = "This message notifies the student that a transaction has been successfully processed and completed.";
 ResponseContentList[1] = "This message is a request for a profile update as a member under the terms of a transaction which the recipient has previously agreed to enter into with the sender.";
@@ -113,14 +114,21 @@ ResponseContentList[2] = "This message would be considered a specified message a
 ResponseContentList[3] = "This message would be considered a specified message as it relates to the supply of goods or services that the sender would like to offer or advertise.<br /><br />This message is to be sent only to recipients who have given written consent to receive marketing messages via SMS from the club.";
 ResponseContentList[4] = "This message provides a security code for the recipient’s online transaction.";
 
+IsQuizPage();
 IsMultipleSelectionQuiz(false);
 
 $('#SubmitBtn').click(function(e) {
-	QuizResponse = ValidateSerialSingleChoiceQuiz("question"+MessageCount, MessageCount, 2);
-	ResponseContent = ResponseContentList[MessageCount-1];
-	ShowQuizPopup(QuizResponse, ResponseContent);
-	ShowNextQuestionButton(MessageCount, MaxMessageCount);
-	console.log(QuizResponse);
+	ValidateStatus = ValidateSelection("question"+MessageCount);
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateSerialSingleChoiceQuiz("question"+MessageCount, ResponseContentList.length, MessageCount, 2);
+		ResponseContent = ResponseContentList[MessageCount-1];
+		ShowQuizPopup(QuizResponse, ResponseContent);
+		ShowNextQuestionButton(MessageCount, MaxMessageCount);
+	}
+	else {
+		ShowQuizPopup("NA", "");
+	}
 });
 
 $('#NextMsgBtn').click(function(e) {

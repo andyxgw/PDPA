@@ -15,6 +15,9 @@ function doEntryTasks()
   {
     strStartDate = new Date();
     doLMSInitialize();
+    console.log("SD: "+doLMSGetValue("cmi.suspend_data"));
+    console.log("LL: "+doLMSGetValue("cmi.core.lesson_location"));
+    console.log("LS: "+doLMSGetValue("cmi.core.lesson_status"));
 		CheckBookMark();
 	}
 	catch (ex) { }
@@ -24,73 +27,20 @@ function doEntryTasks()
 Check the last accessed page upon login.
 If there is no value to the last accessed page, users will be brought to the first page.
 */
-function CheckBookMark() {
-	var cnt = 0;
-	var BMPage;
-	var intervalVar = setInterval(function(){
-	cnt++;
-
-		if (cnt == 2)
-    {
-			GetLMSInfo();
-			BMPage= GetBookmarkPage();
-
-			if(BMPage == null || BMPage == 'null' || BMPage == undefined || BMPage == 'undefined' || BMPage == "")
-      {
-				PageNo = 1;
-			}
-      else
-      {
-				PageNo = BMPage;
-				GetSlideData();
-			}
-
-			clearInterval(intervalVar);
-			NavigatePage(PageNo);
-		}
-	}, 200);
-}
-
-
-function GetLMSInfo()
+function CheckBookMark()
 {
-	var LessonStatus = doLMSGetValue("cmi.core.lesson_status");   // ("passed", "completed", "failed", "incomplete", "browsed", "not attempted")
-	var StudentScore = doLMSGetValue("cmi.core.score.raw");   // Reflects the performance of the learner
-	var BookmarkPage = doLMSGetValue("cmi.core.lesson_location");   // The learner’s current location in the SCO
-	var SuspendDataFromLMS = doLMSGetValue("cmi.suspend_data");   // Provides space to store and retrieve data between learner sessions
-	var OtherDataFromLMS = doLMSGetValue("cmi.comments");
+	var BMPage = GetBookmark();
 
-	console.log("LMS suspend_data: " + SuspendDataFromLMS);
-	console.log("LMS lesson_location: " + BookmarkPage);
-	console.log("LMS lesson_status: " + LessonStatus);
-	console.log("LMS Other Data:" + OtherDataFromLMS);
-
-	var InitialstrLMS = "";
-
-	if(SuspendDataFromLMS == "")
-	{
-		for(var i=0; i<PagesArray.length; i++)
-		{
-			 if(i == 0)
-			 {
-				InitialstrLMS += 0;
-			 }
-			 else
-			 {
-				InitialstrLMS += "/" + 0;
-			 }
-		}
-		console.log("SETTING suspend_data: " + InitialstrLMS);
-		doLMSSetValue("cmi.suspend_data", InitialstrLMS);
-		doLMSCommit();
-	}
-
-	if(LessonStatus == "not attempted")
-	{
-		doLMSSetValue("cmi.core.lesson_status", "incomplete");
-		doLMSCommit();
-	}
-
+  if(BMPage == null || BMPage == 'null' || BMPage == undefined || BMPage == 'undefined' || BMPage == "")
+  {
+    PageNo = 1;
+  }
+  else
+  {
+    PageNo = BMPage;
+    GetSlideData();
+  }
+  NavigatePage(PageNo);
 }
 
 
@@ -101,16 +51,19 @@ function SetBookmark(num){
 }
 
 
-function GetBookmarkPage(){
-	var page = doLMSGetValue("cmi.core.lesson_location");
+function GetBookmark(){
+	var ll;
 	completionStatus = doLMSGetValue("cmi.core.lesson_status");
 
 	if(completionStatus == "completed" || completionStatus == "passed")
 	{
-		page = 1;
+		ll = 1;
 	}
+  else {
+    ll = doLMSGetValue("cmi.core.lesson_location");
+  }
 
-	return page;
+	return ll;
 }
 
 function SetSlideData(){
@@ -151,13 +104,11 @@ function GetSlideData(){
 
 		if(PagesArray[i] == 1)
 		{
-			PageStatus = true;
-		}
-		else
-		{
-			PageStatus = false;
+      CheckBoxNo = i + 1;
+      GetProgress(CheckBoxNo);
 		}
 	}
+  console.log("PagesArray: "+PagesArray);
 }
 
 
@@ -214,7 +165,7 @@ function callOnBeforeUnload() {
 function doExitTasks() {
 	try
 	{
-	  SetSlideData();
+	  //SetSlideData();
 	  var formattedTime = "";
 	  if (strStartDate) {
 			var currentDate = new Date().getTime();

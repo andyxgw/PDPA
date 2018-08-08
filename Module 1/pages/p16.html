@@ -10,8 +10,30 @@
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="TopPanel">
+			<div class="InfoText">
+				<h3>Exceptions Provided by the PDPA</h3>
+				<p>There are some circumstances where organisations need not obtain the consent of the individual to collect, use or disclose his personal data.</p>
+				<p>Click on each box to see examples of such circumstances.</p>
+			</div>
+			<div class="CanvasPanel">
+				<div class="CanvasImg" style="left: 15em; width: 9em;"><img id="C1" class="ClickableImg" src="images/btn_Mod01_P16a_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P16a_Focusing.png" data-visitedimg="btn_Mod01_P16a_Visited.png"/></div>
+				<div class="CanvasImg" style="left: 30em; width: 9em;"><img id="C2" class="ClickableImg" src="images/btn_Mod01_P16b_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P16b_Focusing.png" data-visitedimg="btn_Mod01_P16b_Visited.png"/></div>
+				<div class="CanvasImg" style="left: 45em; width: 9em;"><img id="C3" class="ClickableImg" src="images/btn_Mod01_P16c_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P16c_Focusing.png" data-visitedimg="btn_Mod01_P16c_Visited.png"/></div>
+				<div class="CanvasImg" style="left: 15em; top: 24em; width: 9em;"><img id="C4" class="ClickableImg" src="images/btn_Mod01_P16d_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P16d_Focusing.png" data-visitedimg="btn_Mod01_P16d_Visited.png"/></div>
+				<div class="CanvasImg" style="left: 30em; top: 24em; width: 9em;"><img id="C5" class="ClickableImg" src="images/btn_Mod01_P16e_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P16e_Focusing.png" data-visitedimg="btn_Mod01_P16e_Visited.png"/></div>
+				<div class="CanvasImg" style="left: 45em; top: 24em; width: 9em;"><img id="C6" class="ClickableImg" src="images/btn_Mod01_P16f_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P16f_Focusing.png" data-visitedimg="btn_Mod01_P16f_Visited.png"/></div>
+				<!--
+				<div id="Box1" class="RectBox" style="left: 15em;"><p>The personal data is publicly available</p></div>
+				<div id="Box2" class="RectBox" style="left: 30em;"><p>An emergency situation</p></div>
+				<div id="Box3" class="RectBox" style="left: 45em;"><p>The data is necessary for evaluative purposes</p></div>
+				<div id="Box4" class="RectBox" style="top: 26em; left: 15em;"><p>Clearly in the interest of the individual and consent cannot be obtained in a timely way</p></div>
+				<div id="Box5" class="RectBox" style="top: 26em; left: 30em;"><p>For investigation or proceedings</p></div>
+				<div id="Box6" class="RectBox" style="top: 26em; left: 45em;"><p>Collection of  data of another individual to enable a service</p></div>
+			-->
+			</div>
+		</div>
 	</div>
 
 </div>
@@ -20,21 +42,104 @@
 
 <script>
 PageNo = 16;
-TopicNumber = 16;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 3;
+TotalPagesInTopic = 7;
+PageInTopic = 7;
 
 $('#TopicHeader').text("Consent");
-
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
 
 </script>
 
 <script src="js/custom.js"></script>
+<script>
+ToggleHoverState($("#C1").attr("id"), $("#C1").attr("src"), $("#C1").attr("data-hoverimg"));
+ToggleHoverState($("#C2").attr("id"), $("#C2").attr("src"), $("#C2").attr("data-hoverimg"));
+ToggleHoverState($("#C3").attr("id"), $("#C3").attr("src"), $("#C3").attr("data-hoverimg"));
+ToggleHoverState($("#C4").attr("id"), $("#C4").attr("src"), $("#C4").attr("data-hoverimg"));
+ToggleHoverState($("#C5").attr("id"), $("#C5").attr("src"), $("#C5").attr("data-hoverimg"));
+ToggleHoverState($("#C6").attr("id"), $("#C6").attr("src"), $("#C6").attr("data-hoverimg"));
 
+$('#C1').click(function(e) {
+	puHeader = 'The personal data is publicly available';
+	puContent = '<p>"Publicly available", in relation to personal data about an individual, means personal data that is generally available to the public.</p>';
+	puContent += '<p>This includes personal data which can be observed by reasonably expected means at a location or an event:</p>';
+	puContent += '<ul>';
+	puContent += '<li>at which the individual appears; and</li>';
+	puContent += '<li>that is open to the public.</li>';
+	puContent += '</ul>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+$('#C2').click(function(e) {
+	puHeader = 'An emergency situation';
+	puContent = '<p>The collection, use or disclosure is necessary in order to respond to an emergency that threatens the life, health or safety of the individual or another individual.</p>';
+	puFooter = '<div class="PicPanel">';
+	puFooter += '<img src="images/img_Mod01_P16b.png">';
+	puFooter += '</div>';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+$('#C3').click(function(e) {
+	puHeader = 'The data is necessary for evaluative purposes';
+	puContent = '<p>The collection, use or disclosure is necessary for evaluative purposes.</p>';
+	puContent += '<p>"Evaluative purpose" means:</p>';
+	puContent += '<ol type="a">';
+	puContent += '<li>for the purpose of determining the suitability, eligibility or qualifications of the individual to whom the data relates;</li>';
+	puContent += '<li>for the purpose of determining whether any contract, award, bursary, scholarship, honour or other similar benefit should be continued, modified or cancelled;</li>';
+	puContent += '<li>for the purpose of deciding whether to insure any individual or property or to continue or renew the insurance of any individual or property; or</li>';
+	puContent += '<li>for such other similar purposes as may be prescribed by the Minister.</li>';
+	puContent += '</ol>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+$('#C4').click(function(e) {
+	puHeader = 'Clearly in the interest of the individual and consent cannot be obtained in a timely way';
+	puContent = '<p>The collection, use or disclosure is necessary for any purpose that is clearly in the interest of the individual, if consent for its collection cannot be obtained in a timely way or the individual would not reasonably be expected to withhold consent.</p>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+$('#C5').click(function(e) {
+	puHeader = 'For investigation or proceedings';
+	puContent = '<p>The collection, use or disclosure is necessary for investigation or proceedings if it is reasonable to expect that seeking the consent of the individual would compromise the availability or the accuracy of the personal data.</p>';
+	puContent += '<p>"Investigation" means an investigation relating to:</p>';
+	puContent += '<ol type="a">';
+	puContent += '<li>a breach of an agreement;</li>';
+	puContent += '<li>a contravention of any written law, or any rule of professional conduct or other requirement imposed by any regulatory authority in exercise of its powers under any written law; or</li>';
+	puContent += '<li>a circumstance or conduct that may result in a remedy or relief being available under any law.</li>';
+	puContent += '</ol>';
+	puContent += '<p>"Proceedings" means any civil, criminal or administrative proceedings by or before a court, tribunal or regulatory authority that is related to the allegation of: </p>';
+	puContent += '<ol type="a">';
+	puContent += '<li>a breach of an agreement;</li>';
+	puContent += '<li>a contravention of any written law, or any rule of professional conduct or other requirement imposed by any regulatory authority in exercise of its powers under any written law; or</li>';
+	puContent += '<li>a wrong or a breach of a duty for which a remedy is claimed under any law.</li>';
+	puContent += '</ol>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+$('#C6').click(function(e) {
+	puHeader = 'Collection of  data of another individual to enable a service';
+	puContent = '<p>The personal data was provided to the organisation by another individual to enable the organisation to provide a service for the personal or domestic purposes of that other individual.</p>';
+	puContent += '<p style="text-align:center"><img src="images/img_Mod01_P16f.png" style="width: 7em;"></p>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+</script>
 
 </body>
 </html>

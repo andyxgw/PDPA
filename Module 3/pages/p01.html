@@ -29,13 +29,13 @@ TotalPagesInTopic = 1;
 PageInTopic = 1;
 
 $('#TopicHeader').text("");
-$("#vPlayer").get(0).play();
 </script>
 
 <script src="js/custom.js"></script>
 <script src="js/video.js"></script>
 <script>
 videojs("vPlayer");
+videojs("vPlayer").ready(function(){ this.play(); })
 </script>
 
 </body>

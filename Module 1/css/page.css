@@ -13,7 +13,6 @@
 {
 	width: 128em;
 	height: 72em;
-	max-height: 72em;
 	margin: 2em auto 0 auto;
 	background: #e1e1e1;
 	border: 1px solid #d3d3d3;
@@ -85,19 +84,7 @@
 	float:left;
 }
 
-.BulletImage
-{
-	width: 1.8em;
-	height:auto;
-}
 
-.BulletText
-{
-	width: 25em;
-	text-align: left;
-	float: left;
-	margin-left: 0.5em;
-}
 
 .InfoTextPanel .TopPanel
 {
@@ -110,18 +97,49 @@
 .InfoTextPanel .TopPanel .InfoText
 {
 	text-align: left;
+	font-size: 1em;
 }
+
+.InfoTextPanel .TopPanel .InfoText h3
+{
+	text-align: left;
+	font-size: 1.8em;
+	font-weight: bold;
+}
+
+.InfoTextPanel .TopPanel .InfoText ul li
+{
+	margin-left: -1.6em;
+}
+
+.InfoTextPanel .TopPanel .InfoText ol li
+{
+	margin-left: -1.5em;
+}
+
 
 .InfoTextPanel .TopPanel .CenterContainer
 {
-  width: 60em;
-  margin: 2em auto;
+  width: 55em;
+  margin: 0 auto;
+	margin-top: 3em;
+}
+
+.InfoTextPanel .TopPanel .CenterContainer img
+{
+  width: 100%;
 }
 
 .InfoTextPanel .TopPanel .CenterContainer .LeftText
 {
   float: left;
-  width: 28em;
+  width: 26em;
+}
+
+.InfoTextPanel .TopPanel .CenterContainer .LeftText img, .InfoTextPanel .TopPanel .CenterContainer .RightText img
+{
+	max-width: 10em;
+	height: auto;
 }
 
 .InfoTextPanel .TopPanel .CenterContainer .CenterText
@@ -133,22 +151,184 @@
 .InfoTextPanel .TopPanel .CenterContainer .RightText
 {
   float: left;
-  width: 28em;
+  width: 26em;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel
+{
+  width: 40em;
+	margin: 3em auto;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel .VertLine
+{
+	height: 3.5em;
+	border-right: 0.3em solid #80afff;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
+	position: absolute;
+	z-index: 0;
+	display: none;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel .HorLine
+{
+	height: 3em;
+	border-right: 0.3em solid #80afff;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+	position: absolute;
+	z-index: 0;
+	display: none;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel .CanvasImg
+{
+  width: 6em;
+	height: 6em;
+	position: absolute;
+	z-index: 9999;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel .CanvasImgSmall
+{
+  width: 4.5em;
+	height: 4.5em;
+	position: absolute;
+	z-index: 9999;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel .CanvasImg img, .InfoTextPanel .TopPanel .CanvasPanel .CanvasImgSmall img
+{
+  width: 100%;
+	height: auto;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel .CanvasImg img:hover, .InfoTextPanel .TopPanel .CanvasPanel .CanvasImgSmall img:hover
+{
+  cursor: pointer;
+}
+
+img.ClickableImg:hover
+{
+  cursor: pointer;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel .CanvasBox
+{
+	border: 0.3em solid #80afff;
+	width: 35em;
+	padding: 1.1em;
+	color: #181c62;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: bold;
+	background: #ffffff;
+	position: absolute;
+	border-radius: 1em;
+	display: none;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel .CanvasBoxSmall
+{
+	border: 0.3em solid #80afff;
+	width: 36em;
+	padding: 0.7em;
+	color: #181c62;
+	text-align: center;
+	font-size: 1em;
+	line-height: 0.9em;
+	font-weight: bold;
+	background: #ffffff;
+	position: absolute;
+	border-radius: 1em;
+	display: none;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel .CanvasBoxRelative
+{
+	border: 0.3em solid #80afff;
+	width: 36em;
+	padding: 0.7em;
+	color: #181c62;
+	text-align: center;
+	font-size: 1em;
+	line-height: 0.9em;
+	font-weight: bold;
+	background: #ffffff;
+	border-radius: 1em;
+	display: none;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel .CanvasBox1
+{
+	border: 0.3em solid #80afff;
+	width: 28em;
+	padding: 1.1em;
+	color: #181c62;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: bold;
+	background: #ffffff;
+	position: absolute;
+	border-radius: 1em;
+	display: none;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel .RectBox
+{
+	border: 0.3em solid #80afff;
+	width: 14em;
+	height: 10em;
+	padding: 1em;
+	color: #181c62;
+	text-align: center;
+	font-size: 0.9em;
+	background: #ffffff;
+	position: absolute;
+	border-radius: 0em;
+	display: table;
+	cursor: pointer;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel .RectBox p
+{
+	display: table-cell;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.InfoTextPanel .TopPanel .CanvasPanel .RectBox:hover
+{
+	background: #00ffff;
 }
 
 .InfoTextPanel .BottomPanel
 {
     width: 100%;
-    height:14.8em;
+    height:14.9em;
     background: #FFFFFF;
 }
 
 .InfoTextPanel .QuizPanel
 {
   width: 100%;
-  padding: 1.5em 2em 1.5em 2em;
+  padding: 2em 2em 2em 2em;
   font-size: 2em;
 	text-align: left;
+}
+
+.InfoTextPanel .QuizPanel h3
+{
+	text-align: left;
+	font-size: 1.8em;
+	font-weight: bold;
 }
 
 .InfoTextPanel .QuizPanel p
@@ -173,6 +353,11 @@
 {
 	width: 100%;
 	height: auto;
+}
+
+.InfoTextPanel .QuizPanel .QuizGraphic p
+{
+	margin-bottom: 1em;
 }
 
 .check {
@@ -218,6 +403,88 @@
   margin: auto;
 }
 
+.SummaryPanel
+{
+	width: 128em;
+	height: 72em;
+	max-height: 72em;
+	margin: 2em auto 0 auto;
+	background: #e1e1e1;
+	color: #FFFFFF;
+}
+
+.SummaryPanel .LeftPanel
+{
+	width: 58em;
+	height: 100%;
+	padding: 2em;
+	font-size: 1.6em;
+	background: #808080;
+	float:left;
+	text-align: left;
+}
+
+.SummaryPanel .LeftPanel h3
+{
+	text-align: left;
+	font-size: 1.7em;
+	font-weight: bold;
+}
+
+.SummaryPanel .LeftPanel ol li
+{
+	margin-left: -1.4em;
+	margin-top: 1em;
+	margin-bottom: 1.5em;
+	font-size: 1.4em;
+	text-align: left;
+}
+
+.SummaryPanel .LeftPanel ol li ol li
+{
+	margin-left: -1.4em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	font-size: 1em;
+	text-align: left;
+}
+
+.SummaryPanel .LeftPanel ol li ol {
+  counter-reset: list;
+}
+.SummaryPanel .LeftPanel ol li ol > li {
+  list-style: none;
+	margin-left: -2em;
+}
+
+.SummaryPanel .LeftPanel ol li ol > li:before {
+  content: counter(list, lower-alpha) ") ";
+  counter-increment: list;
+}
+
+.SummaryPanel .RightPanel
+{
+	width: 20em;
+	height: 100%;
+	padding-top: 5em;
+	padding-right: 2em;
+	font-size: 1.6em;
+	background: #E1E1E1;
+	color: #000000;
+	float:right;
+	text-align: left;
+	position: relative;
+}
+
+.SummaryPanel .RightPanel .BorderBox
+{
+	border: 0.2em solid #000000;
+	padding: 1.5em;
+	font-size: 1.4em;
+	border-radius: 1em;
+}
+
+
 .PopUpPanel .TopPanel
 {
   width: 100%;
@@ -241,6 +508,32 @@
 	text-align: left;
 }
 
+.PopUpPanel .TopPanel ol {
+  counter-reset: list;
+}
+
+/*
+.PopUpPanel .TopPanel ol li
+{
+	margin-left: -1.2em;
+	margin-bottom: 0.5em;
+	font-size: 0.7em;
+	text-align: left;
+}*/
+
+.PopUpPanel .TopPanel ol > li {
+  list-style: none;
+	margin-left: -1.8em;
+	margin-bottom: 0.5em;
+	font-size: 0.6em;
+	text-align: left;
+}
+
+.PopUpPanel .TopPanel ol > li:before {
+  content: counter(list, lower-alpha) ") ";
+  counter-increment: list;
+}
+
 
 .PopUpPanel .BottomPanel
 {
@@ -248,6 +541,14 @@
     padding-top:2.2em;
 		padding-bottom:2.5em;
     background: #646464;
+}
+
+.PopUpPanel .QuizBottomPanel
+{
+    width: 100%;
+    padding-top:2.2em;
+		padding-bottom:2.5em;
+		text-align: center;
 }
 
 .PopUpPanel .BottomPanel p
@@ -274,15 +575,40 @@
 	font-size: 0.7em;
 }
 
-
 .InstructionText
 {
-	width: 32em;
-	margin: 0em auto;
-	padding-top: 2.4em;
-	font-size: 1.9em;
+	position: relative;
+	width: 40em;
+	margin: 0 auto;
+	font-size: 2em;
 	color: #000000;
+	top: 50%;
+  transform: translateY(-50%);
 }
+
+.InstructionText .BulletTab
+{
+	width: 5%;
+	height: 100%;
+	float:left;
+}
+
+.InstructionText .BulletText
+{
+	width: 92%;
+	text-align: left;
+	padding-left: 0.5em;
+	float:left;
+}
+
+
+.BulletImage
+{
+	width: 1.8em;
+	height:auto;
+}
+
+
 
 .PopupInstructionText
 {
@@ -320,13 +646,24 @@ a.ModalLink:hover
 
 a.TextLink
 {
-	color: #00ffff;
+	color: #00ffff  !important;
 	outline: 0;
 }
 
 a.TextLink:hover
 {
-	text-decoration: underline;
+	text-decoration: underline !important;
+}
+
+a.TextLinkVisited
+{
+	color: #d8a749 !important;
+	outline: 0;
+}
+
+a.TextLinkVisited:hover
+{
+	text-decoration: underline !important;
 }
 
 

@@ -1,5 +1,5 @@
 var HygieneFactorMode = false;
-var SubPagesMode = true;
+var SubPagesMode = false;
 var CheckBoxMode = true;
 var TrackProgressInTopic = false;
 var HeaderNavigation = false;
@@ -76,11 +76,18 @@ $(document).ready(function(e) {
 	$('.menulink').click(function(e) {
 		var ClickedID = $(this).attr("id");
 		var NavPageID = ClickedID.substring(1);
-		NavigatePage(NavPageID);
+		VerifyToProceed(NavPageID);
 	});
 
-	LoadPage();
+	//LoadPage();
 	tabModule.init();
+	DisableRightClick(true);
+
+	$('#homeBtn').click(function(e) {
+		//$('#sidebar').removeClass('active');
+		NavigatePage(StartPageNo);
+		e.preventDefault();
+	});
 
 	$('#glossaryBtn').click(function(e) {
 		$('.popup-wrap').fadeIn(250);
@@ -190,7 +197,15 @@ function disableScrollBars() {
 	document.body.scroll = "no"; // ie only
 }
 
-
+function DisableRightClick(booleanOption)
+{
+	if(booleanOption == true)
+	{
+		document.addEventListener("contextmenu", function(e){
+			e.preventDefault();
+		}, false);
+	}
+}
 
 // Load Specific Page
 function LoadPage() {
@@ -200,7 +215,6 @@ function LoadPage() {
 		{
 			DisablePrevBtn();
 			EnableNextBtn();
-			PagesArray[PageNo-1] = 1;
 		}
 		else
 		{
@@ -219,13 +233,13 @@ function LoadPage() {
 		else
 		{
 			EnablePrevBtn();
-			DisableNextBtn();
+			EnableNextBtn();
 		}
 	}
 	//CheckPageStatus();
 	if(PageNo == TotalPages)
 	{
-		PagesArray[PageNo-1] = 1;    // Check if current page is at last page
+		EnablePrevBtn();
 		DisableNextBtn();
 	}
 
@@ -272,7 +286,13 @@ function UpdateProgress(PageNo, TopicNumber, PageInTopic, TotalPagesInTopic)
 	}
 }
 
-
+function GetProgress(IndexPageNo)
+{
+	if(SubPagesMode == false)
+	{
+		$("#b" + IndexPageNo).attr("class", "fa fa-check-square-o faCB_visited");
+	}
+}
 
 function DisablePrevBtn()
 {
@@ -282,11 +302,8 @@ function DisablePrevBtn()
 	$(".PrevBtn").css("filter", "grayscale(100%)");
 	$(".PrevBtn").css("filter", "alpha(opacity=40)");
 	$("#PrevNav").css('cursor','default');
-	$('#PrevBtn').unbind('click', function(e){
-		StopVideoOrAudio();
-		e.preventDefault();
-		return false;
-	})
+
+	$('#PrevBtn').css("pointer-events", "none");
 	$('#PrevBtn').off("click");
 }
 
@@ -297,10 +314,10 @@ function EnablePrevBtn()
 	$(".PrevBtn").css("-webkit-filter", "grayscale(0%)");
 	$(".PrevBtn").css("filter", "grayscale(0%)");
 	$(".PrevBtn").css("filter", "alpha(opacity=100)");
-	$("#PrevNav").css('cursor','pointer');
+	$('#PrevBtn').css("pointer-events", "auto");
+	$("#PrevBtn").css('cursor','pointer');
 	$('#PrevBtn').bind('click', function(e){
-		StopVideoOrAudio();
-        NavigatePage('Prev');
+    NavigatePage('Prev');
 		e.stopImmediatePropagation();
 	})
 }
@@ -312,14 +329,9 @@ function DisableNextBtn()
 	$(".NextBtn").css("-webkit-filter", "grayscale(100%)");
 	$(".NextBtn").css("filter", "grayscale(100%)");
 	$(".NextBtn").css("filter", "alpha(opacity=40)");
-	$("#ClickToProceed").css("visibility", "hidden");
-	$('#NextBtn').unbind('click', function(e){
-		StopVideoOrAudio();
-        e.preventDefault();
-		return false;
-	})
-	$('#NextBtn').off("click");
 
+	$('#NextBtn').css("pointer-events", "none");
+	$('#NextBtn').off("click");
 }
 
 function EnableNextBtn()
@@ -329,8 +341,8 @@ function EnableNextBtn()
 	$(".NextBtn").css("-webkit-filter", "grayscale(0%)");
 	$(".NextBtn").css("filter", "grayscale(0%)");
 	$(".NextBtn").css("filter", "alpha(opacity=100)");
-	$("#NextNav").css('cursor','pointer');
-	$("#ClickToProceed").css("visibility", "visible");
+	$('#NextBtn').css("pointer-events", "auto");
+	$("#NextBtn").css('cursor','pointer');
 	$('#NextBtn').bind('click', function(e){
 		StopVideoOrAudio();
         NavigatePage('Next');
@@ -389,6 +401,10 @@ function NavigatePage(varMode)
 			OkToProceed = false;
 		}
 	}
+	else if (varMode == 'Stop')
+	{
+		OkToProceed = false;
+	}
 	else
 	{
 		PageNo = parseInt(varMode);
@@ -397,11 +413,18 @@ function NavigatePage(varMode)
 
 	if(OkToProceed == true)
 	{
-		StopVideoOrAudio();
+		//StopVideoOrAudio();
 		LoadPage();
 	}
 }
 
+function VerifyToProceed(DestPageNo)
+{
+	if(PagesArray[DestPageNo-1] == 1)
+	{
+		NavigatePage(DestPageNo);
+	}
+}
 
 function StopVideoOrAudio()
 {

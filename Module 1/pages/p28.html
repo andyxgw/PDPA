@@ -2,16 +2,35 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Access &amp; Correction</title>
+<title>Consent</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
+<link rel="stylesheet" type="text/css" href="css/quiz.css" />
 </head>
 
 <body>
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="QuizPanel">
+			<h3>Access: Learning Activity</h3>
+			<p>Answer the question below.</p>
+			<p>Select your answer, then click “Submit”.</p>
+			<div class="QuizDivider"></div>
+			<div class="QuizGraphic">
+				<p>Jenny is a member of the Astronomy Club. She has not been receiving any email newsletters from the Club for the past one year. Jenny wrote to the Club to request verification of the email address which she provided upon joining.</p>
+				<p>Should the Club grant Jenny access to her own personal data?</p>
+			</div>
+			<div class="QuizOptions">
+			<fieldset id="question1">
+			<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+			<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span>
+			</fieldset>
+		</div>
+
+			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			<div class="clearfix"></div>
+		</div>
 	</div>
 
 </div>
@@ -20,9 +39,9 @@
 
 <script>
 PageNo = 28;
-TopicNumber = 28;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 5;
+TotalPagesInTopic = 3;
+PageInTopic = 2;
 
 $('#TopicHeader').text("Access & Correction");
 
@@ -35,6 +54,27 @@ if($("#vPlayer").length > 0)
 
 <script src="js/custom.js"></script>
 
+<script>
+var QuizResponse;
+var ResponseContent;
+var QuizStatus;
+
+IsQuizPage();
+IsMultipleSelectionQuiz(false);
+
+$('#SubmitBtn').click(function(e) {
+	ValidateStatus = ValidateSelection("question1");
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateSingleChoiceQuiz("question1");
+		ResponseContent = "The provision of access in this case would be reasonable and the Club should provide the information which Jenny requested.";
+		ShowQuizPopup(QuizResponse, ResponseContent);
+	}
+	else {
+		ShowQuizPopup("NA", "");
+	}
+});
+</script>
 
 </body>
 </html>

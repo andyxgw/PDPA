@@ -4,14 +4,32 @@
 <meta charset="UTF-8" />
 <title>Consent</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
+<link rel="stylesheet" type="text/css" href="css/quiz.css" />
 </head>
 
 <body>
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="QuizPanel">
+			<h3>Exceptions Provided by the PDPA: Learning Activity</h3>
+			<p>Answer the question below.</p>
+			<p>Select your answer, then click “Submit”.</p>
+			<div class="QuizDivider"></div>
+			<div class="QuizGraphic">
+				<p>Does a club’s <b><u>official photographer</u></b> need to obtain an individual’s consent to take a photograph of the individual?</p>
+			</div>
+			<div class="QuizOptions">
+			<fieldset id="question1">
+			<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+			<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span>
+			</fieldset>
+		</div>
+
+			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			<div class="clearfix"></div>
+		</div>
 	</div>
 
 </div>
@@ -20,9 +38,9 @@
 
 <script>
 PageNo = 17;
-TopicNumber = 17;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 3;
+TotalPagesInTopic = 7;
+PageInTopic = 7;
 
 $('#TopicHeader').text("Consent");
 
@@ -35,6 +53,27 @@ if($("#vPlayer").length > 0)
 
 <script src="js/custom.js"></script>
 
+<script>
+var QuizResponse;
+var ResponseContent;
+var QuizStatus;
+
+IsQuizPage();
+IsMultipleSelectionQuiz(false);
+
+$('#SubmitBtn').click(function(e) {
+	ValidateStatus = ValidateSelection("question1");
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateSingleChoiceQuiz("question1");
+		ResponseContent = "An image of an identifiable individual captured in a photograph is considered to be the individual’s personal data, so generally, consent is required.<br/><br/>However, there is an <b><u>exception</u></b> for the collection, use and disclosure of personal data that is publicly available. For example, consent is not required if the individual appears at an event or location that is <b><u>open to the public.</u></b>";
+		ShowQuizPopup(QuizResponse, ResponseContent);
+	}
+	else {
+		ShowQuizPopup("NA", "");
+	}
+});
+</script>
 
 </body>
 </html>

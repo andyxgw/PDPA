@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Access &amp; Correction</title>
+<title>Consent</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
 </head>
 
@@ -10,8 +10,32 @@
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="TopPanel">
+			<div class="InfoText">
+				<h3>Correction</h3>
+				<p>An organisation may collect, use or disclose personal data:</p>
+				<ul>
+					<li>for reasonably appropriate purposes; and</li>
+					<li>if the individual has been informed of the purposes.</li>
+				</ul>
+				<p>Click on each picture to learn the proper steps for correcting an individual’s personal data.</p>
+			</div>
+			<div class="CanvasPanel">
+				<div class="CanvasImg" style="left: 21em;"><img id="C1" class="ClickableImg" src="images/btn_Mod01_P30a_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P30a_Focusing.png" data-visitedimg="btn_Mod01_P30a_Visited.png"/></div>
+				<div class="CanvasImg" style="left: 31.5em;"><i class="fa fa-long-arrow-right" style="font-size:6em; color: #ffffff;"></i></div>
+				<div class="CanvasImg" style="left: 42em;"><img id="C2" class="ClickableImg" src="images/btn_Mod01_P30b_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P30b_Focusing.png" data-visitedimg="btn_Mod01_P30b_Visited.png"/></div>
+			</div>
+		</div>
+
+		<div class="BottomPanel">
+			<div class="InstructionText">
+				<div class="BulletTab"><img src="images/Symbol_Note.png" class="BulletImage" /></div>
+				<div class="BulletText1" style="text-align:center">No fee may be levied and the organisation must make a note of the requested changes that are not made.</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+
 	</div>
 
 </div>
@@ -20,21 +44,50 @@
 
 <script>
 PageNo = 30;
-TopicNumber = 30;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 6;
+TotalPagesInTopic = 3;
+PageInTopic = 3;
 
 $('#TopicHeader').text("Access & Correction");
-
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
 
 </script>
 
 <script src="js/custom.js"></script>
+<script>
 
+ToggleHoverState($("#C1").attr("id"), $("#C1").attr("src"), $("#C1").attr("data-hoverimg"));
+ToggleHoverState($("#C2").attr("id"), $("#C2").attr("src"), $("#C2").attr("data-hoverimg"));
+
+$('#C1').click(function(e) {
+	puHeader = '1. Correct personal data';
+	puContent = '<p>Upon receiving the individual’s request for correction, correct any error or omission in the individual’s personal data as soon as practicable.</p>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+$('#C2').click(function(e) {
+	puHeader = '2. Inform others of the correction';
+	puContent = '<p>Send the corrected personal data to every other organisation to which the personal data was disclosed by the organisation within the last year, unless that other organisation does not need the corrected personal data for any legal or business purpose.</p>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+$('#C3').click(function(e) {
+	puHeader = '';
+	puContent = '<p>While organisations may not compel an individual to consent to such purposes, they may offer an incentive (e.g., a small gift) to encourage the individual to provide his/her consent.</p>';
+	puContent += '<p>For instance …</p>';
+	puContent += '<p align="center"><img src="images/img_Mod01_P22c.png" /></p>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+</script>
 
 </body>
 </html>

@@ -6,7 +6,7 @@
     <organization identifier="ORG-842DDEA3C2E5AF4C78FC8BA0065CC6CE" structure="hierarchical">
       <title>Module 1: The Data Protection Provisions</title>
       <item identifier="ITEM-724564F9336B271C60C4ECE45FB0C47D" identifierref="RES-9FB870BE29704450AB2D97AF52A73E8A" isvisible="true">
-        <title>Module 1: The Data Protection Provisions/title>
+        <title>Module 1: The Data Protection Provisions</title>
       </item>
     </organization>
   </organizations>
@@ -16,4 +16,3 @@
     </resource>
   </resources>
 </manifest>
-

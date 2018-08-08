@@ -20,6 +20,7 @@ if(HygieneFactorMode == true)
 
 		if ($('#vPlayer').length > 0)
 		{
+			console.log("hahahahaha");
 			if(PagesArray[PageNo-1] == 1)
 			{
 				EnableNextBtn();
@@ -43,10 +44,10 @@ function ShowTextPopup(PopUpHeader, PopUpContent, PopUpFooter)
 
 		if(PopUpFooter == "")
 		{
-			$(".BottomPanel").hide();
+			$(".PopUpPanel .BottomPanel").hide();
 		}
 		else {
-			$(".BottomPanel").show();
+			$(".PopUpPanel .BottomPanel").show();
 			$("#PU_footer").html(PopUpFooter);
 		}
 }
@@ -61,16 +62,26 @@ function ShowQuizPopup(QuizResponse, PopUpContent)
 
 	if(QuizResponse == true) {
 		PopUpHeader = "THAT IS CORRECT!";
-		$("#Q_header").html(PopUpHeader + RightIcon);
+		$("#Q_header").html(RightIcon + PopUpHeader);
+		$("#SubmitBtn").hide();
+		$("#ReviewBtn").show();
+	}
+	else if(QuizResponse == false){
+		PopUpHeader = "THAT IS INCORRECT!";
+		$("#Q_header").html(WrongIcon + PopUpHeader);
+		$("#SubmitBtn").hide();
+		$("#ReviewBtn").show();
 	}
 	else {
-		PopUpHeader = "THAT IS INCORRECT!";
-		$("#Q_header").html(PopUpHeader + WrongIcon);
+		PopUpContent = "Please indicate your selection.";
+		$("#Q_header").html("");
 	}
-
 	$("#Q_content").html(PopUpContent);
-	$("#SubmitBtn").hide();
-	$("#ReviewBtn").show();
+}
+
+function IsQuizPage()
+{
+	DisableNextBtn();
 }
 
 function IsMultipleSelectionQuiz(QuizBoolean)
@@ -99,15 +110,43 @@ function ValidateCheckboxQuiz(QuestionID)
 		if(options[i].value == "yes" && options[i].checked == true)
 		{
 			correct = true;
-			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg" />';
 		}
 		else {
 			correct = false;
-			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg" />';
+			break;
 		}
-
-		options[i].disabled =true;
 	}
+
+	for(i = 0; i < options.length; i++)
+	{
+		if(options[i].value == "yes" && options[i].checked == true)
+		{
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg" />';
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerCorrectAnswerLeft.png" class="responseImg" />';
+			options[i].checked = true;
+			options[i].nextSibling.style.border = "0.2em solid #22b573";
+			options[i].nextSibling.className += " CorrectAnswer1 SelectedInput";
+		}
+		else if(options[i].value == "yes" && options[i].checked == false)
+		{
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg" />';
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerCorrectAnswerLeft.png" class="responseImg" />';
+			options[i].checked = true;
+			options[i].nextSibling.style.border = "0.2em solid #22b573";
+			options[i].className += " CorrectInput";
+			options[i].nextSibling.className += " CorrectAnswer";
+		}
+		else {
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg" />';
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerCorrectAnswerLeft.png" class="responseImg" />';
+			options[i].checked = true;
+		}
+		options[i].disabled = true;
+	}
+
+
+
+	EnableNextBtn();
 
 	if(correct)
 	{
@@ -116,6 +155,7 @@ function ValidateCheckboxQuiz(QuestionID)
 	else {
 		return false;
 	}
+
 }
 
 function ValidateImageCheckboxQuiz(QuestionID)
@@ -126,6 +166,8 @@ function ValidateImageCheckboxQuiz(QuestionID)
 
 	options = document.getElementById(QuestionID).getElementsByTagName("input");
 
+
+
 	for(i = 0; i < options.length; i++)
 	{
 		if(options[i].value == "yes" && options[i].checked == true)
@@ -133,9 +175,18 @@ function ValidateImageCheckboxQuiz(QuestionID)
 			correct = true;
 			document.getElementsByClassName("cbResponse")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg" />';
 		}
-		else {
+		if(options[i].value == "yes" && options[i].checked == false)
+		{
 			correct = false;
-			document.getElementsByClassName("cbResponse")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg" />';
+			document.getElementsByClassName("cbResponse")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg" />';
+		}
+		else
+		{
+			correct = false;
+			//document.getElementsByClassName("cbResponse")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg" />';
+			options[i].checked = true;
+			options[i].parentNode.className += " image-checkbox-checked-correct";
+			console.log(options[i].parentNode.nodeName);
 		}
 
 		$('.image-checkbox').on('click', function(e) {
@@ -145,17 +196,32 @@ function ValidateImageCheckboxQuiz(QuestionID)
 			else {
 				$(this).removeClass("image-checkbox-checked");
 			}
-
 		});
 	}
+
+	for(i = 0; i < options.length; i++)
+	{
+		if(options[i].value == "yes" && options[i].checked == true)
+		{
+			correct = true;
+		}
+		else {
+			correct = false;
+			break;
+		}
+	}
+
+	EnableNextBtn();
 
 	if(correct)
 	{
 		return true;
 	}
-	else {
+	else
+	{
 		return false;
 	}
+
 }
 
 function ValidateSingleChoiceQuiz(QuestionID)
@@ -163,6 +229,7 @@ function ValidateSingleChoiceQuiz(QuestionID)
 	var options;
 	var i;
 	var correct = false;
+	var selection = 0;
 
 	options = document.getElementById(QuestionID).getElementsByTagName("input");
 
@@ -175,32 +242,66 @@ function ValidateSingleChoiceQuiz(QuestionID)
 		if(options[i].value == "yes" && options[i].checked == true)
 		{
 			correct = true;
-			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
+			options[i].nextSibling.style.border = "0.2em solid #22b573";
+			options[i].nextSibling.className += " CorrectAnswer1 SelectedInput";
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerCorrectAnswerRight.png" class="responseImg" />';
 		}
 		if(options[i].value == "no" && options[i].checked == true)
 		{
 			correct = false;
-			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerCorrectAnswerRight.png" class="responseImg" />';
 		}
 		if(options[i].value == "yes" && options[i].checked == false)
 		{
 			correct = false;
-			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg1" />';
+			options[i].checked = true;
+			options[i].nextSibling.style.border = "0.2em solid #22b573";
+			options[i].className += " CorrectInput";
+			options[i].nextSibling.className += " CorrectAnswer";
 		}
 		if(options[i].value == "no" && options[i].checked == false)
 		{
 			correct = true;
-			document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
+			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg1" />';
 		}
 
 		options[i].disabled =true;
 	}
+
+	EnableNextBtn();
 
 	if(correct)
 	{
 		return true;
 	}
 	else {
+		return false;
+	}
+}
+
+function ValidateSelection(QuestionID)
+{
+	var selection = 0;
+
+	options = document.getElementById(QuestionID).getElementsByTagName("input");
+
+	for(i = 0; i < options.length; i++)
+	{
+		if(options[i].checked == true)
+		{
+			selection = selection + 1;
+		}
+	}
+
+	if(selection > 0)
+	{
+		return true;
+	}
+	else
+	{
 		return false;
 	}
 }
@@ -342,7 +443,8 @@ $(".image-checkbox").on("click", function(e){
 });
 
 $('.TextLink').click(function(e) {
-	$(this).css("color", "#d8a749");
+	//$(this).css("color", "#d8a749");
+	$(this).addClass("TextLinkVisited");
 });
 
 

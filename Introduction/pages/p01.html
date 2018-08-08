@@ -12,7 +12,7 @@
 
 	<div id="VideoContainer" class="VideoPanel">
 		<div id="container-video" class="VideoBox">
-		<video id="vPlayer" class="VideoSize video-js vjs-default-skin vjs-big-play-centered vjs-16-9" data-setup='{"controls": true, "autoplay": true, "preload": "auto", "fluid": true}'>
+		<video id="vPlayer" class="VideoSize video-js vjs-default-skin vjs-big-play-centered vjs-16-9" data-setup='{"controls": true, "autoplay": true, "fluid": true}'>
 			<source src="videos/vid_Mod00_Introduction.mp4" type="video/mp4">
 		</video>
 		</div>
@@ -29,13 +29,22 @@ TotalPagesInTopic = 1;
 PageInTopic = 1;
 
 $('#TopicHeader').text("");
-$("#vPlayer").get(0).play();
+
 </script>
 
 <script src="js/custom.js"></script>
 <script src="js/video.js"></script>
 <script>
-videojs("vPlayer");
+
+$(document).ready(function() {
+
+})
+
+videojs("vPlayer").ready(function(){
+	this.play();
+})
+
+
 </script>
 </body>
 </html>

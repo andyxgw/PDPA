@@ -12,7 +12,7 @@
 
 	<div class="InfoTextPanel StandardGrey">
 		<div class="QuizPanel">
-			<p>Is the information below considered personal data?</p>
+			<p>Answer the question below.</p>
 			<p>Select your answer, then click “Submit”.</p>
 			<div class="QuizDivider"></div>
 			<div class="QuizGraphic">
@@ -58,7 +58,7 @@ TopicNumber = 7;
 TotalPagesInTopic = 1;
 PageInTopic = 1;
 
-$('#TopicHeader').text("Sending Specified Messages");
+$('#TopicHeader').text("Learning Activity 2");
 
 if($("#vPlayer").length > 0)
 {
@@ -73,13 +73,22 @@ if($("#vPlayer").length > 0)
 var QuizResponse;
 var ResponseContent;
 var QuizStatus;
+var ValidateStatus;
 
+IsQuizPage();
 IsMultipleSelectionQuiz(false);
 
 $('#SubmitBtn').click(function(e) {
-	QuizResponse = ValidateSingleChoiceQuiz("question1");
-	ResponseContent = "Martha is considered to have given clear and unambiguous consent.";
-	ShowQuizPopup(QuizResponse, ResponseContent);
+	ValidateStatus = ValidateSelection("question1");
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateSingleChoiceQuiz("question1");
+		ResponseContent = "Martha is considered to have given clear and unambiguous consent.";
+		ShowQuizPopup(QuizResponse, ResponseContent);
+	}
+	else {
+		ShowQuizPopup("NA", "");
+	}
 });
 </script>
 

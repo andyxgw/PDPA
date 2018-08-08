@@ -10,8 +10,41 @@
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="TopPanel">
+			<div class="InfoText">
+				<h3>Access</h3>
+				<p>There are some circumstances where organisations need not provide access of personal data to individuals. </p>
+				<p>Click on each picture for more information on providing access upon request.</p>
+			</div>
+			<div class="CanvasPanel">
+				<div class="CanvasImgSmall" style="top: 14em; left: 12em;"><img id="C1" class="ClickableImg" src="images/btn_Mod01_P27a_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P27a_Focusing.png" data-visitedimg="btn_Mod01_P27a_Visited.png"/></div>
+				<div class="CanvasImgSmall" style="top: 14em; left: 19em;"><img id="C2" class="ClickableImg" src="images/btn_Mod01_P27b_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P27b_Focusing.png" data-visitedimg="btn_Mod01_P27b_Visited.png"/></div>
+				<div class="CanvasImgSmall" style="top: 14em; left: 26em;"><img id="C3" class="ClickableImg" src="images/btn_Mod01_P27c_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P27c_Focusing.png" data-visitedimg="btn_Mod01_P27c_Visited.png"/></div>
+				<div class="CanvasImgSmall" style="top: 14em; left: 33em;"><img id="C4" class="ClickableImg" src="images/btn_Mod01_P27d_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P27d_Focusing.png" data-visitedimg="btn_Mod01_P27d_Visited.png"/></div>
+				<div class="CanvasImgSmall" style="top: 14em; left: 40em;"><img id="C5" class="ClickableImg" src="images/btn_Mod01_P27e_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P27e_Focusing.png" data-visitedimg="btn_Mod01_P27e_Visited.png"/></div>
+				<div class="CanvasImgSmall" style="top: 14em; left: 47em;"><img id="C6" class="ClickableImg" src="images/btn_Mod01_P27f_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P27f_Focusing.png" data-visitedimg="btn_Mod01_P27f_Visited.png"/></div>
+				<div class="CanvasImgSmall" style="top: 14em; left: 54em;"><img id="C7" class="ClickableImg" src="images/btn_Mod01_P27g_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P27g_Focusing.png" data-visitedimg="btn_Mod01_P27g_Visited.png"/></div>
+
+				<!--
+				<div id="VL1" class="VertLine" style="top: 21em; left: 15em;"></div>
+				<div id="VL2" class="VertLine" style="top: 21em; left: 21em;"></div>
+				<div id="VL3" class="VertLine" style="top: 21.5em; left: 27em;"></div>
+				<div id="VL4" class="VertLine" style="top: 21.5em; left: 34em;"></div>
+				<div id="VL5" class="VertLine" style="top: 21.5em; left: 41em;"></div>
+				<div id="VL6" class="VertLine" style="top: 21.5em; left: 48em;"></div>
+				<div id="VL7" class="VertLine" style="top: 21.5em; left: 55em;"></div>
+			-->
+
+				<div id="Box1" class="CanvasBox" style="top: 18em; left: 12em;">Data kept solely for evaluative purpose</div>
+				<div id="Box2" class="CanvasBox" style="top: 18em; left: 12em;">Providing access would reveal information about another individual</div>
+				<div id="Box3" class="CanvasBox" style="top: 18em; left: 12em;">Providing access would cause unreasonable burden or expense</div>
+				<div id="Box4" class="CanvasBox" style="top: 18em; left: 12em;">Providing access would disclose confidential commercial information</div>
+				<div id="Box5" class="CanvasBox" style="top: 18em; left: 12em;">Any request that is otherwise frivolous or vexatious</div>
+				<div id="Box6" class="CanvasBox" style="top: 18em; left: 12em;">Information that is subject to legal privilege</div>
+				<div id="Box7" class="CanvasBox" style="top: 18em; left: 12em;">Where access is regulated by another law</div>
+			</div>
+		</div>
 	</div>
 
 </div>
@@ -20,21 +53,34 @@
 
 <script>
 PageNo = 27;
-TopicNumber = 27;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 6;
+TotalPagesInTopic = 3;
+PageInTopic = 2;
 
 $('#TopicHeader').text("Access & Correction");
-
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
-
 </script>
 
 <script src="js/custom.js"></script>
 
+<script>
+SetClickableArea(7);
+
+ToggleHoverState($("#C1").attr("id"), $("#C1").attr("src"), $("#C1").attr("data-hoverimg"));
+ToggleHoverState($("#C2").attr("id"), $("#C2").attr("src"), $("#C2").attr("data-hoverimg"));
+ToggleHoverState($("#C3").attr("id"), $("#C3").attr("src"), $("#C3").attr("data-hoverimg"));
+ToggleHoverState($("#C4").attr("id"), $("#C4").attr("src"), $("#C4").attr("data-hoverimg"));
+ToggleHoverState($("#C5").attr("id"), $("#C5").attr("src"), $("#C5").attr("data-hoverimg"));
+ToggleHoverState($("#C6").attr("id"), $("#C6").attr("src"), $("#C6").attr("data-hoverimg"));
+ToggleHoverState($("#C7").attr("id"), $("#C7").attr("src"), $("#C7").attr("data-hoverimg"));
+
+ActivateClickableImage("#C1", "#Box1", $("#C1").attr("data-hoverimg"));
+ActivateClickableImage("#C2", "#Box2", $("#C2").attr("data-hoverimg"));
+ActivateClickableImage("#C3", "#Box3", $("#C3").attr("data-hoverimg"));
+ActivateClickableImage("#C4", "#Box4", $("#C4").attr("data-hoverimg"));
+ActivateClickableImage("#C5", "#Box5", $("#C5").attr("data-hoverimg"));
+ActivateClickableImage("#C6", "#Box6", $("#C6").attr("data-hoverimg"));
+ActivateClickableImage("#C7", "#Box7", $("#C7").attr("data-hoverimg"));
+</script>
 
 </body>
 </html>

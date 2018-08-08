@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Protection</title>
+<title>Consent</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
 </head>
 
@@ -10,8 +10,20 @@
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="TopPanel">
+			<div class="InfoText">
+				<h3>Care of Personal Data</h3>
+				<p>The following shows several measures of protecting personal data.</p>
+				<p>Click on each picture to see some examples.</p>
+			</div>
+			<div class="CanvasPanel">
+				<div class="CanvasImg" style="left: 21em;"><img id="C1" class="ClickableImg" src="images/btn_Mod01_P36a_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P36a_Focusing.png" data-visitedimg="btn_Mod01_P36a_Visited.png"/></div>
+				<div class="CanvasImg" style="left: 31.5em;"><img id="C2" class="ClickableImg" src="images/btn_Mod01_P36b_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P36b_Focusing.png" data-visitedimg="btn_Mod01_P36b_Visited.png"/></div>
+				<div class="CanvasImg" style="left: 42em;"><img id="C3" class="ClickableImg" src="images/btn_Mod01_P36c_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P36c_Focusing.png" data-visitedimg="btn_Mod01_P36c_Visited.png"/></div>
+			</div>
+		</div>
+
 	</div>
 
 </div>
@@ -20,21 +32,66 @@
 
 <script>
 PageNo = 36;
-TopicNumber = 36;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 8;
+TotalPagesInTopic = 3;
+PageInTopic = 3;
 
 $('#TopicHeader').text("Protection");
-
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
 
 </script>
 
 <script src="js/custom.js"></script>
+<script>
 
+ToggleHoverState($("#C1").attr("id"), $("#C1").attr("src"), $("#C1").attr("data-hoverimg"));
+ToggleHoverState($("#C2").attr("id"), $("#C2").attr("src"), $("#C2").attr("data-hoverimg"));
+ToggleHoverState($("#C3").attr("id"), $("#C3").attr("src"), $("#C3").attr("data-hoverimg"));
+
+$('#C1').click(function(e) {
+	puHeader = 'Examples of administrative measures';
+	puContent = '<ul>';
+	puContent += '<li>Requiring all club members to be bound by confidentiality obligations</li>';
+	puContent += '<li>Implementing robust policies and procedures</li>';
+	puContent += '<li>Ensuring that only the appropriate amount of personal data is held, as holding excessive data will also increase the efforts required to protect personal data</li>';
+	puContent += '</ul>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+$('#C2').click(function(e) {
+	puHeader = 'Examples of physical measures';
+	puContent = '<ul>';
+	puContent += '<li>Marking confidential documents clearly and prominently</li>';
+	puContent += '<li>Storing confidential documents in locked file cabinet systems</li>';
+	puContent += '<li>Restricting access to confidential documents on a need-to-know basis</li>';
+	puContent += '<li>Confirming that the intended recipient of personal data is the correct recipient to avoid undue disclosure of personal data</li>';
+	puContent += '</ul>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+$('#C3').click(function(e) {
+	puHeader = 'Examples of technical measures';
+	puContent = '<ul>';
+	puContent += '<li>Encrypting personal data to prevent unauthorised access</li>';
+	puContent += '<li>Activating auto-locking mechanisms for the computer screen if it is left unattended for a certain period of time</li>';
+	puContent += '<li>Installing appropriate computer security software</li>';
+	puContent += '<li>Updating computer security and software regularly</li>';
+	puContent += '<li>Using the right level of email security settings when sending and/or receiving highly confidential emails</li>';
+	puContent += '</ul>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+
+
+</script>
 
 </body>
 </html>

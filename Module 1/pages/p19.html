@@ -2,16 +2,36 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Notification</title>
+<title>Consent</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
+<link rel="stylesheet" type="text/css" href="css/quiz.css" />
 </head>
 
 <body>
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="QuizPanel">
+			<h3>When to Notify</h3>
+			<p>Organisations must notify the individual of the purposes of collection, use and disclosure of the individual’s personal data.</p>
+			<p><b>Note:</b> The term “purpose” does not refer to activities which an organisation may intend to undertake, but rather to its objectives or reasons.</p>
+			<div class="QuizDivider"></div>
+			<div class="QuizGraphic">
+				<p style="margin-bottom: 0em;">When do you think organisations should give such notification to an individual?</p>
+				<p>Select your answer(s), then click "Submit".</p>
+			</div>
+			<div class="QuizOptions">
+			<fieldset id="question1">
+			<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label_long">Prior to collecting the individual’s personal data</span><br />
+			<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="yes" /><label for="chk2" /><span class="cb_label_long">On collecting the individual’s personal data</span><br />
+			<span class="response"></span><input id="chk3" name="option1" type="checkbox" value="no" /><label for="chk3" /><span class="cb_label_long">After successfully collecting the individual’s personal data</span>
+			</fieldset>
+		</div>
+
+			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			<div class="clearfix"></div>
+		</div>
 	</div>
 
 </div>
@@ -20,21 +40,37 @@
 
 <script>
 PageNo = 19;
-TopicNumber = 19;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 4;
+TotalPagesInTopic = 3;
+PageInTopic = 2;
 
 $('#TopicHeader').text("Notification");
-
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
 
 </script>
 
 <script src="js/custom.js"></script>
 
+<script>
+var QuizResponse;
+var ResponseContent;
+var QuizStatus;
+
+IsQuizPage();
+IsMultipleSelectionQuiz(true);
+
+$('#SubmitBtn').click(function(e) {
+	ValidateStatus = ValidateSelection("question1");
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateCheckboxQuiz("question1");
+		ResponseContent = "Notification to the individual must be done <b><u>on or prior to collecting</u></b> his personal data";
+		ShowQuizPopup(QuizResponse, ResponseContent);
+	}
+	else {
+		ShowQuizPopup("NA", "");
+	}
+});
+</script>
 
 </body>
 </html>

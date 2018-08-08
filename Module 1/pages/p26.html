@@ -10,8 +10,31 @@
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="TopPanel">
+			<div class="InfoText">
+				<h3>Access</h3>
+				<p>Upon request by an individual, organisations are required to provide the individual with the following:</p>
+				<ul>
+					<li>personal data about the individual that is in the possession of the organisation; and</li>
+					<li>information about the ways in which the personal data has been used or may have been used or disclosed by the organisation within a year before the date of the request.</li>
+				</ul>
+				<p>Click on each picture for more information on providing access upon request.</p>
+			</div>
+			<div class="CanvasPanel">
+				<div class="CanvasImg" style="left: 10em; top: 20em;"><img id="C1" class="ClickableImg" src="images/btn_Mod01_P26a_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P26a_Focusing.png" data-visitedimg="btn_Mod01_P26a_Visited.png"/></div>
+				<div class="CanvasImg" style="right: 10em; top: 20em;"><img id="C2" class="ClickableImg" src="images/btn_Mod01_P26b_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P26b_Focusing.png" data-visitedimg="btn_Mod01_P26b_Visited.png"/></div>
+
+				<!--
+				<div id="VL1" class="HorLine" style="top: 21.5em; left: 17em;"></div>
+				<div id="VL2" class="HorLine" style="top: 21.5em; right: 17em;"></div>
+			-->
+
+				<div id="Box1" class="CanvasBox1" style="top: 15em; left: 15em;">The organisation must deal with the access request as soon as reasonably possible, and in any event, no later than 30 days from the individual’s access request.</div>
+				<div id="Box2" class="CanvasBox1" style="top: 16em; right: 15.2em;">The organisation may charge a reasonable fee for each access request.</div>
+
+			</div>
+		</div>
 	</div>
 
 </div>
@@ -20,21 +43,24 @@
 
 <script>
 PageNo = 26;
-TopicNumber = 26;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 6;
+TotalPagesInTopic = 3;
+PageInTopic = 2;
 
 $('#TopicHeader').text("Access & Correction");
-
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
-
 </script>
 
 <script src="js/custom.js"></script>
 
+<script>
+SetClickableArea(2);
+
+ToggleHoverState($("#C1").attr("id"), $("#C1").attr("src"), $("#C1").attr("data-hoverimg"));
+ToggleHoverState($("#C2").attr("id"), $("#C2").attr("src"), $("#C2").attr("data-hoverimg"));
+
+ActivateClickableImage("#C1", "#Box1", "btn_Mod01_P26a_Focusing.png");
+ActivateClickableImage("#C2", "#Box2", "btn_Mod01_P26b_Focusing.png");
+</script>
 
 </body>
 </html>

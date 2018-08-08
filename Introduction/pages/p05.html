@@ -21,7 +21,7 @@
 					<tr>
 						<td style="width:60%">
 							<div class="CardGraphic">
-								<div class="CG_Title">Order List for Sports </div>
+								<div class="CG_Title">Order List for Sports Camp</div>
 								<div class="CG_Content">
 									<table width="100%">
 										<tr>
@@ -54,8 +54,8 @@
 							</div>
 						</td>
 						<td style="width:40%; text-align: left; padding: 1.5em; padding-left: 4.5em">
-							<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="cb_label">Yes</span><br />
-							<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label">No</span></td>
+							<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="no" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+							<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="yes" /><label for="chk2" /><span class="cb_label">No</span></td>
 					</tr>
 				</table>
 			</fieldset>
@@ -91,13 +91,24 @@ if($("#vPlayer").length > 0)
 var QuizResponse;
 var ResponseContent;
 var QuizStatus;
+var ValidateStatus;
 
+IsQuizPage();
 IsMultipleSelectionQuiz(false);
 
 $('#SubmitBtn').click(function(e) {
-	QuizResponse = ValidateSingleChoiceQuiz("question1");
-	ResponseContent = "All of the above are not considered personal data because they cannot be matched or associated with particular individuals.";
-	ShowQuizPopup(QuizResponse, ResponseContent);
+	ValidateStatus = ValidateSelection("question1");
+
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateSingleChoiceQuiz("question1");
+		ResponseContent = "All of the above are not considered personal data because they cannot be matched or associated with particular individuals.";
+		ShowQuizPopup(QuizResponse, ResponseContent);
+	}
+	else {
+		ShowQuizPopup("NA", "");
+	}
+
 });
 </script>
 

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Purpose Limitation</title>
+<title>Consent</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
 </head>
 
@@ -10,8 +10,24 @@
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="TopPanel">
+			<div class="InfoText">
+				<h3>Purpose Limitation</h3>
+				<p>An organisation may collect, use or disclose personal data:</p>
+				<ul>
+					<li>for reasonably appropriate purposes; and</li>
+					<li>if the individual has been informed of the purposes.</li>
+				</ul>
+				<p>Click on each picture for more information on purpose limitation. </p>
+			</div>
+			<div class="CanvasPanel">
+				<div class="CanvasImg" style="left: 21em;"><img id="C1" class="ClickableImg" src="images/btn_Mod01_P22a_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P22a_Focusing.png" data-visitedimg="btn_Mod01_P22a_Visited.png"/></div>
+				<div class="CanvasImg" style="left: 31.5em;"><img id="C2" class="ClickableImg" src="images/btn_Mod01_P22b_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P22b_Focusing.png" data-visitedimg="btn_Mod01_P22b_Visited.png"/></div>
+				<div class="CanvasImg" style="left: 42em;"><img id="C3" class="ClickableImg" src="images/btn_Mod01_P22c_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P22c_Focusing.png" data-visitedimg="btn_Mod01_P22c_Visited.png"/></div>
+
+			</div>
+		</div>
 	</div>
 
 </div>
@@ -20,9 +36,9 @@
 
 <script>
 PageNo = 22;
-TopicNumber = 22;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 5;
+TotalPagesInTopic = 3;
+PageInTopic = 2;
 
 $('#TopicHeader').text("Purpose Limitation");
 
@@ -34,7 +50,45 @@ if($("#vPlayer").length > 0)
 </script>
 
 <script src="js/custom.js"></script>
+<script>
 
+ToggleHoverState($("#C1").attr("id"), $("#C1").attr("src"), $("#C1").attr("data-hoverimg"));
+ToggleHoverState($("#C2").attr("id"), $("#C2").attr("src"), $("#C2").attr("data-hoverimg"));
+ToggleHoverState($("#C3").attr("id"), $("#C3").attr("src"), $("#C3").attr("data-hoverimg"));
+
+$('#C1').click(function(e) {
+	puHeader = '';
+	puContent = '<p>Clauses such as the one below are generally not considered reasonable.</p>';
+	puContent += '<p align="center"><img src="images/img_Mod01_P22a.png" style="width:90%;"/></p>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+$('#C2').click(function(e) {
+	puHeader = '';
+	puContent = '<p>An organisation providing a product or service to an individual must not, as a condition of providing the product or service, require the individual to consent to purposes beyond what are reasonable to provide the product or service.</p>';
+	puContent += '<p>For instance …</p>';
+	puContent += '<p align="center"><img src="images/img_Mod01_P22b.png" style="width:100%;" /></p>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+$('#C3').click(function(e) {
+	puHeader = '';
+	puContent = '<p>While organisations may not compel an individual to consent to such purposes, they may offer an incentive (e.g., a small gift) to encourage the individual to provide his/her consent.</p>';
+	puContent += '<p>For instance …</p>';
+	puContent += '<p align="center"><img src="images/img_Mod01_P22c.png" style="width:100%;" /></p>';
+	puFooter = '';
+
+	ShowTextPopup(puHeader, puContent, puFooter);
+	ToggleImageState($(this).attr("id"));
+});
+
+</script>
 
 </body>
 </html>

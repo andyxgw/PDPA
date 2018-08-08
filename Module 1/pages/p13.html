@@ -4,14 +4,34 @@
 <meta charset="UTF-8" />
 <title>Consent</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
+<link rel="stylesheet" type="text/css" href="css/quiz.css" />
 </head>
 
 <body>
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="QuizPanel">
+			<h3>Withdrawal of Consent: Learning Activity</h3>
+			<p>Answer the question below.</p>
+			<p>Select your answer, then click “Submit”.</p>
+			<div class="QuizDivider"></div>
+			<div class="QuizGraphic">
+				<p>Alan signed up for six sessions of yoga conducted by the Yoga Club. He initially agreed to the collection, use and disclosure of his personal data by the Club for the purposes of administering the class. However, during one of the sessions, Alan withdrew his consent.</p>
+				<p>What should you do in this situation?</p>
+			</div>
+			<div class="QuizOptions">
+			<fieldset id="question1">
+			<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="no" /><label for="chk1" /><span class="cb_label_long">Ignore Alan’s withdrawal of consent as his application has been approved and the yoga sessions are still ongoing.</span><br />
+			<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="no" /><label for="chk2" /><span class="cb_label_long">Advise Alan that he is only allowed to do a withdrawal of consent after all the yoga sessions have been completed.</span><br />
+			<span class="response"></span><input id="chk3" name="option1" type="checkbox" value="yes" /><label for="chk3" /><span class="cb_label_long">Inform Alan of the likely consequences of his withdrawal of consent (e.g. the Club may no longer be able to provide him access to the class), and, if he does not reconsider his decision, the Club must immediately cease collecting, using or disclosing his personal data.</span>
+			</fieldset>
+		</div>
+
+			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			<div class="clearfix"></div>
+		</div>
 	</div>
 
 </div>
@@ -20,21 +40,37 @@
 
 <script>
 PageNo = 13;
-TopicNumber = 13;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 3;
+TotalPagesInTopic = 7;
+PageInTopic = 4;
 
 $('#TopicHeader').text("Consent");
-
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
 
 </script>
 
 <script src="js/custom.js"></script>
 
+<script>
+var QuizResponse;
+var ResponseContent;
+var QuizStatus;
+
+IsQuizPage();
+IsMultipleSelectionQuiz(false);
+
+$('#SubmitBtn').click(function(e) {
+	ValidateStatus = ValidateSelection("question1");
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateSingleChoiceQuiz("question1");
+		ResponseContent = "The Club cannot prohibit an individual from withdrawing his consent. It must deal with such a request immediately.";
+		ShowQuizPopup(QuizResponse, ResponseContent);
+	}
+	else {
+		ShowQuizPopup("NA", "");
+	}
+});
+</script>
 
 </body>
 </html>

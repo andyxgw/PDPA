@@ -10,8 +10,39 @@
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="TopPanel">
+			<div class="InfoText">
+				<h3>Purposes for Retention</h3>
+				<p>Click on each picture to learn about some examples of purposes for retention of personal data.</p>
+			</div>
+			<div class="CanvasPanel">
+				<div class="CanvasImg" style="top: 9em; left: 17em;"><img id="C1" class="ClickableImg" src="images/btn_Mod01_P40a_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P40a_Focusing.png" data-visitedimg="btn_Mod01_P40a_Visited.png"/></div>
+				<div class="CanvasImg" style="top: 9em; left: 27em;"><img id="C2" class="ClickableImg" src="images/btn_Mod01_P40b_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P40b_Focusing.png" data-visitedimg="btn_Mod01_P40b_Visited.png"/></div>
+				<div class="CanvasImg" style="top: 9em; left: 37em;"><img id="C3" class="ClickableImg" src="images/btn_Mod01_P40c_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P40c_Focusing.png" data-visitedimg="btn_Mod01_P40c_Visited.png"/></div>
+				<div class="CanvasImg" style="top: 9em; left: 47em;"><img id="C4" class="ClickableImg" src="images/btn_Mod01_P40d_Default.png" border="0" data-clicked="0" data-hoverimg="btn_Mod01_P40d_Focusing.png" data-visitedimg="btn_Mod01_P40d_Visited.png"/></div>
+
+				<!--
+				<div id="VL1" class="VertLine" style="top: 14.5em; left: 20em;"></div>
+				<div id="VL2" class="VertLine" style="top: 14.5em; left: 30em;"></div>
+				<div id="VL3" class="VertLine" style="top: 14.5em; left: 40em;"></div>
+				<div id="VL4" class="VertLine" style="top: 14.5em; left: 50em;"></div>
+			-->
+
+				<div id="Box1" class="CanvasBox" style="top: 15em; left: 12em;">Retention is a requirement under an applicable law or regulation</div>
+				<div id="Box2" class="CanvasBox" style="top: 15em; left: 12em;">Retention is for legal proceedings</div>
+				<div id="Box3" class="CanvasBox" style="top: 15em; left: 12em;">Retention is for producing reports</div>
+				<div id="Box4" class="CanvasBox" style="top: 15em; left: 12em;">Retention is for generating forecasts</div>
+			</div>
+		</div>
+
+		<div class="BottomPanel">
+			<div class="InstructionText">
+				<div class="BulletTab"><img src="images/Symbol_Note.png" class="BulletImage" /></div>
+				<div class="BulletText1" style="text-align:center">Personal data must not be kept by an organisation "just in case" it may be needed for other purposes.</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
 	</div>
 
 </div>
@@ -20,21 +51,26 @@
 
 <script>
 PageNo = 40;
-TopicNumber = 40;
-TotalPagesInTopic = 1;
-PageInTopic = 1;
+TopicNumber = 9;
+TotalPagesInTopic = 4;
+PageInTopic = 3;
 
 $('#TopicHeader').text("Retention Limitation");
-
-if($("#vPlayer").length > 0)
-{
-	$("#vPlayer").get(0).play();
-}
-
 </script>
 
 <script src="js/custom.js"></script>
 
+<script>
+ToggleHoverState($("#C1").attr("id"), $("#C1").attr("src"), $("#C1").attr("data-hoverimg"));
+ToggleHoverState($("#C2").attr("id"), $("#C2").attr("src"), $("#C2").attr("data-hoverimg"));
+ToggleHoverState($("#C3").attr("id"), $("#C3").attr("src"), $("#C3").attr("data-hoverimg"));
+ToggleHoverState($("#C4").attr("id"), $("#C4").attr("src"), $("#C4").attr("data-hoverimg"));
+
+ActivateClickableImage("#C1", "#Box1", $("#C1").attr("data-hoverimg"));
+ActivateClickableImage("#C2", "#Box2", $("#C2").attr("data-hoverimg"));
+ActivateClickableImage("#C3", "#Box3", $("#C3").attr("data-hoverimg"));
+ActivateClickableImage("#C4", "#Box4", $("#C4").attr("data-hoverimg"));
+</script>
 
 </body>
 </html>

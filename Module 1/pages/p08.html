@@ -4,14 +4,33 @@
 <meta charset="UTF-8" />
 <title>Consent</title>
 <link rel="stylesheet" type="text/css" href="css/page.css" />
+<link rel="stylesheet" type="text/css" href="css/quiz.css" />
 </head>
 
 <body>
 
 <div id="SubPageContainer">
 
-	<div class="InfoTextPanel">
-		&nbsp;
+	<div class="InfoTextPanel StandardGrey">
+		<div class="QuizPanel">
+			<h3>Provision of Consent: Learning Activity 2</h3>
+			<p>Answer the question below.</p>
+			<p>Select your answer, then click “Submit”.</p>
+			<div class="QuizDivider"></div>
+			<div class="QuizGraphic">
+				<p>John is intending to create a WhatsApp group chat for the ease of communication amongst the volunteers for the upcoming Sports Carnival. However, he has not received consent from the volunteers to disclose their phone numbers to other volunteers in the intended group chat.</p>
+				<p>Can he still proceed to create the group chat?</p>
+			</div>
+			<div class="QuizOptions">
+			<fieldset id="question1">
+			<span class="response"></span><input id="chk1" name="option1" type="checkbox" value="no" /><label for="chk1" /><span class="cb_label">Yes</span><br />
+			<span class="response"></span><input id="chk2" name="option1" type="checkbox" value="yes" /><label for="chk2" /><span class="cb_label">No</span>
+			</fieldset>
+		</div>
+
+			<div class="ButtonPanel"><button id="SubmitBtn" class="SubmitBtn">Submit</button><button id="ReviewBtn" class="ReviewBtn">Review</button></div>
+			<div class="clearfix"></div>
+		</div>
 	</div>
 
 </div>
@@ -22,7 +41,7 @@
 PageNo = 8;
 TopicNumber = 3;
 TotalPagesInTopic = 7;
-PageInTopic = 6;
+PageInTopic = 2;
 
 $('#TopicHeader').text("Consent");
 
@@ -35,6 +54,32 @@ if($("#vPlayer").length > 0)
 
 <script src="js/custom.js"></script>
 
+<script>
+var QuizResponse;
+var ResponseContent;
+var QuizStatus;
+
+IsQuizPage();
+IsMultipleSelectionQuiz(false);
+
+$('#SubmitBtn').click(function(e) {
+	ValidateStatus = ValidateSelection("question1");
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateSingleChoiceQuiz("question1");
+		ResponseContent = "John has to obtain consent from the volunteers first. One way to do this is to include the option in the volunteer application form.";
+		ResponseContent += "<div style='margin: 1.5em auto 0 auto; padding: 1em; border: 0.2em solid #000000; width: 35em; background: #e49d76;'>";
+		ResponseContent += "<div style='float:left; width: 1.7em;'><div style='width:1em; height: 1em; border: 0.2em solid #000000;'></div></div>";
+		ResponseContent += "<div style='float:left; width: 30em; text-align:left; margin-top: -0.2em;'>";
+		ResponseContent += "I would like to be included in the WhatsApp group chat for this volunteer’s event and I am aware that my phone number will be disclosed to the members of the group chat.";
+		ResponseContent += "</div><div class='clearfix'></div></div>";
+		ShowQuizPopup(QuizResponse, ResponseContent);
+	}
+	else {
+		ShowQuizPopup("NA", "");
+	}
+});
+</script>
 
 </body>
 </html>

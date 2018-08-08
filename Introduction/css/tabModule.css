@@ -39,7 +39,7 @@
 
 .tab .tab-content {
   width: 100%;
-  min-height: 32.3em;
+  min-height: 41.2em;
   position: relative;
   overflow: hidden;
 	padding: 5px 20px;
@@ -109,7 +109,7 @@
   }
 
   .tab-vert .tab-content p {
-  font-size: 0.7em;
+  font-size: 0.8em;
   }
 
 .tab-vert .tab-content > li {
@@ -126,6 +126,7 @@
  .tab-vert .tab-content > li > ol > li {
   list-style: none;
   margin-bottom: 10px;
+  font-size: 0.8em;
 }
  .tab-vert .tab-content > li >ol > li:before {
   content: counter(list, lower-alpha) ") ";

@@ -126,6 +126,18 @@
 	text-align: left;
 }
 
+.InfoTextPanel .TopPanel .InfoText .BorderBox
+{
+	border: 0.2em solid #ffffff;
+	padding: 1.2em;
+	font-size: 1.1em;
+	border-radius: 1em;
+	text-align: center;
+	width: 35em;
+	margin: 0 auto;
+}
+
+
 .InfoTextPanel .TopPanel .CenterContainer
 {
   width: 60em;
@@ -402,13 +414,24 @@ a.ModalLink:hover
 
 a.TextLink
 {
-	color: #00ffff;
+	color: #00ffff  !important;
 	outline: 0;
 }
 
 a.TextLink:hover
 {
-	text-decoration: underline;
+	text-decoration: underline !important;
+}
+
+a.TextLinkVisited
+{
+	color: #d8a749 !important;
+	outline: 0;
+}
+
+a.TextLinkVisited:hover
+{
+	text-decoration: underline !important;
 }
 
 

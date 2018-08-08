@@ -17,16 +17,16 @@
 			<div class="QuizDivider"></div>
 			<div class="QuizGraphic">
 				<fieldset id="question1">
-				<table cellpadding="0" cellspacing="0">
+				<table cellpadding="0" cellspacing="0" border="0">
 					<tr>
 						<td style="width:7em;"><input id="chk1" name="option1" type="checkbox" value="yes" /><label for="chk1" /><span class="response"></span></td>
 						<td style="width:11em;"><input id="chk2" name="option2" type="checkbox" value="yes" /><label for="chk2" /><span class="response"></span></td>
-						<td style="width:7.5em;"><input id="chk3" name="option3" type="checkbox" value="yes" /><label for="chk3" /><span class="response"></span></td>
+						<td style="width:8em;"><input id="chk3" name="option3" type="checkbox" value="yes" /><label for="chk3" /><span class="response"></span></td>
 						<td style="width:4em;"><input id="chk4" name="option4" type="checkbox" value="yes" /><label for="chk4" /><span class="response"></span></td>
-						<td style="width:5em;"><input id="chk5" name="option5" type="checkbox" value="yes" /><label for="chk5" /><span class="response"></span></td>
-						<td style="width:7.5em;"><input id="chk6" name="option6" type="checkbox" value="yes" /><label for="chk6" /><span class="response"></span></td>
-						<td style="width:11.5em;"><input id="chk7" name="option7" type="checkbox" value="yes" /><label for="chk7" /><span class="response"></span></td>
-						<td style="width:6.2em;"><input id="chk8" name="option8" type="checkbox" value="yes" /><label for="chk8" /><span class="response"></span></td>
+						<td style="width:4em;"><input id="chk5" name="option5" type="checkbox" value="yes" /><label for="chk5" /><span class="response"></span></td>
+						<td style="width:6em;"><input id="chk6" name="option6" type="checkbox" value="yes" /><label for="chk6" /><span class="response"></span></td>
+						<td style="width:13em;"><input id="chk7" name="option7" type="checkbox" value="yes" /><label for="chk7" /><span class="response"></span></td>
+						<td style="width:7em;"><input id="chk8" name="option8" type="checkbox" value="yes" /><label for="chk8" /><span class="response"></span></td>
 					</tr>
 				</table>
 			</fieldset>
@@ -62,13 +62,26 @@ if($("#vPlayer").length > 0)
 var QuizResponse;
 var ResponseContent;
 var QuizStatus;
+var ValidateStatus;
 
+IsQuizPage();
 IsMultipleSelectionQuiz(true);
 
 $('#SubmitBtn').click(function(e) {
-	QuizResponse = ValidateCheckboxQuiz("question1");
-	ResponseContent = "All of the above are personal data because they can be matched or associated with particular individuals.";
-	ShowQuizPopup(QuizResponse, ResponseContent);
+	ValidateStatus = ValidateSelection("question1");
+
+	if(ValidateStatus == true)
+	{
+		QuizResponse = ValidateCheckboxQuiz("question1");
+		ResponseContent = "All of the above are personal data because they can be matched or associated with particular individuals.";
+		ShowQuizPopup(QuizResponse, ResponseContent);
+	}
+	else
+	{
+		ShowQuizPopup("NA", "");
+	}
+
+
 });
 </script>
 
