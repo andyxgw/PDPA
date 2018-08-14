@@ -81,7 +81,7 @@ function ShowQuizPopup(QuizResponse, PopUpContent)
 
 function IsQuizPage()
 {
-	DisableNextBtn();
+	//DisableNextBtn();
 }
 
 function IsMultipleSelectionQuiz(QuizBoolean)
@@ -111,9 +111,13 @@ function ValidateCheckboxQuiz(QuestionID)
 		{
 			correct = true;
 		}
-		else {
+		if(options[i].value == "no" && options[i].checked == false)
+		{
+			correct = true;
+		}
+		if(options[i].value == "no" && options[i].checked == true)
+		{
 			correct = false;
-			break;
 		}
 	}
 
@@ -139,7 +143,7 @@ function ValidateCheckboxQuiz(QuestionID)
 		else {
 			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg" />';
 			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerCorrectAnswerLeft.png" class="responseImg" />';
-			options[i].checked = true;
+			options[i].checked = false;
 		}
 		options[i].disabled = true;
 	}

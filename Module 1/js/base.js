@@ -71,9 +71,9 @@ $(document).ready(function(e) {
 		var ClickedID;
 		var NavPageID;
 
-			ClickedID = $(this).attr("id");
-			NavPageID = ClickedID.substring(1);
-			VerifyToProceed(NavPageID);
+		ClickedID = $(this).attr("id");
+		NavPageID = ClickedID.substring(1);
+		VerifyToProceed(NavPageID);
 
 	});
 
@@ -451,7 +451,32 @@ function VerifyToProceed(DestPageNo)
 {
 	if(PagesArray[DestPageNo-1] == 1)
 	{
+		if($(".popup-wrap").length)
+		{
+			$('.popup-wrap').fadeOut(500);
+			$('.popup-box').removeClass('transform-in').addClass('transform-out');
+		}
+
+		if($(".popup-wrap1").length)
+		{
+			$('.popup-wrap1').fadeOut(500);
+			$('.popup-box1').removeClass('transform-in').addClass('transform-out');
+		}
+
+		if($(".popup-wrap2").length)
+		{
+			$('.popup-wrap2').fadeOut(500);
+			$('.popup-box2').removeClass('transform-in').addClass('transform-out');
+		}
+
+		if($(".popup-wrap3").length)
+		{
+			$('.popup-wrap3').fadeOut(500);
+			$('.popup-box3').removeClass('transform-in').addClass('transform-out');
+		}
+
 		NavigatePage(DestPageNo);
+		
 	}
 }
 
