@@ -81,7 +81,7 @@ function ShowQuizPopup(QuizResponse, PopUpContent)
 
 function IsQuizPage()
 {
-	//DisableNextBtn();
+	DisableNextBtn();
 }
 
 function IsMultipleSelectionQuiz(QuizBoolean)
@@ -111,13 +111,13 @@ function ValidateCheckboxQuiz(QuestionID)
 		{
 			correct = true;
 		}
-		if(options[i].value == "no" && options[i].checked == false)
+		else if(options[i].value == "no" && options[i].checked == false)
 		{
 			correct = true;
 		}
-		if(options[i].value == "no" && options[i].checked == true)
-		{
+		else {
 			correct = false;
+			break;
 		}
 	}
 
@@ -131,7 +131,7 @@ function ValidateCheckboxQuiz(QuestionID)
 			options[i].nextSibling.style.border = "0.2em solid #22b573";
 			options[i].nextSibling.className += " CorrectAnswer1 SelectedInput";
 		}
-		else if(options[i].value == "yes" && options[i].checked == false)
+		if(options[i].value == "yes" && options[i].checked == false)
 		{
 			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerRight.png" class="responseImg" />';
 			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerCorrectAnswerLeft.png" class="responseImg" />';
@@ -140,11 +140,7 @@ function ValidateCheckboxQuiz(QuestionID)
 			options[i].className += " CorrectInput";
 			options[i].nextSibling.className += " CorrectAnswer";
 		}
-		else {
-			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerWrong.png" class="responseImg" />';
-			//document.getElementsByClassName("response")[i].innerHTML = '<img src="images/MarkerCorrectAnswerLeft.png" class="responseImg" />';
-			options[i].checked = false;
-		}
+
 		options[i].disabled = true;
 	}
 

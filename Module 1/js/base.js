@@ -475,8 +475,11 @@ function VerifyToProceed(DestPageNo)
 			$('.popup-box3').removeClass('transform-in').addClass('transform-out');
 		}
 
+		$('#sidebar').removeClass('active');
+ 		$('.submenu').removeClass('show');
+
 		NavigatePage(DestPageNo);
-		
+
 	}
 }
 
