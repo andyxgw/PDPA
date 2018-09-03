@@ -81,7 +81,7 @@ function ShowQuizPopup(QuizResponse, PopUpContent)
 
 function IsQuizPage()
 {
-	DisableNextBtn();
+	//DisableNextBtn();
 }
 
 function IsMultipleSelectionQuiz(QuizBoolean)
@@ -378,6 +378,11 @@ function ToggleImageState(VarName)
 	$("#"+VarName).attr('data-clicked', '1');
 	$("#"+VarName).attr('src', 'images/'+DoneImage);
 	$(this).attr('data-clicked', '1');
+}
+
+function ToggleCSSState(VarName)
+{
+	$(this).addClass('1');
 }
 
 function ToggleHoverState(VarName, CurrImage, NewImage)

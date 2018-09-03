@@ -41,8 +41,6 @@ for(var i=0;i<PagesArray.length;++i)
 }
 
 
-
-
 window.addEventListener("resize", resizeWindow);
 window.addEventListener("orientationchange", resizeWindow);
 

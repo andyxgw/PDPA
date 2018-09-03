@@ -281,30 +281,38 @@ img.ClickableImg:hover
 	display: none;
 }
 
-.InfoTextPanel .TopPanel .CanvasPanel .RectBox
+.RectBox
 {
 	border: 0.3em solid #80afff;
-	width: 14em;
-	height: 10em;
-	padding: 1em;
+	width: 17em;
+	height: 9em;
 	color: #181c62;
 	text-align: center;
 	font-size: 0.9em;
+	font-weight: bold;
 	background: #ffffff;
-	position: absolute;
+	position: relative;
+	float: left;
 	border-radius: 0em;
 	display: table;
 	cursor: pointer;
 }
 
-.InfoTextPanel .TopPanel .CanvasPanel .RectBox p
+.RectBox p
 {
 	display: table-cell;
 	vertical-align: middle;
 	cursor: pointer;
+	padding: 1em 1em;
 }
 
-.InfoTextPanel .TopPanel .CanvasPanel .RectBox:hover
+.RectBoxVisited
+{
+	border: 0.3 solid #c8c8c8;
+	color: #808080;
+}
+
+.RectBox:hover
 {
 	background: #00ffff;
 }
